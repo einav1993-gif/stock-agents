@@ -1,0 +1,39 @@
+name: 🌅 דוח בוקר — אורי ודניאל
+
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  morning-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 הורדת הקוד
+        uses: actions/checkout@v4
+
+      - name: 🐍 התקנת Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 התקנת חבילות
+        run: pip install -r requirements.txt
+
+      - name: ▶️ הרצת הסוכנים
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 cloud_runner.py
+
+      - name: 💾 שמירת הדוח
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: דוח-בוקר-${{ github.run_number }}
+          path: reports/
+          retention-days: 30
+          if-no-files-found: ignore
