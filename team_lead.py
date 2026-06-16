@@ -83,12 +83,22 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
 
     if total >= 60:
         decision = "🟢 קנייה חזקה"
+        trade_type = "long"
     elif total >= 35:
-        decision = "🟡 בחן מקרוב"
+        decision = "🟡 לונג — בחן מקרוב"
+        trade_type = "long"
     elif total >= 10:
         decision = "⚪ המתן"
+        trade_type = "none"
+    elif total <= -50:
+        decision = "🔴 שורט חזק"
+        trade_type = "short"
+    elif total <= -25:
+        decision = "🟠 שורט — בחן מקרוב"
+        trade_type = "short"
     else:
-        decision = "🔴 הימנע"
+        decision = "⚪ הימנע"
+        trade_type = "none"
 
     all_signals  = tech.get("signals", []) + fund.get("signals", [])
     all_warnings = tech.get("warnings", []) + fund.get("warnings", [])
@@ -97,6 +107,7 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
         "ticker":       ticker,
         "total_score":  total,
         "decision":     decision,
+        "trade_type":   trade_type,
         "tech":         tech,
         "news":         news,
         "sent":         sent,
@@ -105,11 +116,19 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
         "macro":        macro,
         "all_signals":  all_signals,
         "all_warnings": all_warnings,
+        # לונג
         "entry":        risk.get("entry_price"),
         "stop_loss":    risk.get("stop_loss"),
         "stop_pct":     risk.get("stop_loss_pct"),
         "target_1":     risk.get("target_1"),
         "target_2":     risk.get("target_2"),
+        # שורט
+        "short_entry":    risk.get("short_entry"),
+        "short_stop":     risk.get("short_stop"),
+        "short_stop_pct": risk.get("short_stop_pct"),
+        "short_target_1": risk.get("short_target_1"),
+        "short_target_2": risk.get("short_target_2"),
+        # כללי
         "shares":       risk.get("shares"),
         "max_loss":     risk.get("max_loss_usd"),
     }

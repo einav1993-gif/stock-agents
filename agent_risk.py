@@ -28,11 +28,19 @@ def analyze(ticker, current_price=None):
     result = {
         "ticker": ticker,
         "current_price": current_price,
+        # לונג
         "entry_price": None,
         "stop_loss": None,
         "stop_loss_pct": None,
-        "target_1": None,    # יעד ראשון (1:1.5)
-        "target_2": None,    # יעד שני  (1:3)
+        "target_1": None,
+        "target_2": None,
+        # שורט
+        "short_entry": None,
+        "short_stop": None,
+        "short_stop_pct": None,
+        "short_target_1": None,
+        "short_target_2": None,
+        # כללי
         "shares": None,
         "max_loss_usd": None,
         "risk_reward": None,
@@ -90,16 +98,21 @@ def analyze(ticker, current_price=None):
         sl_pct = max(1.0, min(4.0, sl_pct))
         sl_distance = price * sl_pct / 100
 
+        # ── לונג (קנייה) ──
         result["entry_price"]   = round(price, 2)
         result["stop_loss"]     = round(price - sl_distance, 2)
         result["stop_loss_pct"] = round(sl_pct, 1)
+        result["target_1"]      = round(price + sl_distance * 1.5, 2)
+        result["target_2"]      = round(price + sl_distance * 3.0, 2)
+        result["risk_reward"]   = 3.0
 
-        # ── יעדי רווח ──
-        # יעד 1: 1.5x הסיכון (יחס 1:1.5)
-        # יעד 2: 3x הסיכון  (יחס 1:3)
-        result["target_1"] = round(price + sl_distance * 1.5, 2)
-        result["target_2"] = round(price + sl_distance * 3.0, 2)
-        result["risk_reward"] = 3.0
+        # ── שורט (מכירה בחסר) ──
+        # בשורט: כניסה = מחיר נוכחי, Stop מעל, יעד מתחת
+        result["short_entry"]     = round(price, 2)
+        result["short_stop"]      = round(price + sl_distance, 2)   # Stop מעל
+        result["short_stop_pct"]  = round(sl_pct, 1)
+        result["short_target_1"]  = round(price - sl_distance * 1.5, 2)  # יעד 1 מתחת
+        result["short_target_2"]  = round(price - sl_distance * 3.0, 2)  # יעד 2 מתחת
 
         # ── גודל פוזיציה ──
         # כמה מניות לקנות כך שהפסד מקסימלי = 1.5% מהתיק

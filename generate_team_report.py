@@ -62,13 +62,50 @@ def build_html(top5, all_stocks):
         for w in s.get("all_warnings", [])[:3]:
             warnings_html += f'<div class="warning-tag">⚠️ {w}</div>'
 
-        # ניהול סיכון
+        # ניהול סיכון — לונג או שורט
         risk_html = ""
-        if s.get("entry"):
+        trade_type = s.get("trade_type", "long")
+
+        if trade_type == "short" and s.get("short_entry"):
+            sp = s.get("short_stop_pct", 0)
+            risk_html = f"""
+            <div class="risk-box" style="border:1px solid #f44336">
+                <div class="risk-title">⚖️ ניהול סיכון — שורט 📉</div>
+                <div style="font-size:0.78rem;color:#ff8a80;margin-bottom:8px">
+                    שורט = מוכרים בחסר, מרוויחים כשהמחיר יורד
+                </div>
+                <div class="risk-grid">
+                    <div class="risk-item">
+                        <div class="risk-label">כניסה (מכירה)</div>
+                        <div class="risk-val red">${s['short_entry']}</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-label">Stop Loss (מעל)</div>
+                        <div class="risk-val" style="color:#ff9800">${s['short_stop']} <span class="small">(+{sp}%)</span></div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-label">יעד 1 (מתחת)</div>
+                        <div class="risk-val green">${s['short_target_1']}</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-label">יעד 2 (מתחת)</div>
+                        <div class="risk-val green">${s['short_target_2']}</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-label">כמות</div>
+                        <div class="risk-val">{s['shares']} מניות</div>
+                    </div>
+                    <div class="risk-item">
+                        <div class="risk-label">סיכון מקס׳</div>
+                        <div class="risk-val red">${s['max_loss']}</div>
+                    </div>
+                </div>
+            </div>"""
+        elif s.get("entry"):
             stop_pct = s.get("stop_pct", 0)
             risk_html = f"""
             <div class="risk-box">
-                <div class="risk-title">⚖️ ניהול סיכון</div>
+                <div class="risk-title">⚖️ ניהול סיכון — לונג 📈</div>
                 <div class="risk-grid">
                     <div class="risk-item">
                         <div class="risk-label">כניסה</div>
