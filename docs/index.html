@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>צוות סוכני המניות — 17/06/2026 13:37</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0a0e1a;
+    color: #e0e0e0;
+    direction: rtl;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0d47a1, #1a237e, #311b92);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #3949ab;
+  }
+  .header h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+  .header .subtitle { color: #90caf9; font-size: 1rem; }
+  .header .time { color: #b39ddb; font-size: 0.85rem; margin-top: 6px; }
+
+  /* ── Section title ── */
+  .section-title {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #90caf9;
+    margin: 30px 0 15px;
+    padding: 10px;
+    border-bottom: 1px solid #1e2a4a;
+  }
+
+  /* ── Stock Card ── */
+  .stock-card {
+    background: #111827;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .rank-badge { font-size: 2rem; }
+  .ticker-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    flex: 1;
+  }
+  .score-circle {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; font-weight: bold; color: #000;
+  }
+  .decision-badge {
+    background: #1e2a4a;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  /* ── Agents Grid ── */
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .agent-box {
+    background: #0d1525;
+    border-radius: 10px;
+    padding: 14px;
+    border: 1px solid #1e2a4a;
+  }
+  .agent-title {
+    font-size: 0.9rem;
+    color: #90caf9;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #1e2a4a;
+  }
+  .agent-detail {
+    font-size: 0.82rem;
+    color: #b0bec5;
+    margin: 4px 0;
+    line-height: 1.4;
+  }
+  .candle-tag, .signal-tag, .warning-tag, .headline {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin: 3px 2px;
+    display: inline-block;
+  }
+  .candle-tag  { background: #1a237e; color: #90caf9; }
+  .signal-tag  { background: #1b5e20; color: #a5d6a7; }
+  .warning-tag { background: #4a1500; color: #ffab91; }
+  .headline    { background: #1c2331; color: #90a4ae; display: block; }
+
+  .sentiment-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 8px;
+  }
+  .earnings-tag { color: #ffd600 !important; font-weight: bold; }
+
+  .signals-row {
+    margin: 10px 0;
+    min-height: 10px;
+  }
+
+  /* ── Risk Box ── */
+  .risk-box {
+    background: #0d1525;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 15px;
+    border: 1px solid #263238;
+  }
+  .risk-title {
+    color: #90caf9;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .risk-item {
+    text-align: center;
+    background: #111827;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .risk-label { font-size: 0.75rem; color: #78909c; margin-bottom: 4px; }
+  .risk-val { font-size: 1rem; font-weight: bold; }
+  .risk-val.green { color: #00c853; }
+  .risk-val.red   { color: #f44336; }
+  .risk-val.blue  { color: #40c4ff; }
+  .risk-val .small { font-size: 0.75rem; font-weight: normal; }
+
+  /* ── All Stocks Table ── */
+  .table-wrap {
+    max-width: 960px;
+    margin: 0 auto 40px;
+    overflow-x: auto;
+    padding: 0 15px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  th {
+    background: #1a237e;
+    color: #90caf9;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #1e2a4a;
+    color: #b0bec5;
+  }
+  tr:hover td { background: #0d1525; }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: #546e7a;
+    font-size: 0.8rem;
+    border-top: 1px solid #1e2a4a;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>👑 צוות סוכני המניות</h1>
+  <div class="subtitle">ניתוח יומי מקצועי — טכני · חדשות · פונדמנטלי · סיכון</div>
+  <div class="time">📅 17/06/2026 13:37 | 3 מניות נסרקו</div>
+</div>
+
+<div class="section-title">🏆 TOP 5 המניות להיום — ניתוח מלא</div>
+<div style="padding: 0 15px">
+  
+        <div class="stock-card" style="border-top: 4px solid #f44336">
+            <div class="card-header">
+                <div class="rank-badge">🥇</div>
+                <div class="ticker-name">SNAP</div>
+                <div class="score-circle" style="background:#f44336">2</div>
+                <div class="decision-badge">⚪ הימנע</div>
+            </div>
+
+            <div class="agents-grid">
+                <div class="agent-box">
+                    <div class="agent-title">🕯️ ניתוח טכני</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    
+                </div>
+
+                <div class="agent-box">
+                    <div class="agent-title">📰 חדשות וסנטימנט</div>
+                    <div class="sentiment-badge" style="background:#90a4ae">
+                        —
+                    </div>
+                    <div class="agent-detail">—</div>
+                    
+                </div>
+
+                <div class="agent-box">
+                    <div class="agent-title">📊 ניתוח פונדמנטלי</div>
+                    <div class="agent-detail">אנליסטים: —</div>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <div class="signals-row">
+                
+                
+            </div>
+
+            
+        </div>
+        
+        <div class="stock-card" style="border-top: 4px solid #f44336">
+            <div class="card-header">
+                <div class="rank-badge">🥈</div>
+                <div class="ticker-name">MU</div>
+                <div class="score-circle" style="background:#f44336">2</div>
+                <div class="decision-badge">⚪ הימנע</div>
+            </div>
+
+            <div class="agents-grid">
+                <div class="agent-box">
+                    <div class="agent-title">🕯️ ניתוח טכני</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    
+                </div>
+
+                <div class="agent-box">
+                    <div class="agent-title">📰 חדשות וסנטימנט</div>
+                    <div class="sentiment-badge" style="background:#90a4ae">
+                        —
+                    </div>
+                    <div class="agent-detail">—</div>
+                    
+                </div>
+
+                <div class="agent-box">
+                    <div class="agent-title">📊 ניתוח פונדמנטלי</div>
+                    <div class="agent-detail">אנליסטים: —</div>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <div class="signals-row">
+                
+                
+            </div>
+
+            
+        </div>
+        
+        <div class="stock-card" style="border-top: 4px solid #f44336">
+            <div class="card-header">
+                <div class="rank-badge">🥉</div>
+                <div class="ticker-name">INTC</div>
+                <div class="score-circle" style="background:#f44336">2</div>
+                <div class="decision-badge">⚪ הימנע</div>
+            </div>
+
+            <div class="agents-grid">
+                <div class="agent-box">
+                    <div class="agent-title">🕯️ ניתוח טכני</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    <div class="agent-detail">—</div>
+                    
+                </div>
+
+                <div class="agent-box">
+                    <div class="agent-title">📰 חדשות וסנטימנט</div>
+                    <div class="sentiment-badge" style="background:#90a4ae">
+                        —
+                    </div>
+                    <div class="agent-detail">—</div>
+                    
+                </div>
+
+                <div class="agent-box">
+                    <div class="agent-title">📊 ניתוח פונדמנטלי</div>
+                    <div class="agent-detail">אנליסטים: —</div>
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <div class="signals-row">
+                
+                
+            </div>
+
+            
+        </div>
+        
+</div>
+
+<div class="section-title">📋 כל המניות שנסרקו</div>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>מניה</th><th>ציון</th><th>המלצה</th><th>טרנד</th>
+        <th>RSI</th><th>סנטימנט</th><th>קטליסט</th>
+        <th>כניסה</th><th>Stop</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>SNAP</strong></td>
+            <td style="color:#f44336;font-weight:bold">2</td>
+            <td>⚪ הימנע</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><strong>MU</strong></td>
+            <td style="color:#f44336;font-weight:bold">2</td>
+            <td>⚪ הימנע</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td><strong>INTC</strong></td>
+            <td style="color:#f44336;font-weight:bold">2</td>
+            <td>⚪ הימנע</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<div class="footer">
+  🤖 הופק אוטומטית על ידי צוות סוכני AI | לא ייעוץ פיננסי | אינטרקטיב ישראל
+</div>
+
+</body>
+</html>
