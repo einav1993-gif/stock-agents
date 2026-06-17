@@ -1,39 +1,62 @@
-name: 🌅 דוח בוקר — אורי ודניאל
+name: Stock Morning Report
 
 on:
   schedule:
     - cron: '0 13 * * 1-5'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   morning-report:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
-      - name: 📥 הורדת הקוד
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 🐍 התקנת Python 3.11
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: 📦 התקנת חבילות
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: ▶️ הרצת הסוכנים
+      - name: Run agents
         env:
-          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python3 cloud_runner.py
 
-      - name: 💾 שמירת הדוח
+      - name: Publish to GitHub Pages
+        run: |
+          git config user.name "Stock Agents Bot"
+          git config user.email "bot@stock-agents"
+          mkdir -p docs
+          if [ -f reports/report.html ]; then
+            cp reports/report.html docs/index.html
+            echo "Report published to GitHub Pages"
+          else
+            echo "<html><body style='font-family:sans-serif;text-align:center;padding:50px'><h1>הדוח עדיין לא מוכן</h1><p>נסי שוב אחרי 16:00</p></body></html>" > docs/index.html
+          fi
+          git add docs/
+          git diff --staged --quiet || git commit -m "Update daily report $(date '+%Y-%m-%d')"
+          git push
+
+      - name: Save artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: דוח-בוקר-${{ github.run_number }}
+          name: report-${{ github.run_number }}
           path: reports/
           retention-days: 30
           if-no-files-found: ignore
