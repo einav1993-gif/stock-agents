@@ -22,8 +22,7 @@ token   = os.environ.get("TELEGRAM_TOKEN", "")
 chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
 
 if not token or not chat_id:
-    print("❌ חסרים TELEGRAM_TOKEN או TELEGRAM_CHAT_ID ב-GitHub Secrets!")
-    sys.exit(1)
+    print("⚠️  אזהרה: חסרים TELEGRAM_TOKEN או TELEGRAM_CHAT_ID — ממשיכים בלי טלגרם")
 
 cfg = {
     "telegram": {
