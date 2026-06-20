@@ -50,7 +50,7 @@ jobs:
           fi
           git add docs/
           git diff --staged --quiet || git commit -m "Update daily report $(date '+%Y-%m-%d')"
-          git push
+          git push || echo "Push failed or nothing to push"
 
       - name: Save artifact
         if: always()
