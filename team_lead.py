@@ -165,11 +165,11 @@ def run():
     print("\n📋 שלב 3: ניתוח מקביל — 5 סוכנים עובדים יחד...")
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:
-        f_news = ex.submit(_safe, agent_news.run, candidates, "חדשות")
-        f_sent = ex.submit(_safe, agent_sentiment.run, candidates, "סנטימנט")
-        f_tech = ex.submit(_safe, agent_technical.run, candidates, "טכני")
-        f_fund = ex.submit(_safe, agent_fundamental.run, candidates, "פונדמנטלי")
-        f_risk = ex.submit(_safe, agent_risk.run, {t: None for t in candidates}, "סיכון")
+        f_news = ex.submit(_safe, agent_news.run, candidates, name="חדשות")
+        f_sent = ex.submit(_safe, agent_sentiment.run, candidates, name="סנטימנט")
+        f_tech = ex.submit(_safe, agent_technical.run, candidates, name="טכני")
+        f_fund = ex.submit(_safe, agent_fundamental.run, candidates, name="פונדמנטלי")
+        f_risk = ex.submit(_safe, agent_risk.run, {t: None for t in candidates}, name="סיכון")
 
         news_r = f_news.result()
         sent_r = f_sent.result()
