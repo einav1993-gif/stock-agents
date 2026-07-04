@@ -48,8 +48,9 @@ jobs:
           else
             echo "<html><body style='font-family:sans-serif;text-align:center;padding:50px'><h1>הדוח עדיין לא מוכן</h1><p>נסי שוב אחרי 16:00</p></body></html>" > docs/index.html
           fi
-          git add docs/
+          git add docs/ data/
           git diff --staged --quiet || git commit -m "Update daily report $(date '+%Y-%m-%d')"
+          git pull --rebase origin main || true
           git push || echo "Push failed or nothing to push"
 
       - name: Save artifact
