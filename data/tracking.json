@@ -103,5 +103,55 @@
     "target_2": 6.81,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-07-04",
+    "ticker": "MRNA",
+    "total_score": 30.3,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": 19,
+      "macro": 8,
+      "news": 50.0,
+      "sent": 28,
+      "fund": 15,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 79.76,
+    "stop_loss": 76.57,
+    "target_1": 84.55,
+    "target_2": 89.33,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-04",
+    "ticker": "NFLX",
+    "total_score": 28.6,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": 26,
+      "macro": 8,
+      "news": 45.0,
+      "sent": -7,
+      "fund": 15,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 77.65,
+    "stop_loss": 74.54,
+    "target_1": 82.31,
+    "target_2": 86.97,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
