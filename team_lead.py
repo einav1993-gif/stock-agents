@@ -10,9 +10,18 @@
 5. 🕯️  סוכן טכני      — RSI, MACD, נרות יפניים
 6. 📊 סוכן פונדמנטלי  — דוחות, אנליסטים, יעד מחיר
 7. ⚖️  סוכן סיכון     — כניסה, עצירה, יעד
+
+חדש:
+- המשקלות נטענים מ-data/weights.json ומתעדכנים כל ערב
+  על ידי self_review.py (הביקורת העצמית).
+- ראש הצוות באמת בודק שהסוכנים עובדים: סופר כמה מניות
+  קיבלו נתונים אמיתיים, ואם הכיסוי נמוך — מסמן את הדוח
+  כ"לא אמין" במקום להעמיד פנים שהכול בסדר.
 """
 
 import concurrent.futures
+import json
+import os
 from datetime import datetime
 
 import agent_scanner
@@ -22,28 +31,43 @@ import agent_sentiment
 import agent_technical
 import agent_fundamental
 import agent_risk
+import data_layer
+
+WEIGHTS_PATH = os.path.join("data", "weights.json")
+
+DEFAULT_WEIGHTS = {
+    "tech": 0.35, "macro": 0.15, "news": 0.20,
+    "sent": 0.10, "fund": 0.15, "risk": 0.05,
+}
+
+# מתחת לכיסוי נתונים כזה (באחוזים) — הדוח מסומן כלא אמין
+MIN_COVERAGE_PCT = 50
+
+
+def load_weights():
+    """טוען את המשקלות שהביקורת העצמית למדה. אם אין — ברירת מחדל."""
+    try:
+        with open(WEIGHTS_PATH, "r", encoding="utf-8") as f:
+            w = json.load(f)
+        weights = {k: float(w[k]) for k in DEFAULT_WEIGHTS if k in w}
+        if len(weights) == len(DEFAULT_WEIGHTS) and 0.9 < sum(weights.values()) < 1.1:
+            return weights
+    except Exception:
+        pass
+    return dict(DEFAULT_WEIGHTS)
 
 
 def _safe(fn, *args, name="סוכן"):
     try:
-        return fn(*args)
+        result = fn(*args)
+        return result if result is not None else {}
     except Exception as e:
-        print(f"⚠️  [{name}] שגיאה: {e}")
+        print(f"🚨 [{name}] נכשל: {e}")
         return {}
 
 
-def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
-    """
-    מחשב ציון כולל למניה אחת ממכלול הסוכנים.
-
-    משקלות:
-    - טכני:        35% (הכי חשוב למסחר יומי)
-    - מאקרו:       15% (תנאי שוק כלליים)
-    - חדשות:       20%
-    - סנטימנט:     10%
-    - פונדמנטלי:   15%
-    - סיכון:        5%
-    """
+def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights):
+    """מחשב ציון כולל למניה אחת ממכלול הסוכנים, לפי המשקלות הנלמדים."""
     tech = tech_r.get(ticker, {})
     news = news_r.get(ticker, {})
     sent = sent_r.get(ticker, {})
@@ -57,14 +81,14 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
     fund_score  = fund.get("score", 0)
     risk_score  = risk.get("score", 0)
 
-    total = (
-        tech_score  * 0.35 +
-        macro_score * 0.15 +
-        news_score  * 0.20 +
-        sent_score  * 0.10 +
-        fund_score  * 0.15 +
-        risk_score  * 0.05
-    )
+    # הציונים הגולמיים של כל סוכן — נשמרים כדי שהביקורת העצמית
+    # תדע בערב מי צדק ומי טעה
+    components = {
+        "tech": tech_score, "macro": macro_score, "news": news_score,
+        "sent": sent_score, "fund": fund_score, "risk": risk_score,
+    }
+
+    total = sum(components[a] * weights[a] for a in weights)
 
     # בונוסים
     if news.get("catalyst"):          total += 15
@@ -75,13 +99,19 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
         total += 10   # דוח קרוב = תנועה צפויה
 
     # עונשים
-    vix = macro.get("vix", {})
+    vix = macro.get("vix") or {}
     if vix and vix.get("value", 0) > 30:
         total -= 15   # שוק בפאניקה — לא זמן לסחור
 
     total = round(max(-100, min(100, total)), 1)
 
-    if total >= 60:
+    # האם בכלל היו לנו נתונים על המניה הזו?
+    has_data = bool(tech) and tech.get("rsi") is not None
+
+    if not has_data:
+        decision = "⚫ אין נתונים"
+        trade_type = "none"
+    elif total >= 60:
         decision = "🟢 קנייה חזקה"
         trade_type = "long"
     elif total >= 35:
@@ -108,6 +138,8 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r):
         "total_score":  total,
         "decision":     decision,
         "trade_type":   trade_type,
+        "has_data":     has_data,
+        "components":   components,
         "tech":         tech,
         "news":         news,
         "sent":         sent,
@@ -139,17 +171,20 @@ def run():
     print("║  👑 ראש הצוות — מפעיל 7 סוכני ניתוח מקצועיים         ║")
     print("╚" + "═"*60 + "╝\n")
 
+    weights = load_weights()
+    print("⚖️  משקלות נוכחיים (נלמדים):",
+          " | ".join(f"{k}: {v*100:.0f}%" for k, v in weights.items()))
+
     # ── שלב 1: מאקרו — בודקים את מצב השוק לפני הכל ──
-    print("📋 שלב 1: בדיקת מצב השוק הכללי...")
+    print("\n📋 שלב 1: בדיקת מצב השוק הכללי...")
     macro = _safe(agent_macro.run, name="מאקרו")
 
-    vix_val = macro.get("vix", {}).get("value", 18) if macro else 18
-    fg_val  = macro.get("fear_greed", {}).get("value", 50) if macro else 50
-    mkt_mood = macro.get("market", {}).get("mood", "") if macro else ""
+    vix_val = (macro.get("vix") or {}).get("value", 18) if macro else 18
+    fg_val  = (macro.get("fear_greed") or {}).get("value", 50) if macro else 50
+    mkt_mood = (macro.get("market") or {}).get("mood", "") if macro else ""
 
     print(f"   🌡️  VIX: {vix_val} | Fear&Greed: {fg_val} | שוק: {mkt_mood}")
 
-    # אזהרה אם השוק בפאניקה
     if vix_val > 35:
         print("   🚨 VIX גבוה מאוד! ראש הצוות ממליץ זהירות מרבית היום!")
 
@@ -177,11 +212,35 @@ def run():
         fund_r = f_fund.result()
         risk_r = f_risk.result()
 
+    # ── שלב 3.5: ראש הצוות בודק שהסוכנים באמת עבדו ──
+    def _agent_coverage(results, key):
+        if not results:
+            return 0
+        ok = sum(1 for t in candidates
+                 if results.get(t) and results[t].get(key) is not None)
+        return round(ok / len(candidates) * 100)
+
+    health = {
+        "tech_coverage":  _agent_coverage(tech_r, "rsi"),
+        "risk_coverage":  _agent_coverage(risk_r, "entry_price"),
+        "fund_coverage":  _agent_coverage(fund_r, "score"),
+        "data_sources":   data_layer.health_summary(),
+    }
+    health["overall"] = round(
+        (health["tech_coverage"] + health["risk_coverage"]) / 2
+    )
+    health["degraded"] = health["overall"] < MIN_COVERAGE_PCT
+
+    print(f"\n🩺 בדיקת בריאות: טכני {health['tech_coverage']}% | "
+          f"סיכון {health['risk_coverage']}% | פונדמנטלי {health['fund_coverage']}%")
+    if health["degraded"]:
+        print("🚨 כיסוי נתונים נמוך! הדוח יסומן כלא אמין — אל תסחרי לפיו היום.")
+
     # ── שלב 4: ציון כולל ──
     print("\n📋 שלב 4: ראש הצוות מסכם ומדרג...")
     all_analyzed = []
     for ticker in candidates:
-        s = _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r)
+        s = _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights)
         all_analyzed.append(s)
 
     all_analyzed.sort(key=lambda x: x["total_score"], reverse=True)
@@ -197,14 +256,16 @@ def run():
             print(f"      כניסה ${s['entry']} | Stop ${s['stop_loss']} (-{s['stop_pct']}%) | יעד ${s['target_2']}")
 
     print(f"\n✅ ראש הצוות סיים | {datetime.now().strftime('%d/%m/%Y %H:%M')}")
-    return top5, all_analyzed
+    return top5, all_analyzed, health, weights
 
 
 def get_full_team_report():
-    top5, all_stocks = run()
+    top5, all_stocks, health, weights = run()
     return {
-        "top5":        top5,
-        "all_stocks":  all_stocks,
+        "top5":         top5,
+        "all_stocks":   all_stocks,
+        "health":       health,
+        "weights":      weights,
         "generated_at": datetime.now().isoformat()
     }
 

@@ -11,8 +11,10 @@
 זהו הסוכן שמגן על הכסף שלך.
 """
 
-import yfinance as yf
 import numpy as np
+import pandas as pd
+
+import data_layer
 
 
 VIRTUAL_CAPITAL = 10_000   # הון וירטואלי בדולר
@@ -52,11 +54,10 @@ def analyze(ticker, current_price=None):
     }
 
     try:
-        # שליפת נתונים
-        df = yf.download(ticker, period="1mo", interval="1d",
-                         auto_adjust=True, progress=False)
+        # שליפת נתונים — דרך שכבת הנתונים העמידה
+        df = data_layer.get_daily(ticker, period="2mo")
 
-        if df.empty or len(df) < 5:
+        if df is None or df.empty or len(df) < 5:
             result["summary"] = "אין מספיק נתונים"
             return result
 
@@ -174,8 +175,6 @@ def run(tickers_with_prices=None, tickers=None):
     return results
 
 
-# import pandas must be at module level
-import pandas as pd
 
 if __name__ == "__main__":
     test = {"TSLA": None, "NVDA": None, "COIN": None}

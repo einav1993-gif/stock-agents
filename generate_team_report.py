@@ -5,6 +5,7 @@
 בונה אתר יפה ומפורט שמציג את ניתוח כל הסוכנים.
 """
 
+import json
 from datetime import datetime
 
 
@@ -30,8 +31,100 @@ def _sentiment_color(score):
         return "#f44336"
 
 
-def build_html(top5, all_stocks):
+
+def _build_performance_section():
+    """טבלת ביצועים היסטורית + יומן הלמידה — מ-data/."""
+    try:
+        with open("data/tracking.json", "r", encoding="utf-8") as f:
+            records = json.load(f)
+    except Exception:
+        records = []
+
+    completed = [r for r in records if r.get("actual_result")
+                 and r.get("actual_result") not in (None, "open")]
+    if not completed:
+        return ""
+
+    hits  = sum(1 for r in completed if r["actual_result"] == "target")
+    stops = sum(1 for r in completed if r["actual_result"] == "stop")
+    win_rate = round(hits / max(1, hits + stops) * 100) if (hits + stops) else 0
+
+    rows = ""
+    outcome_he = {"target": "✅ פגע ביעד", "stop": "🛑 סטופ",
+                  "neither": "⏳ בלי פגיעה", "no_trade": "⚪ המתנה"}
+    for r in list(reversed(completed))[:15]:
+        color = "#00c853" if (r.get("pnl_pct") or 0) > 0 else "#f44336"
+        rows += f"""<tr>
+          <td>{r.get('date','')}</td><td><b>{r.get('ticker','')}</b></td>
+          <td>{r.get('total_score','')}</td>
+          <td>{outcome_he.get(r.get('actual_result'), r.get('actual_result'))}</td>
+          <td style="color:{color}">{(r.get('pnl_pct') or 0):+.1f}%</td>
+        </tr>"""
+
+    # יומן למידה אחרון
+    lessons_html = ""
+    try:
+        with open("data/learning_log.json", "r", encoding="utf-8") as f:
+            log = json.load(f)
+        if log:
+            last = log[-1]
+            items = (last.get("weight_changes", [])[:3] + last.get("lessons", [])[:3])
+            if items:
+                lis = "".join(f"<div style='margin:4px 0;color:#b0bec5'>• {i}</div>" for i in items)
+                lessons_html = f"""
+<div style="max-width:900px;margin:10px auto;padding:14px;background:#111827;
+     border:1px solid #1e2a4a;border-radius:10px;font-size:0.85rem">
+  <b style="color:#90caf9">🧠 מה המערכת למדה אתמול ({last.get('date','')}):</b>
+  {lis}
+</div>"""
+    except Exception:
+        pass
+
+    return f"""
+<div class="section-title">🪞 ביקורת עצמית — ביצועי ההמלצות עד כה</div>
+<div style="max-width:900px;margin:0 auto;text-align:center;color:#b0bec5;font-size:0.95rem">
+  סה"כ נבדקו: {len(completed)} המלצות |
+  ✅ יעדים: {hits} | 🛑 סטופים: {stops} |
+  🎯 אחוז הצלחה (יעד מול סטופ): <b style="color:#90caf9">{win_rate}%</b>
+</div>
+{lessons_html}
+<div class="table-wrap" style="margin-top:15px">
+  <table>
+    <thead><tr><th>תאריך</th><th>מניה</th><th>ציון בוקר</th><th>תוצאה</th><th>רווח/הפסד</th></tr></thead>
+    <tbody>{rows}</tbody>
+  </table>
+</div>"""
+
+
+def build_html(top5, all_stocks, health=None):
     now = datetime.now().strftime("%d/%m/%Y %H:%M")
+
+    # ── באנר בריאות: אם הנתונים חלקיים, אומרים את זה ביושר ──
+    health_banner = ""
+    if health:
+        if health.get("degraded"):
+            health_banner = f"""
+<div style="max-width:900px;margin:20px auto;padding:16px;background:#4a1500;
+     border:2px solid #ff5722;border-radius:12px;text-align:center;color:#ffab91">
+  🚨 <b>אזהרה: כיסוי הנתונים היום נמוך!</b><br>
+  ניתוח טכני: {health.get('tech_coverage', '?')}% מהמניות |
+  נתוני סיכון: {health.get('risk_coverage', '?')}% |
+  פונדמנטלי: {health.get('fund_coverage', '?')}%<br>
+  <b>ההמלצות בדוח זה אינן אמינות — לא לסחור לפיהן היום.</b>
+</div>"""
+        else:
+            src_info = health.get("data_sources", {})
+            health_banner = f"""
+<div style="max-width:900px;margin:15px auto;padding:10px;background:#0d2818;
+     border:1px solid #1b5e20;border-radius:10px;text-align:center;color:#a5d6a7;font-size:0.85rem">
+  🩺 בריאות המערכת: טכני {health.get('tech_coverage', '?')}% |
+  סיכון {health.get('risk_coverage', '?')}% |
+  פונדמנטלי {health.get('fund_coverage', '?')}%
+  &nbsp;·&nbsp; מקורות: yfinance {src_info.get('yfinance_ok', 0)} · Stooq {src_info.get('stooq_ok', 0)}
+</div>"""
+
+    # ── סקציית ביצועים: מה קרה להמלצות הקודמות + מה המערכת למדה ──
+    performance_html = _build_performance_section()
 
     # ── כרטיס מניה ──
     def stock_card(s, rank):
@@ -411,6 +504,8 @@ def build_html(top5, all_stocks):
   <div class="time">📅 {now} | {len(all_stocks)} מניות נסרקו</div>
 </div>
 
+{health_banner}
+
 <div class="section-title">🏆 TOP 5 המניות להיום — ניתוח מלא</div>
 <div style="padding: 0 15px">
   {top_cards}
@@ -429,6 +524,8 @@ def build_html(top5, all_stocks):
     <tbody>{all_rows}</tbody>
   </table>
 </div>
+
+{performance_html}
 
 <div class="footer">
   🤖 הופק אוטומטית על ידי צוות סוכני AI | לא ייעוץ פיננסי | אינטרקטיב ישראל

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
 ☁️ cloud_runner.py — מריץ את צוות הסוכנים בענן (GitHub Actions)
+=================================================================
+חדש:
+- כל המלצות ה-TOP 5 נרשמות ב-data/tracking.json (מקומט לריפו!)
+  כדי שהביקורת העצמית של הערב (self_review.py) תוכל לבדוק אותן.
+- אם כיסוי הנתונים נמוך — הטלגרם והאתר מזהירים במקום להמליץ.
 """
 
 import os
@@ -16,6 +21,7 @@ print()
 # ── יצירת תיקיות ──
 os.makedirs("reports", exist_ok=True)
 os.makedirs("docs", exist_ok=True)
+os.makedirs("data", exist_ok=True)
 
 # ── בניית config.json מ-Secrets של GitHub ──
 token   = os.environ.get("TELEGRAM_TOKEN", "")
@@ -56,20 +62,59 @@ try:
     report = get_full_team_report()
     top5 = report["top5"]
     all_stocks = report["all_stocks"]
+    health = report.get("health", {})
 except Exception as e:
     print(f"❌ שגיאה בהרצת הצוות: {e}")
     import traceback
     traceback.print_exc()
-    # fallback לדוח הישן
-    from morning_report import main as old_main
-    old_main(force=True)
-    sys.exit(0)
+    sys.exit(1)
+
+degraded = health.get("degraded", False)
+
+# ── רישום ההמלצות למעקב (הבסיס לביקורת העצמית של הערב) ──
+print("\n📝 רושם את המלצות היום למעקב (data/tracking.json)...")
+try:
+    track_path = os.path.join("data", "tracking.json")
+    existing = []
+    if os.path.exists(track_path):
+        with open(track_path, "r", encoding="utf-8") as f:
+            existing = json.load(f)
+
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    # לא רושמים פעמיים באותו יום (למשל בהרצה ידנית חוזרת)
+    already = {(r["date"], r["ticker"]) for r in existing}
+
+    added = 0
+    for s in top5:
+        if (date_str, s["ticker"]) in already:
+            continue
+        existing.append({
+            "date":         date_str,
+            "ticker":       s["ticker"],
+            "total_score":  s["total_score"],
+            "decision":     s["decision"],
+            "trade_type":   s["trade_type"],
+            "components":   s.get("components", {}),
+            "entry":        s.get("entry"),
+            "stop_loss":    s.get("stop_loss"),
+            "target_1":     s.get("target_1"),
+            "target_2":     s.get("target_2"),
+            "degraded_data": degraded,
+            "actual_result": None,
+        })
+        added += 1
+
+    with open(track_path, "w", encoding="utf-8") as f:
+        json.dump(existing, f, indent=2, ensure_ascii=False)
+    print(f"✅ נרשמו {added} המלצות חדשות למעקב")
+except Exception as e:
+    print(f"⚠️  שגיאה ברישום מעקב: {e}")
 
 # ── יצירת דוח HTML ──
 print("\n📄 יוצר דוח HTML...")
 try:
     from generate_team_report import build_html
-    html = build_html(top5, all_stocks)
+    html = build_html(top5, all_stocks, health=health)
     with open("reports/report.html", "w", encoding="utf-8") as f:
         f.write(html)
     with open("docs/index.html", "w", encoding="utf-8") as f:
@@ -77,16 +122,8 @@ try:
     print("✅ דוח HTML נוצר")
 except Exception as e:
     print(f"⚠️  שגיאה ביצירת HTML: {e}")
-    # fallback
-    try:
-        from generate_html_report import build_report_html
-        html = build_report_html([s for s in all_stocks])
-        with open("reports/report.html", "w", encoding="utf-8") as f:
-            f.write(html)
-        with open("docs/index.html", "w", encoding="utf-8") as f:
-            f.write(html)
-    except Exception as e2:
-        print(f"⚠️  fallback HTML נכשל: {e2}")
+    import traceback
+    traceback.print_exc()
 
 # ── שליחת טלגרם ──
 print("\n📱 שולח עדכון לטלגרם...")
@@ -95,6 +132,12 @@ try:
     date_str = datetime.now().strftime("%d/%m/%Y")
 
     msg = f"📊 *דוח בוקר — {date_str}*\n\n"
+
+    if degraded:
+        msg += "🚨 *אזהרה: כיסוי הנתונים נמוך היום!*\n"
+        msg += f"(טכני: {health.get('tech_coverage', '?')}% | סיכון: {health.get('risk_coverage', '?')}%)\n"
+        msg += "_ההמלצות היום לא אמינות — עדיף לא לסחור לפיהן._\n\n"
+
     msg += "🏆 *TOP 5 מניות להיום:*\n\n"
 
     for i, s in enumerate(top5, 1):
@@ -108,7 +151,7 @@ try:
 
     # קישור לאתר
     msg += "🌐 [דוח מלא באתר](https://einav1993-gif.github.io/stock-agents/)\n"
-    msg += f"\n_הופק על ידי צוות {len(all_stocks)} סוכני AI_"
+    msg += f"\n_הופק על ידי צוות {len(all_stocks)} סוכני AI | בערב תגיע הביקורת העצמית_ 🪞"
 
     resp = requests.post(
         f"https://api.telegram.org/bot{token}/sendMessage",

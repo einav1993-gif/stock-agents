@@ -8,7 +8,7 @@
 רמת אנליסט Wall Street — לא משאיר שום אינדיקטור מחוץ לתמונה.
 """
 
-import yfinance as yf
+import data_layer
 import pandas as pd
 import numpy as np
 
@@ -106,11 +106,10 @@ def analyze(ticker):
     }
 
     try:
-        # שליפת נתוני 3 חודשים — מספיק לכל האינדיקטורים
-        df = yf.download(ticker, period="3mo", interval="1d",
-                         auto_adjust=True, progress=False)
+        # שליפת נתוני 3 חודשים — דרך שכבת הנתונים העמידה (yfinance→Stooq)
+        df = data_layer.get_daily(ticker, period="3mo")
 
-        if df.empty or len(df) < 20:
+        if df is None or df.empty or len(df) < 20:
             result["summary"] = "אין מספיק נתונים"
             return result
 

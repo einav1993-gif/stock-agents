@@ -7,8 +7,9 @@
 מחזיר רשימה מדורגת של מועמדות לניתוח עמוק.
 """
 
-import yfinance as yf
 import pandas as pd
+
+import data_layer
 from datetime import datetime, timedelta
 
 # כל המניות שהסוכן יודע לסרוק
@@ -45,32 +46,24 @@ def run(top_n=25):
     candidates = []
 
     try:
-        # שליפת נתוני 5 ימים לכל המניות בבת אחת
-        raw = yf.download(
-            FULL_UNIVERSE,
-            period="5d",
-            interval="1d",
-            auto_adjust=True,
-            progress=False,
-            threads=True
-        )
+        # שליפת נתוני 5 ימים לכל המניות — דרך שכבת הנתונים העמידה
+        frames = data_layer.get_daily_bulk(FULL_UNIVERSE, period="5d")
+        got = sum(1 for df in frames.values() if df is not None)
 
-        if raw.empty:
-            print("⚠️  [סוכן סריקה] לא הצלחתי למשוך נתונים")
+        if got == 0:
+            print("⚠️  [סוכן סריקה] לא הצלחתי למשוך נתונים משום מקור")
             return _fallback_list()
 
-        close  = raw["Close"]
-        volume = raw["Volume"]
-        high   = raw["High"]
-        low    = raw["Low"]
+        print(f"   📡 נתונים התקבלו עבור {got}/{len(FULL_UNIVERSE)} מניות")
 
         for ticker in FULL_UNIVERSE:
             try:
-                if ticker not in close.columns:
+                df = frames.get(ticker)
+                if df is None or len(df) < 2:
                     continue
 
-                prices  = close[ticker].dropna()
-                volumes = volume[ticker].dropna()
+                prices  = df["Close"].dropna()
+                volumes = df["Volume"].dropna()
 
                 if len(prices) < 2 or len(volumes) < 2:
                     continue
