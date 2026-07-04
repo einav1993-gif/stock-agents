@@ -9,6 +9,8 @@
 """
 
 import yfinance as yf
+
+import finnhub_source
 from datetime import datetime, timezone, timedelta
 
 
@@ -94,43 +96,62 @@ def analyze(ticker):
         except Exception:
             pass
 
-        # ── המלצות אנליסטים ──
+        # ── המלצות אנליסטים — קודם Finnhub (אמין בענן), אז Yahoo ──
+        rec = None
         try:
-            recs = t.recommendations
-            if recs is not None and not recs.empty:
-                # הסינון לחודש האחרון
-                recent = recs.tail(10)
-                grades = []
-                for _, row in recent.iterrows():
-                    grade = (row.get("To Grade") or row.get("toGrade") or "").lower()
-                    grades.append(grade)
-
-                buy_count    = sum(1 for g in grades if any(x in g for x in ["buy","outperform","overweight","strong buy"]))
-                sell_count   = sum(1 for g in grades if any(x in g for x in ["sell","underperform","underweight"]))
-                hold_count   = sum(1 for g in grades if "hold" in g or "neutral" in g or "market" in g)
-
-                total = buy_count + sell_count + hold_count
-                if total > 0:
-                    buy_pct = buy_count / total
-                    if buy_pct >= 0.7:
-                        result["analyst_rating"] = f"Strong Buy ({buy_count}/{total} אנליסטים) 🌟"
-                        result["score"] += 15
-                        result["signals"].append("רוב האנליסטים ממליצים קנייה")
-                    elif buy_pct >= 0.5:
-                        result["analyst_rating"] = f"Buy ({buy_count}/{total})"
-                        result["score"] += 8
-                    elif sell_count > buy_count:
-                        result["analyst_rating"] = f"Sell ({sell_count}/{total} מוכרים)"
-                        result["score"] -= 10
-                        result["warnings"].append("אנליסטים ממליצים מכירה")
-                    else:
-                        result["analyst_rating"] = f"Hold ({hold_count}/{total})"
+            rec = finnhub_source.recommendation(ticker)
         except Exception:
-            pass
+            rec = None
 
-        # ── יעד מחיר אנליסטים ──
+        if rec:
+            result["analyst_rating"] = rec["label"]
+            result["score"] += rec["score_add"]
+            if rec["score_add"] > 0:
+                result["signals"].append("רוב האנליסטים ממליצים קנייה")
+            elif rec["score_add"] < 0:
+                result["warnings"].append("אנליסטים ממליצים מכירה")
+        else:
+            # fallback ל-Yahoo, עם פרסור מתוקן לפורמט החדש (strongBuy/buy/hold/sell)
+            try:
+                recs = t.recommendations
+                if recs is not None and not recs.empty:
+                    row = recs.iloc[0]  # החודש האחרון
+                    def _col(name):
+                        try:
+                            return int(row.get(name, 0) or 0)
+                        except Exception:
+                            return 0
+                    buy_count  = _col("strongBuy") + _col("buy")
+                    hold_count = _col("hold")
+                    sell_count = _col("sell") + _col("strongSell")
+                    total = buy_count + hold_count + sell_count
+                    if total > 0:
+                        buy_pct = buy_count / total
+                        if buy_pct >= 0.7:
+                            result["analyst_rating"] = f"Strong Buy ({buy_count}/{total} אנליסטים) 🌟"
+                            result["score"] += 15
+                            result["signals"].append("רוב האנליסטים ממליצים קנייה")
+                        elif buy_pct >= 0.5:
+                            result["analyst_rating"] = f"Buy ({buy_count}/{total})"
+                            result["score"] += 8
+                        elif sell_count > buy_count:
+                            result["analyst_rating"] = f"Sell ({sell_count}/{total} מוכרים)"
+                            result["score"] -= 10
+                            result["warnings"].append("אנליסטים ממליצים מכירה")
+                        else:
+                            result["analyst_rating"] = f"Hold ({hold_count}/{total})"
+            except Exception:
+                pass
+
+        # ── יעד מחיר אנליסטים — Yahoo, ואם ריק אז Finnhub ──
         try:
             target = info.get("targetMeanPrice") or info.get("targetMedianPrice")
+            if not target:
+                pt = finnhub_source.price_target(ticker, current_price)
+                if pt:
+                    target = pt["target"]
+                    if not current_price and pt.get("target"):
+                        current_price = target  # ליתר ביטחון
             if target and current_price and current_price > 0:
                 result["analyst_target"] = round(float(target), 2)
                 upside = (float(target) - current_price) / current_price * 100
