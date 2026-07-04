@@ -36,7 +36,7 @@ cfg = {
         "token":   token,
         "chat_id": chat_id
     },
-    "virtual_capital": 10000,
+    "virtual_capital": 1000,
     "stop_loss_pct":   1.5,
     "target_pct":      3.0
 }

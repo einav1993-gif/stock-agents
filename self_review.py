@@ -34,13 +34,16 @@ LOG_PATH = os.path.join(DATA_DIR, "learning_log.json")
 
 # משקלות ברירת מחדל (כמו שהיו קבועים בקוד עד עכשיו)
 DEFAULT_WEIGHTS = {
-    "tech": 0.35, "macro": 0.15, "news": 0.20,
-    "sent": 0.10, "fund": 0.15, "risk": 0.05,
+    "tech": 0.22, "news": 0.13, "gap": 0.12, "fund": 0.10,
+    "rs": 0.10, "macro": 0.09, "sent": 0.07, "risk": 0.07,
+    "social": 0.06, "cal": 0.04,
 }
 
 AGENT_NAMES_HE = {
     "tech": "הסוכן הטכני", "macro": "סוכן המאקרו", "news": "סוכן החדשות",
     "sent": "סוכן הסנטימנט", "fund": "הסוכן הפונדמנטלי", "risk": "סוכן הסיכון",
+    "gap": "סוכן הגאפים", "social": "הסוכן החברתי",
+    "rs": "סוכן החוזק היחסי", "cal": "סוכן לוח האירועים",
 }
 
 MIN_SAMPLES_TO_LEARN = 10   # לא משנים משקלות לפני שיש מספיק דוגמאות

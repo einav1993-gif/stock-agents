@@ -17,8 +17,18 @@ import pandas as pd
 import data_layer
 
 
-VIRTUAL_CAPITAL = 10_000   # הון וירטואלי בדולר
-MAX_RISK_PER_TRADE = 0.015  # מקסימום 1.5% הפסד מהתיק בעסקה
+def _load_capital():
+    """גודל התיק נקרא מ-config.json (נוצר ע"י cloud_runner) — ברירת מחדל $1,000."""
+    try:
+        import json
+        with open("config.json", "r", encoding="utf-8") as f:
+            return float(json.load(f).get("virtual_capital", 1000))
+    except Exception:
+        return 1000.0
+
+
+VIRTUAL_CAPITAL = _load_capital()   # הון בדולרים (ברירת מחדל: 1,000)
+MAX_RISK_PER_TRADE = 0.015          # מקסימום 1.5% הפסד מהתיק בעסקה
 
 
 def analyze(ticker, current_price=None):
@@ -118,14 +128,22 @@ def analyze(ticker, current_price=None):
         # ── גודל פוזיציה ──
         # כמה מניות לקנות כך שהפסד מקסימלי = 1.5% מהתיק
         max_loss_usd = VIRTUAL_CAPITAL * MAX_RISK_PER_TRADE
-        shares = max_loss_usd / sl_distance if sl_distance > 0 else 0
-        shares = max(1, int(shares))
+        shares = int(max_loss_usd / sl_distance) if sl_distance > 0 else 0
 
-        # בדיקה שהפוזיציה לא עולה על 25% מהתיק
-        position_value = shares * price
-        if position_value > VIRTUAL_CAPITAL * 0.25:
-            shares = int(VIRTUAL_CAPITAL * 0.25 / price)
-            shares = max(1, shares)
+        # הפוזיציה לא עולה על 35% מהתיק
+        max_position = VIRTUAL_CAPITAL * 0.35
+        if shares * price > max_position:
+            shares = int(max_position / price)
+
+        # מנייה יקרה מדי לתיק — אומרים את זה ביושר במקום להמציא
+        if shares < 1:
+            result["shares"] = 0
+            result["max_loss_usd"] = 0
+            result["verdict"] = f"💸 יקרה מדי לתיק של ${VIRTUAL_CAPITAL:,.0f}"
+            result["summary"] = (
+                f"מחיר ${price:.2f} — אפילו מניה אחת חורגת מגבולות הסיכון של התיק")
+            result["score"] -= 10
+            return result
 
         result["shares"]       = shares
         result["max_loss_usd"] = round(shares * sl_distance, 2)

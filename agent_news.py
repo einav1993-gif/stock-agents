@@ -8,8 +8,71 @@
 מחזיר: ציון סנטימנט וסיכום הסיפור.
 """
 
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone, timedelta
+
 import yfinance as yf
-from datetime import datetime, timezone
+
+
+def _headlines_from_google_rss(ticker):
+    """
+    Google News RSS — חינמי, בלי מפתח, עובד משרתים.
+    מחזיר רשימת (כותרת, האם_מהיום).
+    """
+    try:
+        q = urllib.parse.quote(f'"{ticker}" stock when:2d')
+        url = f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            root = ET.fromstring(resp.read())
+
+        today = datetime.now(timezone.utc).date()
+        out = []
+        for item in root.iter("item"):
+            title = (item.findtext("title") or "").strip()
+            pub = item.findtext("pubDate") or ""
+            if not title:
+                continue
+            is_today = False
+            try:
+                dt = datetime.strptime(pub[:16], "%a, %d %b %Y")
+                is_today = dt.date() >= today - timedelta(days=1)
+            except Exception:
+                pass
+            out.append((title, is_today))
+            if len(out) >= 20:
+                break
+        return out
+    except Exception:
+        return []
+
+
+def _headlines_from_yfinance(ticker):
+    """מקור גיבוי — Yahoo (לרוב חסום בענן, עובד מקומית)."""
+    try:
+        news = yf.Ticker(ticker).news or []
+        today_ts = datetime.now(timezone.utc).replace(
+            hour=0, minute=0, second=0).timestamp()
+        out = []
+        for a in news[:20]:
+            content = a.get("content") or a
+            title = (content.get("title") or a.get("title") or "").strip()
+            pub_time = a.get("providerPublishTime", 0)
+            if title:
+                out.append((title, pub_time > today_ts))
+        return out
+    except Exception:
+        return []
+
+
+def get_headlines(ticker):
+    """שרשרת מקורות: Google News RSS ← Yahoo. מחזיר [(כותרת, מהיום?)]."""
+    headlines = _headlines_from_google_rss(ticker)
+    if not headlines:
+        headlines = _headlines_from_yfinance(ticker)
+    return headlines
 
 
 # מילות מפתח בוליות (חדשות חיוביות)
@@ -64,14 +127,11 @@ def analyze_news(ticker):
     }
 
     try:
-        t = yf.Ticker(ticker)
-        news = t.news
+        headlines = get_headlines(ticker)
 
-        if not news:
+        if not headlines:
+            result["summary"] = "לא נמצאו חדשות (כל המקורות)"
             return result
-
-        today_ts = datetime.now(timezone.utc).replace(
-            hour=0, minute=0, second=0).timestamp()
 
         bullish_score = 0
         bearish_score  = 0
@@ -79,13 +139,8 @@ def analyze_news(ticker):
         headlines_today = []
         headlines_recent = []
 
-        for article in news[:20]:  # עד 20 חדשות אחרונות
-            title = (article.get("title") or "").lower()
-            pub_time = article.get("providerPublishTime", 0)
-            is_today = pub_time > today_ts
-
-            if not title:
-                continue
+        for original_title, is_today in headlines:
+            title = original_title.lower()
 
             # ניקוד סנטימנט
             bull = sum(1 for kw in BULLISH_KEYWORDS if kw in title)
@@ -103,7 +158,6 @@ def analyze_news(ticker):
                     break
 
             # שמירת כותרות
-            original_title = article.get("title", "")
             if is_today:
                 headlines_today.append(original_title)
                 result["news_count_today"] += 1

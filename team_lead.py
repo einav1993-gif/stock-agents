@@ -2,7 +2,7 @@
 """
 👑 team_lead.py — ראש צוות הסוכנים
 =====================================
-מנהל 7 סוכנים מקצועיים:
+מנהל 11 סוכנים מקצועיים:
 1. 🔭 סוכן סריקה      — מוצא מניות חמות
 2. 🌍 סוכן מאקרו      — VIX, Fear&Greed, סקטורים
 3. 📰 סוכן חדשות      — סנטימנט חדשות
@@ -10,6 +10,10 @@
 5. 🕯️  סוכן טכני      — RSI, MACD, נרות יפניים
 6. 📊 סוכן פונדמנטלי  — דוחות, אנליסטים, יעד מחיר
 7. ⚖️  סוכן סיכון     — כניסה, עצירה, יעד
+8. ⚡ סוכן גאפים      — פערי פתיחה ופרימרקט (המנבא החזק ביותר)
+9. 🗣️  סוכן חברתי     — סנטימנט Reddit דרך ApeWisdom
+10. 💪 סוכן חוזק יחסי — חזקה או חלשה מהשוק (מול SPY)
+11. 📅 סוכן לוח אירועים — דוחות קרובים ואירועי מאקרו
 
 חדש:
 - המשקלות נטענים מ-data/weights.json ומתעדכנים כל ערב
@@ -31,13 +35,18 @@ import agent_sentiment
 import agent_technical
 import agent_fundamental
 import agent_risk
+import agent_gap
+import agent_social
+import agent_rs
+import agent_calendar
 import data_layer
 
 WEIGHTS_PATH = os.path.join("data", "weights.json")
 
 DEFAULT_WEIGHTS = {
-    "tech": 0.35, "macro": 0.15, "news": 0.20,
-    "sent": 0.10, "fund": 0.15, "risk": 0.05,
+    "tech": 0.22, "news": 0.13, "gap": 0.12, "fund": 0.10,
+    "rs": 0.10, "macro": 0.09, "sent": 0.07, "risk": 0.07,
+    "social": 0.06, "cal": 0.04,
 }
 
 # מתחת לכיסוי נתונים כזה (באחוזים) — הדוח מסומן כלא אמין
@@ -66,13 +75,18 @@ def _safe(fn, *args, name="סוכן"):
         return {}
 
 
-def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights):
+def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r,
+               gap_r, social_r, rs_r, cal_r, weights):
     """מחשב ציון כולל למניה אחת ממכלול הסוכנים, לפי המשקלות הנלמדים."""
     tech = tech_r.get(ticker, {})
     news = news_r.get(ticker, {})
     sent = sent_r.get(ticker, {})
     fund = fund_r.get(ticker, {})
     risk = risk_r.get(ticker, {})
+    gap    = gap_r.get(ticker, {})
+    social = social_r.get(ticker, {})
+    rs     = rs_r.get(ticker, {})
+    cal    = cal_r.get(ticker, {})
 
     macro_score = macro.get("macro_score", 0)
     tech_score  = tech.get("score", 0)
@@ -86,6 +100,10 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights):
     components = {
         "tech": tech_score, "macro": macro_score, "news": news_score,
         "sent": sent_score, "fund": fund_score, "risk": risk_score,
+        "gap":    gap.get("score", 0),
+        "social": social.get("score", 0),
+        "rs":     rs.get("score", 0),
+        "cal":    cal.get("score", 0),
     }
 
     total = sum(components[a] * weights[a] for a in weights)
@@ -130,8 +148,12 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights):
         decision = "⚪ הימנע"
         trade_type = "none"
 
-    all_signals  = tech.get("signals", []) + fund.get("signals", [])
-    all_warnings = tech.get("warnings", []) + fund.get("warnings", [])
+    all_signals  = (tech.get("signals", []) + fund.get("signals", [])
+                    + gap.get("signals", []) + social.get("signals", [])
+                    + rs.get("signals", []) + cal.get("signals", []))
+    all_warnings = (tech.get("warnings", []) + fund.get("warnings", [])
+                    + gap.get("warnings", []) + social.get("warnings", [])
+                    + rs.get("warnings", []) + cal.get("warnings", []))
 
     return {
         "ticker":       ticker,
@@ -146,6 +168,10 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights):
         "fund":         fund,
         "risk":         risk,
         "macro":        macro,
+        "gap":          gap,
+        "social":       social,
+        "rs":           rs,
+        "cal":          cal,
         "all_signals":  all_signals,
         "all_warnings": all_warnings,
         # לונג
@@ -168,7 +194,7 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights):
 
 def run():
     print("\n" + "╔" + "═"*60 + "╗")
-    print("║  👑 ראש הצוות — מפעיל 7 סוכני ניתוח מקצועיים         ║")
+    print("║  👑 ראש הצוות — מפעיל 11 סוכני ניתוח מקצועיים         ║")
     print("╚" + "═"*60 + "╝\n")
 
     weights = load_weights()
@@ -197,20 +223,28 @@ def run():
     print(f"   נבחרו {len(candidates)} מועמדות")
 
     # ── שלב 3: כל שאר הסוכנים במקביל ──
-    print("\n📋 שלב 3: ניתוח מקביל — 5 סוכנים עובדים יחד...")
+    print("\n📋 שלב 3: ניתוח מקביל — 9 סוכנים עובדים יחד...")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:
-        f_news = ex.submit(_safe, agent_news.run, candidates, name="חדשות")
-        f_sent = ex.submit(_safe, agent_sentiment.run, candidates, name="סנטימנט")
-        f_tech = ex.submit(_safe, agent_technical.run, candidates, name="טכני")
-        f_fund = ex.submit(_safe, agent_fundamental.run, candidates, name="פונדמנטלי")
-        f_risk = ex.submit(_safe, agent_risk.run, {t: None for t in candidates}, name="סיכון")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=9) as ex:
+        f_news   = ex.submit(_safe, agent_news.run, candidates, name="חדשות")
+        f_sent   = ex.submit(_safe, agent_sentiment.run, candidates, name="סנטימנט")
+        f_tech   = ex.submit(_safe, agent_technical.run, candidates, name="טכני")
+        f_fund   = ex.submit(_safe, agent_fundamental.run, candidates, name="פונדמנטלי")
+        f_risk   = ex.submit(_safe, agent_risk.run, {t: None for t in candidates}, name="סיכון")
+        f_gap    = ex.submit(_safe, agent_gap.run, candidates, name="גאפים")
+        f_social = ex.submit(_safe, agent_social.run, candidates, name="חברתי")
+        f_rs     = ex.submit(_safe, agent_rs.run, candidates, name="חוזק יחסי")
+        f_cal    = ex.submit(_safe, agent_calendar.run, candidates, name="לוח אירועים")
 
-        news_r = f_news.result()
-        sent_r = f_sent.result()
-        tech_r = f_tech.result()
-        fund_r = f_fund.result()
-        risk_r = f_risk.result()
+        news_r   = f_news.result()
+        sent_r   = f_sent.result()
+        tech_r   = f_tech.result()
+        fund_r   = f_fund.result()
+        risk_r   = f_risk.result()
+        gap_r    = f_gap.result()
+        social_r = f_social.result()
+        rs_r     = f_rs.result()
+        cal_r    = f_cal.result()
 
     # ── שלב 3.5: ראש הצוות בודק שהסוכנים באמת עבדו ──
     def _agent_coverage(results, key):
@@ -220,10 +254,13 @@ def run():
                  if results.get(t) and results[t].get(key) is not None)
         return round(ok / len(candidates) * 100)
 
+    news_ok = sum(1 for t in candidates
+                  if news_r.get(t) and news_r[t].get("headlines")) if news_r else 0
     health = {
         "tech_coverage":  _agent_coverage(tech_r, "rsi"),
         "risk_coverage":  _agent_coverage(risk_r, "entry_price"),
         "fund_coverage":  _agent_coverage(fund_r, "score"),
+        "news_coverage":  round(news_ok / len(candidates) * 100) if candidates else 0,
         "data_sources":   data_layer.health_summary(),
     }
     health["overall"] = round(
@@ -232,7 +269,8 @@ def run():
     health["degraded"] = health["overall"] < MIN_COVERAGE_PCT
 
     print(f"\n🩺 בדיקת בריאות: טכני {health['tech_coverage']}% | "
-          f"סיכון {health['risk_coverage']}% | פונדמנטלי {health['fund_coverage']}%")
+          f"סיכון {health['risk_coverage']}% | פונדמנטלי {health['fund_coverage']}% | "
+          f"חדשות {health['news_coverage']}%")
     if health["degraded"]:
         print("🚨 כיסוי נתונים נמוך! הדוח יסומן כלא אמין — אל תסחרי לפיו היום.")
 
@@ -240,7 +278,8 @@ def run():
     print("\n📋 שלב 4: ראש הצוות מסכם ומדרג...")
     all_analyzed = []
     for ticker in candidates:
-        s = _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r, weights)
+        s = _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r,
+                       gap_r, social_r, rs_r, cal_r, weights)
         all_analyzed.append(s)
 
     all_analyzed.sort(key=lambda x: x["total_score"], reverse=True)

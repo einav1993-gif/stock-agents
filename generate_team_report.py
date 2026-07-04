@@ -147,12 +147,12 @@ def build_html(top5, all_stocks, health=None):
 
         # אותות
         signals_html = ""
-        for sig in s.get("all_signals", [])[:5]:
+        for sig in s.get("all_signals", [])[:8]:
             signals_html += f'<div class="signal-tag">✅ {sig}</div>'
 
         # אזהרות
         warnings_html = ""
-        for w in s.get("all_warnings", [])[:3]:
+        for w in s.get("all_warnings", [])[:5]:
             warnings_html += f'<div class="warning-tag">⚠️ {w}</div>'
 
         # ניהול סיכון — לונג או שורט
