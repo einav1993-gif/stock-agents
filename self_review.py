@@ -277,7 +277,7 @@ def summarize(checked, perf, weight_changes):
     }
 
 
-def send_telegram(entry, records):
+def send_telegram(entry, records, paper_summary=""):
     token = os.environ.get("TELEGRAM_TOKEN", "")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
     if not token or not chat_id:
@@ -301,6 +301,8 @@ def send_telegram(entry, records):
             msg += "\n🧠 *למידה:*\n" + "\n".join(f"• {c}" for c in entry["weight_changes"][:4])
         if entry["lessons"]:
             msg += "\n\n📝 *לקחים:*\n" + "\n".join(f"• {l}" for l in entry["lessons"][:4])
+        if paper_summary:
+            msg += "\n" + paper_summary
 
         requests.post(
             f"https://api.telegram.org/bot{token}/sendMessage",
@@ -355,8 +357,28 @@ def main():
     for l in entry["lessons"]:
         print(f"📝 {l}")
 
+    # 4.5 סימולטור — סוגר את פוזיציות הדמה מול תוצאות היום
+    paper_summary = ""
+    try:
+        import paper_trader
+        _, closed = paper_trader.close_positions()
+        st = paper_trader.stats()
+        if closed:
+            print(f"💼 הסימולטור סגר {len(closed)} פוזיציות היום")
+            lines = [f"{t['ticker']}: {t['reason']} ({t['pnl']:+.2f}$ / {t['pnl_pct']:+.1f}%)"
+                     for t in closed]
+            paper_summary = "\n💼 *תיק הדמה — נסגרו היום:*\n" + \
+                "\n".join(f"• {l}" for l in lines)
+        arrow = "🟢" if st["total_return_pct"] >= 0 else "🔴"
+        paper_summary += (f"\n\n{arrow} *שווי תיק:* ${st['equity']:.0f} "
+                          f"({st['total_return_pct']:+.1f}%) | "
+                          f"עסקאות: {st['closed_count']} | הצלחה: {st['win_rate']}% | "
+                          f"נפילה מקס': {st['max_drawdown_pct']:.1f}%")
+    except Exception as e:
+        print(f"⚠️  שגיאה בסימולטור: {e}")
+
     # 5. טלגרם
-    send_telegram(entry, records)
+    send_telegram(entry, records, paper_summary)
     print("\n✅ הביקורת העצמית הסתיימה — המערכת מוכנה למחר")
 
 

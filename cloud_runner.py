@@ -110,6 +110,22 @@ try:
 except Exception as e:
     print(f"⚠️  שגיאה ברישום מעקב: {e}")
 
+# ── סימולטור מסחר דמה: פתיחת פוזיציות אוטומטית ──
+print("\n💼 הסימולטור בודק אם לפתוח פוזיציות...")
+paper_orders = []
+try:
+    import paper_trader
+    # מצרפים דגל degraded לכל מנייה כדי שהסימולטור לא יקנה בימים לא אמינים
+    for s in top5:
+        s["degraded_data"] = degraded
+    _, paper_orders = paper_trader.open_positions(top5)
+    if paper_orders:
+        print(f"✅ הסימולטור פתח {len(paper_orders)} פוזיציות חדשות")
+    else:
+        print("ℹ️  אין איתות מספיק חזק היום — הסימולטור לא קנה")
+except Exception as e:
+    print(f"⚠️  שגיאה בסימולטור: {e}")
+
 # ── יצירת דוח HTML ──
 print("\n📄 יוצר דוח HTML...")
 try:
@@ -148,6 +164,30 @@ try:
         if s["news"].get("catalyst"):
             msg += f"   🔥 קטליסט: {s['news']['catalyst_type']}\n"
         msg += "\n"
+
+    # ── כרטיס פקודה לאינטרקטיב (דמו) — רק אם הסימולטור פתח פוזיציות ──
+    if paper_orders:
+        msg += "━━━━━━━━━━━━━━━\n"
+        msg += "💼 *כרטיס פקודה לדמו של אינטרקטיב:*\n"
+        msg += "_(העתיקי כל פקודה כ-Bracket Order: לימיט + סטופ + יעד)_\n\n"
+        for o in paper_orders:
+            msg += f"📌 *{o['ticker']}* — קנייה (BUY)\n"
+            msg += f"   כמות: *{o['shares']}* מניות\n"
+            msg += f"   סוג: LIMIT | מחיר: *${o['entry']}*\n"
+            msg += f"   🛑 Stop Loss: ${o['stop_loss']}\n"
+            msg += f"   🎯 Take Profit: ${o['target']}\n"
+            msg += f"   ⏱️ תוקף: DAY (סגירה עד סוף היום)\n\n"
+        msg += "_הסימולטור כבר \"קנה\" את אלה אוטומטית. הזנה בדמו = תרגול._\n\n"
+
+    # מצב התיק הווירטואלי
+    try:
+        import paper_trader
+        st = paper_trader.stats()
+        arrow = "🟢" if st["total_return_pct"] >= 0 else "🔴"
+        msg += f"{arrow} *תיק הדמה:* ${st['equity']:.0f} ({st['total_return_pct']:+.1f}%) | "
+        msg += f"עסקאות: {st['closed_count']} | הצלחה: {st['win_rate']}%\n"
+    except Exception:
+        pass
 
     # קישור לאתר
     msg += "🌐 [דוח מלא באתר](https://einav1993-gif.github.io/stock-agents/)\n"

@@ -32,6 +32,81 @@ def _sentiment_color(score):
 
 
 
+
+def _build_portfolio_section():
+    """עמוד תיק הדמה: שווי, עקומת הון, פוזיציות פתוחות ועסקאות אחרונות."""
+    try:
+        with open("data/portfolio.json", "r", encoding="utf-8") as f:
+            p = json.load(f)
+    except Exception:
+        return ""
+
+    start = p.get("start_cash", 1000)
+    closed = p.get("closed_trades", [])
+    open_pos = p.get("open_positions", [])
+    curve = p.get("equity_curve", [])
+    equity = curve[-1]["equity"] if curve else p.get("cash", start)
+
+    ret_pct = round((equity - start) / start * 100, 1)
+    ret_color = "#00c853" if ret_pct >= 0 else "#f44336"
+    wins = sum(1 for t in closed if t.get("pnl", 0) > 0)
+    win_rate = round(wins / len(closed) * 100) if closed else 0
+
+    # עקומת הון כ-SVG פשוט
+    spark = ""
+    if len(curve) >= 2:
+        vals = [c["equity"] for c in curve]
+        lo, hi = min(vals), max(vals)
+        rng = (hi - lo) or 1
+        pts = " ".join(
+            f"{i/(len(vals)-1)*300:.0f},{60 - (v-lo)/rng*55:.0f}"
+            for i, v in enumerate(vals))
+        line_color = "#00c853" if vals[-1] >= vals[0] else "#f44336"
+        spark = f'''<svg viewBox="0 0 300 60" width="100%" height="60" preserveAspectRatio="none">
+          <polyline points="{pts}" fill="none" stroke="{line_color}" stroke-width="2"/>
+        </svg>'''
+
+    open_html = ""
+    for pos in open_pos:
+        open_html += f'''<tr><td><b>{pos["ticker"]}</b></td><td>{pos["shares"]}</td>
+          <td>${pos["entry"]}</td><td>${pos["stop_loss"]}</td><td>${pos["target"]}</td></tr>'''
+
+    closed_html = ""
+    for t in list(reversed(closed))[:10]:
+        c = "#00c853" if t.get("pnl", 0) > 0 else "#f44336"
+        closed_html += f'''<tr><td>{t.get("date_close","")}</td><td><b>{t["ticker"]}</b></td>
+          <td>{t.get("reason","")}</td><td style="color:{c}">{t.get("pnl",0):+.2f}$ ({t.get("pnl_pct",0):+.1f}%)</td></tr>'''
+
+    return f'''
+<div class="section-title">💼 תיק המסחר הווירטואלי (דמה)</div>
+<div style="max-width:900px;margin:0 auto;padding:0 15px">
+  <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:15px">
+    <div style="background:#111827;border-radius:10px;padding:16px 24px;text-align:center;min-width:130px">
+      <div style="color:#78909c;font-size:0.8rem">שווי תיק</div>
+      <div style="font-size:1.6rem;font-weight:bold;color:{ret_color}">${equity:,.0f}</div>
+      <div style="color:{ret_color};font-size:0.9rem">{ret_pct:+.1f}%</div>
+    </div>
+    <div style="background:#111827;border-radius:10px;padding:16px 24px;text-align:center;min-width:130px">
+      <div style="color:#78909c;font-size:0.8rem">אחוז הצלחה</div>
+      <div style="font-size:1.6rem;font-weight:bold;color:#90caf9">{win_rate}%</div>
+      <div style="color:#78909c;font-size:0.9rem">{len(closed)} עסקאות</div>
+    </div>
+    <div style="background:#111827;border-radius:10px;padding:16px 24px;text-align:center;min-width:130px">
+      <div style="color:#78909c;font-size:0.8rem">נפילה מקס'</div>
+      <div style="font-size:1.6rem;font-weight:bold;color:#ffab91">{p.get("max_drawdown_pct",0):.1f}%</div>
+      <div style="color:#78909c;font-size:0.9rem">מהשיא</div>
+    </div>
+  </div>
+  <div style="background:#0d1525;border-radius:10px;padding:14px;margin-bottom:15px">
+    <div style="color:#90caf9;font-size:0.85rem;margin-bottom:6px">📈 עקומת הון</div>
+    {spark or '<div style="color:#78909c;font-size:0.85rem">עדיין אוסף נתונים...</div>'}
+  </div>
+  {'<div style="color:#90caf9;margin:10px 0 6px">פוזיציות פתוחות עכשיו:</div><table style="width:100%;font-size:0.85rem"><thead><tr><th>מניה</th><th>כמות</th><th>כניסה</th><th>סטופ</th><th>יעד</th></tr></thead><tbody>' + open_html + '</tbody></table>' if open_html else ''}
+  {'<div style="color:#90caf9;margin:15px 0 6px">עסקאות אחרונות:</div><table style="width:100%;font-size:0.85rem"><thead><tr><th>תאריך</th><th>מניה</th><th>סיבה</th><th>תוצאה</th></tr></thead><tbody>' + closed_html + '</tbody></table>' if closed_html else '<div style="color:#78909c;text-align:center;padding:10px">עדיין לא בוצעו עסקאות — הסימולטור קונה כשיש איתות לונג חזק (ציון 35+).</div>'}
+</div>
+'''
+
+
 def _build_performance_section():
     """טבלת ביצועים היסטורית + יומן הלמידה — מ-data/."""
     try:
@@ -125,6 +200,7 @@ def build_html(top5, all_stocks, health=None):
 
     # ── סקציית ביצועים: מה קרה להמלצות הקודמות + מה המערכת למדה ──
     performance_html = _build_performance_section()
+    portfolio_html = _build_portfolio_section()
 
     # ── כרטיס מניה ──
     def stock_card(s, rank):
@@ -524,6 +600,8 @@ def build_html(top5, all_stocks, health=None):
     <tbody>{all_rows}</tbody>
   </table>
 </div>
+
+{portfolio_html}
 
 {performance_html}
 
