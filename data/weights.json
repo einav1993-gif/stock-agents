@@ -1,0 +1,9 @@
+{
+  "tech": 0.35,
+  "macro": 0.15,
+  "news": 0.2,
+  "sent": 0.1,
+  "fund": 0.15,
+  "risk": 0.05,
+  "updated": "initial"
+}
