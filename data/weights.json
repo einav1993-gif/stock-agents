@@ -1,9 +1,13 @@
 {
-  "tech": 0.35,
-  "macro": 0.15,
-  "news": 0.2,
-  "sent": 0.1,
-  "fund": 0.15,
-  "risk": 0.05,
-  "updated": "initial"
+  "tech": 0.22,
+  "news": 0.13,
+  "gap": 0.12,
+  "fund": 0.1,
+  "rs": 0.1,
+  "macro": 0.09,
+  "sent": 0.07,
+  "risk": 0.07,
+  "social": 0.06,
+  "cal": 0.04,
+  "updated": "initial-v3"
 }
