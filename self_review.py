@@ -81,6 +81,12 @@ def check_outcomes(records):
         if rec.get("date", "") > today:
             continue
 
+        # יום עם נתונים לא אמינים — סוגרים אבל לא לומדים ממנו
+        # (אחרת ציוני הסוכנים והמשקלות מזדהמים מנתוני זבל)
+        if rec.get("degraded_data"):
+            rec["actual_result"] = "skipped_degraded"
+            continue
+
         ticker = rec["ticker"]
         df = data_layer.get_daily(ticker, "1mo")
         if df is None or df.empty:
@@ -287,7 +293,7 @@ def send_telegram(entry, records, paper_summary=""):
         import requests
 
         completed = [r for r in records if r.get("actual_result")
-                     and r.get("actual_result") != "open"]
+                     and r.get("actual_result") not in ("open", "skipped_degraded")]
         total_hits = sum(1 for r in completed if r["actual_result"] == "target")
         total_stops = sum(1 for r in completed if r["actual_result"] == "stop")
 

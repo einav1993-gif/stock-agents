@@ -133,6 +133,14 @@ def close_positions(date_str=None):
             still_open.append(pos)   # אין נתונים — משאירים לבדיקה מחר
             continue
 
+        # מוודאים שהבר האחרון הוא באמת מיום ההמלצה או אחריו.
+        # אם נתוני סוף-היום עוד לא פורסמו, iloc[-1] הוא בר ישן —
+        # אסור לסגור פוזיציה מול מחיר של יום קודם. משאירים למחר.
+        last_bar_date = df.index[-1].strftime("%Y-%m-%d")
+        if last_bar_date < pos.get("date_open", "0000-00-00"):
+            still_open.append(pos)
+            continue
+
         bar = df.iloc[-1]
         day_high = float(bar["High"])
         day_low  = float(bar["Low"])

@@ -116,7 +116,7 @@ def _build_performance_section():
         records = []
 
     completed = [r for r in records if r.get("actual_result")
-                 and r.get("actual_result") not in (None, "open")]
+                 and r.get("actual_result") not in (None, "open", "skipped_degraded")]
     if not completed:
         return ""
 
