@@ -1,235 +1,179 @@
 #!/usr/bin/env python3
 """
-⚡ נועה — סוכנת ההתראות
-========================
-ערה כל 15 דקות בשעות המסחר (16:30–23:00 ישראל).
-שומרת עיניים על המניות שאורי המליץ עליהן.
-שולחת התראה מיידית לטלגרם ברגע שמניה
-פוגעת ביעד או בסטופ לוס.
+⚡ intraday_alert.py — מעקב תוך-יומי בזמן אמת
+================================================
+רץ כל 20 דקות בשעות המסחר (workflow: intraday.yml).
 
-⚡ Intraday Alert — התראות בזמן אמת
-=====================================
-בודק כל 15 דקות האם המניות המומלצות היום פגעו ביעד או בסטופ.
-שולח הודעת Telegram מיד כשזה קורה.
+מה הוא עושה:
+1. קורא את המלצות הבוקר הפתוחות מ-data/tracking.json.
+2. מושך מחיר בזמן אמת לכל מנייה — דרך Finnhub /quote (עובד משרתים!),
+   עם גיבוי ל-yfinance בנתוני דקה.
+3. אם מנייה חצתה את היעד או את הסטופ — שולח התראה מיידית לטלגרם.
+4. שומר ב-data/alerts_sent.json אילו התראות כבר נשלחו היום,
+   כדי לא לשלוח פעמיים (הקובץ מקומט לריפו כדי לשרוד בין ריצות).
 
-cron (עריכת crontab -e):
-  */15 14-21 * * 1-5 cd /Users/.../stock_agents && python3 intraday_alert.py
+הערה: הקובץ הזה שולח התראות בלבד. הוא לא סוגר פוזיציות ולא משנה
+את הלמידה — זה נשאר באחריות הביקורת הערבית (self_review.py),
+שהיא מקור האמת היחיד. כך אין התנגשויות ולא ספירה כפולה.
 """
 
-import yfinance as yf
-import json, os, urllib.request, urllib.parse
+import json
+import os
 from datetime import datetime
 
+import data_layer
+import finnhub_source
 
-# ─────────────────────────────────
-# קובץ מעקב התראות (למנוע כפולות)
-# ─────────────────────────────────
-ALERTS_SENT_FILE = "reports/alerts_sent.json"
-
-def load_alerts_sent():
-    if not os.path.exists(ALERTS_SENT_FILE):
-        return {}
-    with open(ALERTS_SENT_FILE, "r") as f:
-        return json.load(f)
-
-def save_alerts_sent(data):
-    os.makedirs("reports", exist_ok=True)
-    with open(ALERTS_SENT_FILE, "w") as f:
-        json.dump(data, f, indent=2)
+TRACKING_PATH    = os.path.join("data", "tracking.json")
+ALERTS_SENT_PATH = os.path.join("data", "alerts_sent.json")
 
 
-# ─────────────────────────────────
-# קריאת ההמלצות של היום
-# ─────────────────────────────────
-def load_todays_recommendations():
-    track_path = "reports/tracking.json"
-    if not os.path.exists(track_path):
-        return []
-
-    today = datetime.now().strftime("%Y-%m-%d")
-
-    with open(track_path, "r") as f:
-        all_recs = json.load(f)
-
-    # רק המלצות של היום שעדיין פתוחות
-    return [r for r in all_recs
-            if r.get('date') == today and r.get('actual_result') is None]
-
-
-# ─────────────────────────────────
-# בדיקת מחיר נוכחי
-# ─────────────────────────────────
-def get_current_price(ticker):
+def _load(path, default):
+    if not os.path.exists(path):
+        return default
     try:
-        stock = yf.Ticker(ticker)
-        info  = stock.info
-        price = info.get('regularMarketPrice') or info.get('currentPrice')
-        return float(price) if price else None
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
     except Exception:
-        return None
+        return default
 
 
-# ─────────────────────────────────
-# שליחת Telegram
-# ─────────────────────────────────
-def send_telegram_alert(message):
-    cfg_path = "config.json"
-    if not os.path.exists(cfg_path):
-        return
-    with open(cfg_path, "r") as f:
-        cfg = json.load(f)
+def _save(path, obj):
+    os.makedirs("data", exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
 
-    tg = cfg.get("telegram", {})
-    if not tg.get("enabled"):
-        return
 
-    token   = tg.get("token", "")
-    chat_id = tg.get("chat_id", "")
-    if not token or not chat_id:
-        return
-
-    url  = f"https://api.telegram.org/bot{token}/sendMessage"
-    data = urllib.parse.urlencode({
-        "chat_id":    chat_id,
-        "text":       message,
-        "parse_mode": "Markdown"
-    }).encode()
-
+def get_live_price(ticker):
+    """מחיר בזמן אמת: Finnhub /quote קודם, אז yfinance דקה, אז סגירה יומית."""
+    q = finnhub_source.quote(ticker)
+    if q:
+        return q["price"]
+    # גיבוי: yfinance נתוני דקה (לרוב חסום בענן, אבל ננסה)
     try:
-        urllib.request.urlopen(url, data=data, timeout=10)
-        print(f"📱 התראה נשלחה!")
+        import yfinance as yf
+        df = yf.download(ticker, period="1d", interval="1m",
+                         progress=False, auto_adjust=True)
+        if df is not None and not df.empty:
+            return round(float(df["Close"].iloc[-1]), 2)
+    except Exception:
+        pass
+    # מוצא אחרון: סגירה יומית (לא בזמן אמת אבל עדיף מכלום)
+    return data_layer.get_last_price(ticker)
+
+
+def send_telegram(msg):
+    token = os.environ.get("TELEGRAM_TOKEN", "")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
+    if not token or not chat_id:
+        print("⚠️  אין פרטי טלגרם — מדלגים")
+        return
+    try:
+        import requests
+        requests.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            json={"chat_id": chat_id, "text": msg, "parse_mode": "Markdown"},
+            timeout=15,
+        )
+        print("📱 התראה נשלחה!")
     except Exception as e:
-        print(f"(Telegram error: {e})")
+        print(f"⚠️  שגיאת טלגרם: {e}")
 
 
-# ─────────────────────────────────
-# עדכון תוצאה בקובץ המעקב
-# ─────────────────────────────────
-def update_tracking_result(ticker, date, result_text):
-    track_path = "reports/tracking.json"
-    if not os.path.exists(track_path):
-        return
+def check():
+    today = datetime.now().strftime("%Y-%m-%d")
+    now_str = datetime.now().strftime("%H:%M")
 
-    with open(track_path, "r") as f:
-        records = json.load(f)
+    records = _load(TRACKING_PATH, [])
+    # רק המלצות של היום שהן עסקאות פתוחות (לונג עם יעד/סטופ)
+    open_today = [
+        r for r in records
+        if r.get("date") == today
+        and r.get("actual_result") is None
+        and r.get("entry") and r.get("stop_loss") and r.get("target_1")
+        and r.get("trade_type") == "long"
+        and not r.get("degraded_data")
+    ]
 
-    for r in records:
-        if r.get('ticker') == ticker and r.get('date') == date and r.get('actual_result') is None:
-            r['actual_result'] = result_text
-            break
+    if not open_today:
+        print(f"[{now_str}] אין המלצות פתוחות למעקב היום")
+        return False
 
-    with open(track_path, "w") as f:
-        json.dump(records, f, indent=2, ensure_ascii=False)
+    alerts_sent = _load(ALERTS_SENT_PATH, {})
+    print(f"[{now_str}] בודק {len(open_today)} מניות בזמן אמת...")
+    fired = False
 
+    for rec in open_today:
+        ticker = rec["ticker"]
+        key_hit  = f"{today}_{ticker}_hit"
+        key_warn = f"{today}_{ticker}_warn"
+        if key_hit in alerts_sent:
+            continue  # כבר התרענו על פגיעה — לא שולחים שוב
 
-# ─────────────────────────────────
-# ניתוח עסקאות
-# ─────────────────────────────────
-def check_alerts():
-    recs         = load_todays_recommendations()
-    alerts_sent  = load_alerts_sent()
-    today        = datetime.now().strftime("%Y-%m-%d")
-    now_str      = datetime.now().strftime("%H:%M")
-    any_sent     = False
-
-    if not recs:
-        print(f"[{now_str}] אין המלצות פתוחות להיום")
-        return
-
-    print(f"[{now_str}] בודק {len(recs)} המלצות...")
-
-    for rec in recs:
-        ticker  = rec['ticker']
-        target  = rec['target']
-        stop    = rec['stop']
-        entry   = rec['price_at_report']
-        alert_key = f"{today}_{ticker}"
-
-        if alert_key in alerts_sent:
-            continue  # כבר שלחנו התראה על זה
-
-        price = get_current_price(ticker)
+        price = get_live_price(ticker)
         if price is None:
-            print(f"  {ticker}: לא הצלחתי לקבל מחיר")
+            print(f"  {ticker}: אין מחיר")
             continue
 
-        change_pct = round(((price - entry) / entry) * 100, 2)
-        print(f"  {ticker}: ${price} (כניסה ${entry}, שינוי {change_pct:+.1f}%)")
-
-        msg = None
-        result_text = None
+        entry  = float(rec["entry"])
+        target = float(rec["target_1"])
+        stop   = float(rec["stop_loss"])
+        change = round((price - entry) / entry * 100, 2)
+        print(f"  {ticker}: ${price} (כניסה ${entry}, {change:+.1f}%)")
 
         # ── פגע ביעד ──
         if price >= target:
-            profit = round(rec.get('potential_profit', 0), 2)
-            msg = (
-                f"🎯 *פגע ביעד! {ticker}*\n\n"
-                f"✅ המניה הגיעה ליעד!\n"
-                f"📈 מחיר נוכחי: ${price}\n"
+            send_telegram(
+                f"🎯 *{ticker} פגע ביעד!*\n\n"
+                f"📈 מחיר עכשיו: ${price}\n"
                 f"🎯 יעד: ${target}\n"
-                f"📊 כניסה: ${entry} ({change_pct:+.1f}%)\n"
-                f"💰 רווח פוטנציאלי: +${profit}\n\n"
-                f"_שקלי לממש חלק מהפוזיציה!_"
+                f"📊 כניסה: ${entry} ({change:+.1f}%)\n\n"
+                f"_שקלי לממש את הפוזיציה בדמו של אינטרקטיב._"
             )
-            result_text = f"פגע ביעד ${target} ב-{now_str} (+{change_pct}%)"
+            alerts_sent[key_hit] = now_str
+            fired = True
 
         # ── פגע בסטופ ──
         elif price <= stop:
-            loss = round(rec.get('potential_profit', 0) * 0.5, 2)
-            msg = (
-                f"🛑 *סטופ לוס! {ticker}*\n\n"
-                f"⚠️ המניה ירדה לסטופ לוס!\n"
-                f"📉 מחיר נוכחי: ${price}\n"
+            send_telegram(
+                f"🛑 *{ticker} פגע בסטופ!*\n\n"
+                f"📉 מחיר עכשיו: ${price}\n"
                 f"🛑 סטופ: ${stop}\n"
-                f"📊 כניסה: ${entry} ({change_pct:+.1f}%)\n\n"
-                f"_יש לצאת מהפוזיציה. הפסד מינימלי!_"
+                f"📊 כניסה: ${entry} ({change:+.1f}%)\n\n"
+                f"_יש לצאת מהפוזיציה — זו בדיוק המטרה של הסטופ: להגביל הפסד._"
             )
-            result_text = f"פגע בסטופ ${stop} ב-{now_str} ({change_pct}%)"
+            alerts_sent[key_hit] = now_str
+            fired = True
 
-        # ── אזהרה: קרוב לסטופ ──
-        elif price <= stop * 1.01 and f"{alert_key}_warning" not in alerts_sent:
-            msg = (
-                f"⚠️ *אזהרה — {ticker} קרוב לסטופ!*\n\n"
-                f"📉 מחיר: ${price}\n"
-                f"🛑 סטופ: ${stop} (מרחק {round(((price-stop)/stop)*100, 1)}%)\n\n"
-                f"_עקבי מקרוב!_"
+        # ── אזהרה: קרוב לסטופ (עד 1%) — פעם אחת ──
+        elif price <= stop * 1.01 and key_warn not in alerts_sent:
+            dist = round((price - stop) / stop * 100, 1)
+            send_telegram(
+                f"⚠️ *{ticker} מתקרב לסטופ*\n\n"
+                f"📉 מחיר: ${price} | סטופ: ${stop} (מרחק {dist}%)\n"
+                f"_עקבי מקרוב._"
             )
-            alerts_sent[f"{alert_key}_warning"] = now_str
+            alerts_sent[key_warn] = now_str
+            fired = True
 
-        if msg:
-            send_telegram_alert(msg)
-            alerts_sent[alert_key] = now_str
-            any_sent = True
-
-            if result_text:
-                update_tracking_result(ticker, today, result_text)
-
-    save_alerts_sent(alerts_sent)
-
-    if not any_sent:
+    if fired:
+        _save(ALERTS_SENT_PATH, alerts_sent)
+        print(f"[{now_str}] נשלחו התראות ✅")
+    else:
         print(f"[{now_str}] אין התראות חדשות")
+    return fired
 
 
-# ─────────────────────────────────
-# main
-# ─────────────────────────────────
 if __name__ == "__main__":
-    # בדיקת שעות מסחר (14:30–21:00 UTC = 16:30–23:00 ישראל בחורף)
+    # בדיקת שעות מסחר (13:30–20:00 UTC = שוק ניו יורק פתוח)
     now_utc = datetime.utcnow()
-    hour    = now_utc.hour
-    minute  = now_utc.minute
-    weekday = now_utc.weekday()  # 0=שני
-
-    if weekday >= 5:
+    if now_utc.weekday() >= 5:
         print("⛔ סוף שבוע — אין מסחר")
-        exit()
-
-    # שוק פתוח 13:30–20:00 UTC (9:30–16:00 ET)
-    market_open  = hour > 13 or (hour == 13 and minute >= 30)
-    market_close = hour < 20
-
-    if not (market_open and market_close):
-        print(f"⛔ שוק סגור כרגע ({now_utc.strftime('%H:%M')} UTC)")
-        exit()
-
-    check_alerts()
+        raise SystemExit(0)
+    h, m = now_utc.hour, now_utc.minute
+    market_open = (h > 13 or (h == 13 and m >= 30)) and h < 20
+    is_manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    if not market_open and not is_manual:
+        print(f"⛔ שוק סגור ({now_utc.strftime('%H:%M')} UTC)")
+        raise SystemExit(0)
+    check()

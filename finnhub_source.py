@@ -104,6 +104,27 @@ def price_target(ticker, current_price=None):
     return out
 
 
+def quote(ticker):
+    """
+    מחיר בזמן אמת דרך Finnhub /quote (עובד משרתים, בניגוד ל-Yahoo).
+    מחזיר dict: {price, high, low, open, prev_close} או None.
+    'c'=current, 'h'=high היום, 'l'=low היום, 'o'=open, 'pc'=prev close.
+    """
+    data = _get(f"/quote?symbol={ticker}")
+    if not data or not isinstance(data, dict):
+        return None
+    price = data.get("c")
+    if not price:  # 0 או None = אין נתון
+        return None
+    return {
+        "price":      round(float(price), 2),
+        "high":       round(float(data.get("h") or price), 2),
+        "low":        round(float(data.get("l") or price), 2),
+        "open":       round(float(data.get("o") or price), 2),
+        "prev_close": round(float(data.get("pc") or price), 2),
+    }
+
+
 if __name__ == "__main__":
     if not has_key():
         print("⚠️  אין מפתח FINNHUB_API_KEY בסביבה")
