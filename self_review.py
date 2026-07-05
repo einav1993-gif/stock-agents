@@ -383,8 +383,23 @@ def main():
     except Exception as e:
         print(f"⚠️  שגיאה בסימולטור: {e}")
 
+    # 4.7 דוח PDF יומי — נשמר ל-reports/ (נבנית תיקייה עם כל הימים)
+    pdf_link = ""
+    try:
+        import daily_pdf
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        pdf_path = daily_pdf.build_pdf(date_str)
+        if pdf_path:
+            print(f"📄 דוח PDF נוצר: {pdf_path}")
+            # קישור הורדה ישיר מ-GitHub
+            url = (f"https://github.com/einav1993-gif/stock-agents/raw/main/"
+                   f"reports/daily_{date_str}.pdf")
+            pdf_link = f"\n\n📄 [הורדת דוח PDF יומי]({url})"
+    except Exception as e:
+        print(f"⚠️  שגיאה ביצירת PDF: {e}")
+
     # 5. טלגרם
-    send_telegram(entry, records, paper_summary)
+    send_telegram(entry, records, paper_summary + pdf_link)
     print("\n✅ הביקורת העצמית הסתיימה — המערכת מוכנה למחר")
 
 
