@@ -19,8 +19,12 @@
     {
       "date": "2026-07-05",
       "equity": 1000.0
+    },
+    {
+      "date": "2026-07-05",
+      "equity": 999.0
     }
   ],
   "peak_equity": 1000.0,
-  "max_drawdown_pct": 0.0
+  "max_drawdown_pct": 0.1
 }

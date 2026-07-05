@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "date": "2026-07-05",
+    "checked": 0,
+    "hits": 0,
+    "stops": 0,
+    "neither": 0,
+    "direction_correct": 0,
+    "direction_total": 0,
+    "weight_changes": [
+      "עדיין אין מספיק דוגמאות ללמידה (0/10) — המשקלות לא שונו"
+    ],
+    "lessons": []
+  }
+]
