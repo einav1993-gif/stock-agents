@@ -1,1 +1,38 @@
-{}
+{
+  "tech": {
+    "correct": 0,
+    "wrong": 5
+  },
+  "macro": {
+    "correct": 0,
+    "wrong": 5
+  },
+  "news": {
+    "correct": 0,
+    "wrong": 5
+  },
+  "sent": {
+    "correct": 1,
+    "wrong": 2
+  },
+  "fund": {
+    "correct": 0,
+    "wrong": 4
+  },
+  "risk": {
+    "correct": 5,
+    "wrong": 0
+  },
+  "gap": {
+    "correct": 0,
+    "wrong": 3
+  },
+  "rs": {
+    "correct": 0,
+    "wrong": 5
+  },
+  "social": {
+    "correct": 0,
+    "wrong": 2
+  }
+}
