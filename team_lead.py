@@ -90,9 +90,9 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r,
 
     macro_score = macro.get("macro_score", 0)
     tech_score  = tech.get("score", 0)
-    news_score  = news.get("sentiment_score", 0) * 0.5
+    news_score  = news.get("sentiment_score", 0)
     sent_score  = sent.get("combined_score", 0)
-    fund_score  = fund.get("score", 0)
+    fund_score  = fund.get("score", 0) * 2
     risk_score  = risk.get("score", 0)
 
     # הציונים הגולמיים של כל סוכן — נשמרים כדי שהביקורת העצמית
@@ -129,19 +129,19 @@ def _score_one(ticker, macro, news_r, sent_r, tech_r, fund_r, risk_r,
     if not has_data:
         decision = "⚫ אין נתונים"
         trade_type = "none"
-    elif total >= 60:
+    elif total >= 45:
         decision = "🟢 קנייה חזקה"
         trade_type = "long"
-    elif total >= 35:
+    elif total >= 25:
         decision = "🟡 לונג — בחן מקרוב"
         trade_type = "long"
-    elif total >= 10:
+    elif total >= 8:
         decision = "⚪ המתן"
         trade_type = "none"
-    elif total <= -50:
+    elif total <= -40:
         decision = "🔴 שורט חזק"
         trade_type = "short"
-    elif total <= -25:
+    elif total <= -20:
         decision = "🟠 שורט — בחן מקרוב"
         trade_type = "short"
     else:
@@ -283,25 +283,25 @@ def run():
         all_analyzed.append(s)
 
     all_analyzed.sort(key=lambda x: x["total_score"], reverse=True)
-    top5 = all_analyzed[:5]
+    top3 = all_analyzed[:3]
 
     # ── דוח סיום ──
     print("\n" + "╔" + "═"*60 + "╗")
     print("║  📊 TOP 5 להיום                                         ║")
     print("╚" + "═"*60 + "╝")
-    for i, s in enumerate(top5, 1):
+    for i, s in enumerate(top3, 1):
         print(f"\n  #{i} {s['ticker']} | {s['decision']} | ציון {s['total_score']:.0f}")
         if s["entry"]:
             print(f"      כניסה ${s['entry']} | Stop ${s['stop_loss']} (-{s['stop_pct']}%) | יעד ${s['target_2']}")
 
     print(f"\n✅ ראש הצוות סיים | {datetime.now().strftime('%d/%m/%Y %H:%M')}")
-    return top5, all_analyzed, health, weights
+    return top3, all_analyzed, health, weights
 
 
 def get_full_team_report():
-    top5, all_stocks, health, weights = run()
+    top3, all_stocks, health, weights = run()
     return {
-        "top5":         top5,
+        "top3":         top3,
         "all_stocks":   all_stocks,
         "health":       health,
         "weights":      weights,
