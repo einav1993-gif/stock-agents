@@ -371,7 +371,7 @@ def build_html(top5, all_stocks, health=None):
             <td>{'$' + str(s.get('stop_loss','')) if s.get('stop_loss') else '—'}</td>
         </tr>"""
 
-    # ── כרטיסי TOP 5 ──
+    # ── כרטיסי TOP 3 ──
     top_cards = ""
     for i, s in enumerate(top5, 1):
         top_cards += stock_card(s, i)
@@ -582,7 +582,7 @@ def build_html(top5, all_stocks, health=None):
 
 {health_banner}
 
-<div class="section-title">🏆 TOP 5 המניות להיום — ניתוח מלא</div>
+<div class="section-title">🏆 TOP 3 המניות להיום — ניתוח מלא</div>
 <div style="padding: 0 15px">
   {top_cards}
 </div>
