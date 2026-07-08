@@ -578,5 +578,30 @@
     "target_2": 404.73,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-07-08",
+    "ticker": "NVDA",
+    "total_score": 35.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 13,
+      "news": 100,
+      "sent": 18,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": -8,
+      "rs": 6,
+      "cal": -5
+    },
+    "entry": 202.83,
+    "stop_loss": 194.72,
+    "target_1": 215.0,
+    "target_2": 227.17,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
