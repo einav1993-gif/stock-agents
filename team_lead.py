@@ -301,6 +301,7 @@ def run():
 def get_full_team_report():
     top3, all_stocks, health, weights = run()
     return {
+        "top5":         top3,
         "top3":         top3,
         "all_stocks":   all_stocks,
         "health":       health,
