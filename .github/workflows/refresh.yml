@@ -1,0 +1,51 @@
+name: Hourly Site Refresh
+
+on:
+  schedule:
+    # כל שעה עגולה בשעות המסחר של וול סטריט (13:00–20:00 UTC), ימי חול
+    - cron: '0 13-20 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# מבטל ריצות ריענון קודמות אם עדיין רצות, כדי למנוע התנגשות
+concurrency:
+  group: site-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh report
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: python3 refresh_report.py
+
+      - name: Publish updated site
+        run: |
+          git config user.name "Stock Agents Bot"
+          git config user.email "bot@stock-agents"
+          git add docs/index.html
+          git diff --staged --quiet || git commit -m "Hourly site refresh $(date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main || true
+          git push || echo "Nothing to push"
