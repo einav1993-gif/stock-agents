@@ -1,29 +1,8 @@
 {
-  "cash": 441.14000427246077,
+  "cash": 996.5200024414061,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "HOOD",
-      "date_open": "2026-07-09",
-      "shares": 2,
-      "entry": 116.65,
-      "stop_loss": 111.98,
-      "target": 123.65,
-      "score": 33.7,
-      "cost": 234.3
-    },
-    {
-      "ticker": "BABA",
-      "date_open": "2026-07-09",
-      "shares": 3,
-      "entry": 111.77,
-      "stop_loss": 107.3,
-      "target": 118.48,
-      "score": 33.7,
-      "cost": 336.31
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -54,6 +33,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -0.71,
       "pnl_pct": -0.35
+    },
+    {
+      "ticker": "HOOD",
+      "date_open": "2026-07-09",
+      "shares": 2,
+      "entry": 116.65,
+      "stop_loss": 111.98,
+      "target": 123.65,
+      "score": 33.7,
+      "cost": 234.3,
+      "date_close": "2026-07-09",
+      "exit": 111.98,
+      "reason": "🛑 סטופ",
+      "pnl": -11.34,
+      "pnl_pct": -4.84
+    },
+    {
+      "ticker": "BABA",
+      "date_open": "2026-07-09",
+      "shares": 3,
+      "entry": 111.77,
+      "stop_loss": 107.3,
+      "target": 118.48,
+      "score": 33.7,
+      "cost": 336.31,
+      "date_close": "2026-07-09",
+      "exit": 111.14,
+      "reason": "🔔 סגירת יום",
+      "pnl": -3.89,
+      "pnl_pct": -1.16
     }
   ],
   "equity_curve": [
@@ -76,8 +85,12 @@
     {
       "date": "2026-07-08",
       "equity": 1011.75
+    },
+    {
+      "date": "2026-07-09",
+      "equity": 996.52
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 0.1
+  "max_drawdown_pct": 1.57
 }
