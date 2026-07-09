@@ -633,5 +633,80 @@
     "day_low": 195.1,
     "change_pct": 0.64,
     "pnl_pct": 0.64
+  },
+  {
+    "date": "2026-07-09",
+    "ticker": "AVGO",
+    "total_score": 34.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 23,
+      "news": 100,
+      "sent": -30,
+      "fund": 70,
+      "risk": -10,
+      "gap": 10,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 400.73,
+    "stop_loss": 384.7,
+    "target_1": 424.77,
+    "target_2": 448.81,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-09",
+    "ticker": "HOOD",
+    "total_score": 33.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 23,
+      "news": 100,
+      "sent": -7,
+      "fund": 30,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 116.65,
+    "stop_loss": 111.98,
+    "target_1": 123.65,
+    "target_2": 130.65,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-09",
+    "ticker": "BABA",
+    "total_score": 33.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 33,
+      "macro": 23,
+      "news": 100,
+      "sent": 0,
+      "fund": 36,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 111.77,
+    "stop_loss": 107.3,
+    "target_1": 118.48,
+    "target_2": 125.18,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
