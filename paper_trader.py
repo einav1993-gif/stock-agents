@@ -22,10 +22,10 @@ import data_layer
 
 PORTFOLIO_PATH = os.path.join("data", "portfolio.json")
 
-STARTING_CASH   = 1000.0   # הון התחלתי בדולרים
-ENTRY_THRESHOLD = 35       # ציון מינימלי לפתיחת עסקה ("לונג — בחן מקרוב" ומעלה)
-MAX_POSITIONS   = 3        # מקסימום פוזיציות פתוחות במקביל
-COMMISSION      = 1.0      # עמלה מדומה לכל צד (קנייה/מכירה) בדולר
+STARTING_CASH     = 1000.0  # הון התחלתי בדולרים
+TARGET_POSITIONS  = 3       # שואפים להחזיק 3 מניות כל יום
+MIN_SCORE_TO_TRADE = 5      # סף מינימלי — לא קונים מניות עם איתות שלילי/"הימנע"
+COMMISSION        = 1.0     # עמלה מדומה לכל צד (קנייה/מכירה) בדולר
 
 
 def _default_portfolio():
@@ -72,32 +72,39 @@ def open_positions(top_stocks, date_str=None):
     date_str = date_str or datetime.now().strftime("%Y-%m-%d")
 
     held = {pos["ticker"] for pos in p["open_positions"]}
-    slots = MAX_POSITIONS - len(p["open_positions"])
+    slots = TARGET_POSITIONS - len(p["open_positions"])
     orders = []
 
     if slots <= 0:
         return p, orders
 
-    # מועמדים: לונג, ציון מספיק, יש מחיר כניסה/סטופ/יעד, לא מוחזק כבר
+    # מועמדים: 3 המניות המדורגות הכי גבוה שיש להן נתונים ומחירי כניסה/סטופ/יעד,
+    # ציון חיובי (לא "הימנע"), ושלא מוחזקות כבר. לא דורשים סף גבוה —
+    # קונים את הטופ המדורג כדי שיהיו 3 עסקאות ביום ונצבור נתונים ללמידה.
     picks = [
         s for s in top_stocks
-        if s.get("trade_type") == "long"
-        and s.get("total_score", 0) >= ENTRY_THRESHOLD
+        if s.get("total_score", 0) >= MIN_SCORE_TO_TRADE
         and s.get("entry") and s.get("stop_loss") and s.get("target_1")
+        and s.get("has_data", True)
         and s["ticker"] not in held
         and not s.get("degraded_data", False)
     ]
     picks.sort(key=lambda s: s.get("total_score", 0), reverse=True)
 
-    for s in picks[:slots]:
+    # מחלקים את המזומן בין המקומות הפנויים כדי ש-3 פוזיציות ייכנסו
+    budget_per = p["cash"] / max(slots, 1)
+
+    for s in picks:
+        if len(orders) >= slots:
+            break
         entry = float(s["entry"])
-        shares = int(s.get("shares") or 0)
-        # אם סוכן הסיכון לא נתן כמות — מחשבים לפי 30% מהתיק
-        if shares < 1:
-            shares = int((p["cash"] * 0.30) / entry)
+        risk_shares = int(s.get("shares") or 0)
+        budget_shares = int(budget_per / entry) if entry > 0 else 0
+        # לוקחים את המינימום בין מה שסוכן הסיכון המליץ לבין התקציב לפוזיציה
+        shares = min(risk_shares, budget_shares) if risk_shares > 0 else budget_shares
         cost = shares * entry + COMMISSION
         if shares < 1 or cost > p["cash"]:
-            continue
+            continue  # מנייה יקרה מדי לתקציב הפוזיציה — מדלגים לבאה
 
         p["cash"] -= cost
         pos = {

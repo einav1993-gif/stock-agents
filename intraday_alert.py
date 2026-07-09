@@ -84,19 +84,17 @@ def check():
     today = datetime.now().strftime("%Y-%m-%d")
     now_str = datetime.now().strftime("%H:%M")
 
-    records = _load(TRACKING_PATH, [])
-    # רק המלצות של היום שהן עסקאות פתוחות (לונג עם יעד/סטופ)
+    # עוקבים אחרי הפוזיציות שהסימולטור באמת קנה היום (portfolio.json),
+    # כדי שהמעקב יתאים בדיוק למה שמוחזק — 3 המניות המדורגות.
+    portfolio = _load(os.path.join("data", "portfolio.json"), {})
     open_today = [
-        r for r in records
-        if r.get("date") == today
-        and r.get("actual_result") is None
-        and r.get("entry") and r.get("stop_loss") and r.get("target_1")
-        and r.get("trade_type") == "long"
-        and not r.get("degraded_data")
+        pos for pos in portfolio.get("open_positions", [])
+        if pos.get("date_open") == today
+        and pos.get("entry") and pos.get("stop_loss") and pos.get("target")
     ]
 
     if not open_today:
-        print(f"[{now_str}] אין המלצות פתוחות למעקב היום")
+        print(f"[{now_str}] אין פוזיציות פתוחות למעקב היום")
         return False
 
     alerts_sent = _load(ALERTS_SENT_PATH, {})
@@ -116,7 +114,7 @@ def check():
             continue
 
         entry  = float(rec["entry"])
-        target = float(rec["target_1"])
+        target = float(rec["target"])
         stop   = float(rec["stop_loss"])
         change = round((price - entry) / entry * 100, 2)
         print(f"  {ticker}: ${price} (כניסה ${entry}, {change:+.1f}%)")

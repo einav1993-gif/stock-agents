@@ -269,6 +269,22 @@ def summarize(checked, perf, weight_changes):
                 f"{r['ticker']}: נעצר בסטופ ({r['pnl_pct']:+.1f}%). "
                 f"ציון הבוקר היה {r.get('total_score', '?')} — נבדוק אילו סוכנים דחפו אותו למעלה."
             )
+    # לקח על מנייה שפגעה ביעד — מה עבד
+    for r in trades:
+        if r["actual_result"] == "target":
+            lessons.append(
+                f"{r['ticker']}: פגעה ביעד ({r['pnl_pct']:+.1f}%) — ציון בוקר {r.get('total_score','?')}. "
+                f"סימן טוב: הדירוג עבד.")
+            break
+
+    # ── לקח יומי מובטח — נכתב גם בימים שקטים ──
+    if not lessons:
+        if checked:
+            lessons.append(
+                f"היום נבדקו {len(checked)} המלצות. עדיין אוספים נתונים — "
+                f"הלמידה מתחילה להשפיע אחרי {MIN_SAMPLES_TO_LEARN}+ עסקאות.")
+        else:
+            lessons.append("יום שקט — לא נבדקו עסקאות חדשות (חג/סופ\"ש/אין נתונים).")
 
     return {
         "date": datetime.now().strftime("%Y-%m-%d"),
@@ -281,6 +297,35 @@ def summarize(checked, perf, weight_changes):
         "weight_changes": weight_changes,
         "lessons": lessons,
     }
+
+
+def improvement_trend():
+    """
+    מגמת שיפור: משווה את אחוז ההצלחה של 7 העסקאות האחרונות
+    מול 7 שלפניהן. מחזיר מחרוזת תיאור.
+    כנות: מסחר תנודתי — המדד הזה מראה כיוון, לא מבטיח שיפור יומי.
+    """
+    try:
+        portfolio = _load_json(os.path.join(DATA_DIR, "portfolio.json"), {})
+        trades = [t for t in portfolio.get("closed_trades", [])
+                  if t.get("actual_result") != "skipped_degraded"]
+        if len(trades) < 6:
+            return f"מגמה: עדיין מוקדם למדוד ({len(trades)} עסקאות, צריך 6+)"
+        recent = trades[-7:]
+        prev = trades[-14:-7] if len(trades) >= 14 else trades[:-7]
+        def wr(ts):
+            w = sum(1 for t in ts if t.get("pnl", 0) > 0)
+            return w / len(ts) * 100 if ts else 0
+        r_wr, p_wr = wr(recent), wr(prev)
+        diff = round(r_wr - p_wr)
+        if diff > 5:
+            return f"מגמה: 📈 משתפרת (הצלחה עלתה מ-{p_wr:.0f}% ל-{r_wr:.0f}%)"
+        elif diff < -5:
+            return f"מגמה: 📉 יורדת (הצלחה ירדה מ-{p_wr:.0f}% ל-{r_wr:.0f}%) — המערכת תתאים משקלות"
+        else:
+            return f"מגמה: ➡️ יציבה (~{r_wr:.0f}% הצלחה)"
+    except Exception:
+        return ""
 
 
 def send_telegram(entry, records, paper_summary=""):
@@ -380,6 +425,9 @@ def main():
                           f"({st['total_return_pct']:+.1f}%) | "
                           f"עסקאות: {st['closed_count']} | הצלחה: {st['win_rate']}% | "
                           f"נפילה מקס': {st['max_drawdown_pct']:.1f}%")
+        trend = improvement_trend()
+        if trend:
+            paper_summary += f"\n📊 {trend}"
     except Exception as e:
         print(f"⚠️  שגיאה בסימולטור: {e}")
 
