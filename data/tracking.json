@@ -723,5 +723,80 @@
     "day_low": 108.85,
     "change_pct": -0.56,
     "pnl_pct": -0.56
+  },
+  {
+    "date": "2026-07-10",
+    "ticker": "NVDA",
+    "total_score": 35.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 38,
+      "macro": 13,
+      "news": 100,
+      "sent": 0,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": -8,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 208.47,
+    "stop_loss": 200.13,
+    "target_1": 220.98,
+    "target_2": 233.49,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-10",
+    "ticker": "META",
+    "total_score": 33.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 22,
+      "macro": 13,
+      "news": 60,
+      "sent": 0,
+      "fund": 60,
+      "risk": -10,
+      "gap": 18,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 673.27,
+    "stop_loss": 646.34,
+    "target_1": 713.67,
+    "target_2": 754.06,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-10",
+    "ticker": "RIVN",
+    "total_score": 31.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 13,
+      "news": 100,
+      "sent": -13,
+      "fund": 46,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 18.48,
+    "stop_loss": 17.74,
+    "target_1": 19.59,
+    "target_2": 20.7,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
