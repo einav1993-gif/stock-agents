@@ -1,29 +1,8 @@
 {
-  "cash": 471.890002441406,
+  "cash": 982.4300091552732,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NVDA",
-      "date_open": "2026-07-10",
-      "shares": 1,
-      "entry": 208.47,
-      "stop_loss": 200.13,
-      "target": 220.98,
-      "score": 35.8,
-      "cost": 209.47
-    },
-    {
-      "ticker": "RIVN",
-      "date_open": "2026-07-10",
-      "shares": 17,
-      "entry": 18.48,
-      "stop_loss": 17.74,
-      "target": 19.59,
-      "score": 31.4,
-      "cost": 315.16
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -84,6 +63,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -3.89,
       "pnl_pct": -1.16
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-07-10",
+      "shares": 1,
+      "entry": 208.47,
+      "stop_loss": 200.13,
+      "target": 220.98,
+      "score": 35.8,
+      "cost": 209.47,
+      "date_close": "2026-07-10",
+      "exit": 210.96,
+      "reason": "🔔 סגירת יום",
+      "pnl": 0.49,
+      "pnl_pct": 0.23
+    },
+    {
+      "ticker": "RIVN",
+      "date_open": "2026-07-10",
+      "shares": 17,
+      "entry": 18.48,
+      "stop_loss": 17.74,
+      "target": 19.59,
+      "score": 31.4,
+      "cost": 315.16,
+      "date_close": "2026-07-10",
+      "exit": 17.74,
+      "reason": "🛑 סטופ",
+      "pnl": -14.58,
+      "pnl_pct": -4.63
     }
   ],
   "equity_curve": [
@@ -110,8 +119,12 @@
     {
       "date": "2026-07-09",
       "equity": 996.52
+    },
+    {
+      "date": "2026-07-10",
+      "equity": 982.43
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 1.57
+  "max_drawdown_pct": 2.97
 }
