@@ -1,39 +1,8 @@
 {
-  "cash": 156.42000392913798,
+  "cash": 960.4100194358823,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NVDA",
-      "date_open": "2026-07-15",
-      "shares": 1,
-      "entry": 210.15,
-      "stop_loss": 201.74,
-      "target": 222.76,
-      "score": 38.8,
-      "cost": 211.15
-    },
-    {
-      "ticker": "NIO",
-      "date_open": "2026-07-15",
-      "shares": 63,
-      "entry": 5.11,
-      "stop_loss": 4.91,
-      "target": 5.42,
-      "score": 33.9,
-      "cost": 322.93
-    },
-    {
-      "ticker": "PYPL",
-      "date_open": "2026-07-15",
-      "shares": 5,
-      "entry": 55.5,
-      "stop_loss": 53.28,
-      "target": 58.83,
-      "score": 31.2,
-      "cost": 278.5
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -169,6 +138,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -5.56,
       "pnl_pct": -1.85
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-07-15",
+      "shares": 1,
+      "entry": 210.15,
+      "stop_loss": 201.74,
+      "target": 222.76,
+      "score": 38.8,
+      "cost": 211.15,
+      "date_close": "2026-07-15",
+      "exit": 212.5,
+      "reason": "🔔 סגירת יום",
+      "pnl": 0.35,
+      "pnl_pct": 0.17
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-07-15",
+      "shares": 63,
+      "entry": 5.11,
+      "stop_loss": 4.91,
+      "target": 5.42,
+      "score": 33.9,
+      "cost": 322.93,
+      "date_close": "2026-07-15",
+      "exit": 5.03,
+      "reason": "🔔 סגירת יום",
+      "pnl": -7.04,
+      "pnl_pct": -2.18
+    },
+    {
+      "ticker": "PYPL",
+      "date_open": "2026-07-15",
+      "shares": 5,
+      "entry": 55.5,
+      "stop_loss": 53.28,
+      "target": 58.83,
+      "score": 31.2,
+      "cost": 278.5,
+      "date_close": "2026-07-15",
+      "exit": 55.52,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.9,
+      "pnl_pct": -0.68
     }
   ],
   "equity_curve": [
@@ -207,8 +221,12 @@
     {
       "date": "2026-07-14",
       "equity": 969.0
+    },
+    {
+      "date": "2026-07-15",
+      "equity": 960.41
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 4.29
+  "max_drawdown_pct": 5.14
 }
