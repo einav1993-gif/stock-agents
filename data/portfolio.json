@@ -1,8 +1,39 @@
 {
-  "cash": 960.4100194358823,
+  "cash": 144.15001943588237,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "UBER",
+      "date_open": "2026-07-16",
+      "shares": 4,
+      "entry": 74.57,
+      "stop_loss": 71.59,
+      "target": 79.05,
+      "score": 33.5,
+      "cost": 299.28
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-07-16",
+      "shares": 1,
+      "entry": 207.18,
+      "stop_loss": 198.89,
+      "target": 219.61,
+      "score": 32.8,
+      "cost": 208.18
+    },
+    {
+      "ticker": "SMCI",
+      "date_open": "2026-07-16",
+      "shares": 12,
+      "entry": 25.65,
+      "stop_loss": 24.63,
+      "target": 27.19,
+      "score": 29.2,
+      "cost": 308.8
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
