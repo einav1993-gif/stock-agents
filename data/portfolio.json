@@ -1,39 +1,8 @@
 {
-  "cash": 144.15001943588237,
+  "cash": 940.8700206565854,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "UBER",
-      "date_open": "2026-07-16",
-      "shares": 4,
-      "entry": 74.57,
-      "stop_loss": 71.59,
-      "target": 79.05,
-      "score": 33.5,
-      "cost": 299.28
-    },
-    {
-      "ticker": "NVDA",
-      "date_open": "2026-07-16",
-      "shares": 1,
-      "entry": 207.18,
-      "stop_loss": 198.89,
-      "target": 219.61,
-      "score": 32.8,
-      "cost": 208.18
-    },
-    {
-      "ticker": "SMCI",
-      "date_open": "2026-07-16",
-      "shares": 12,
-      "entry": 25.65,
-      "stop_loss": 24.63,
-      "target": 27.19,
-      "score": 29.2,
-      "cost": 308.8
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -214,6 +183,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -1.9,
       "pnl_pct": -0.68
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-07-16",
+      "shares": 4,
+      "entry": 74.57,
+      "stop_loss": 71.59,
+      "target": 79.05,
+      "score": 33.5,
+      "cost": 299.28,
+      "date_close": "2026-07-16",
+      "exit": 74.04,
+      "reason": "🔔 סגירת יום",
+      "pnl": -4.12,
+      "pnl_pct": -1.38
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-07-16",
+      "shares": 1,
+      "entry": 207.18,
+      "stop_loss": 198.89,
+      "target": 219.61,
+      "score": 32.8,
+      "cost": 208.18,
+      "date_close": "2026-07-16",
+      "exit": 207.4,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.78,
+      "pnl_pct": -0.86
+    },
+    {
+      "ticker": "SMCI",
+      "date_open": "2026-07-16",
+      "shares": 12,
+      "entry": 25.65,
+      "stop_loss": 24.63,
+      "target": 27.19,
+      "score": 29.2,
+      "cost": 308.8,
+      "date_close": "2026-07-16",
+      "exit": 24.68,
+      "reason": "🔔 סגירת יום",
+      "pnl": -13.64,
+      "pnl_pct": -4.42
     }
   ],
   "equity_curve": [
@@ -256,8 +270,12 @@
     {
       "date": "2026-07-15",
       "equity": 960.41
+    },
+    {
+      "date": "2026-07-16",
+      "equity": 940.87
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 5.14
+  "max_drawdown_pct": 7.07
 }
