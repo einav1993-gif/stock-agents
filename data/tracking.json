@@ -1173,5 +1173,80 @@
     "day_low": 24.66,
     "change_pct": -3.78,
     "pnl_pct": -3.78
+  },
+  {
+    "date": "2026-07-17",
+    "ticker": "TSM",
+    "total_score": 44.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 5,
+      "macro": -2,
+      "news": 100,
+      "sent": 34,
+      "fund": 90,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 401.01,
+    "stop_loss": 384.97,
+    "target_1": 425.07,
+    "target_2": 449.13,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-17",
+    "ticker": "NIO",
+    "total_score": 29.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -8,
+      "macro": -2,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 4.86,
+    "stop_loss": 4.66,
+    "target_1": 5.15,
+    "target_2": 5.44,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-17",
+    "ticker": "BABA",
+    "total_score": 29.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 10,
+      "macro": -2,
+      "news": 100,
+      "sent": 17,
+      "fund": 36,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 115.54,
+    "stop_loss": 110.92,
+    "target_1": 122.48,
+    "target_2": 129.41,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
