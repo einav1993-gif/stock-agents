@@ -1,29 +1,8 @@
 {
-  "cash": 396.75002065658543,
+  "cash": 937.0100304222104,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NIO",
-      "date_open": "2026-07-17",
-      "shares": 64,
-      "entry": 4.86,
-      "stop_loss": 4.66,
-      "target": 5.15,
-      "score": 29.8,
-      "cost": 312.04
-    },
-    {
-      "ticker": "BABA",
-      "date_open": "2026-07-17",
-      "shares": 2,
-      "entry": 115.54,
-      "stop_loss": 110.92,
-      "target": 122.48,
-      "score": 29.1,
-      "cost": 232.08
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -249,6 +228,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -13.64,
       "pnl_pct": -4.42
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-07-17",
+      "shares": 64,
+      "entry": 4.86,
+      "stop_loss": 4.66,
+      "target": 5.15,
+      "score": 29.8,
+      "cost": 312.04,
+      "date_close": "2026-07-17",
+      "exit": 4.88,
+      "reason": "🔔 סגירת יום",
+      "pnl": -0.72,
+      "pnl_pct": -0.23
+    },
+    {
+      "ticker": "BABA",
+      "date_open": "2026-07-17",
+      "shares": 2,
+      "entry": 115.54,
+      "stop_loss": 110.92,
+      "target": 122.48,
+      "score": 29.1,
+      "cost": 232.08,
+      "date_close": "2026-07-17",
+      "exit": 114.97,
+      "reason": "🔔 סגירת יום",
+      "pnl": -3.14,
+      "pnl_pct": -1.35
     }
   ],
   "equity_curve": [
@@ -295,8 +304,12 @@
     {
       "date": "2026-07-16",
       "equity": 940.87
+    },
+    {
+      "date": "2026-07-17",
+      "equity": 937.01
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 7.07
+  "max_drawdown_pct": 7.45
 }
