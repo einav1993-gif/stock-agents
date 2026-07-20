@@ -1,29 +1,8 @@
 {
-  "cash": 330.7700304222104,
+  "cash": 950.2800230979917,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "AMC",
-      "date_open": "2026-07-20",
-      "shares": 143,
-      "entry": 2.18,
-      "stop_loss": 2.09,
-      "target": 2.31,
-      "score": 48.4,
-      "cost": 312.74
-    },
-    {
-      "ticker": "INTC",
-      "date_open": "2026-07-20",
-      "shares": 3,
-      "entry": 97.5,
-      "stop_loss": 93.6,
-      "target": 103.35,
-      "score": 41.8,
-      "cost": 293.5
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -279,6 +258,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -3.14,
       "pnl_pct": -1.35
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-07-20",
+      "shares": 143,
+      "entry": 2.18,
+      "stop_loss": 2.09,
+      "target": 2.31,
+      "score": 48.4,
+      "cost": 312.74,
+      "date_close": "2026-07-20",
+      "exit": 2.31,
+      "reason": "✅ יעד",
+      "pnl": 16.59,
+      "pnl_pct": 5.3
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-07-20",
+      "shares": 3,
+      "entry": 97.5,
+      "stop_loss": 93.6,
+      "target": 103.35,
+      "score": 41.8,
+      "cost": 293.5,
+      "date_close": "2026-07-20",
+      "exit": 97.06,
+      "reason": "🔔 סגירת יום",
+      "pnl": -3.32,
+      "pnl_pct": -1.13
     }
   ],
   "equity_curve": [
@@ -329,6 +338,10 @@
     {
       "date": "2026-07-17",
       "equity": 937.01
+    },
+    {
+      "date": "2026-07-20",
+      "equity": 950.28
     }
   ],
   "peak_equity": 1012.46,
