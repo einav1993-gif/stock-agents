@@ -1263,5 +1263,80 @@
     "day_low": 113.94,
     "change_pct": -0.49,
     "pnl_pct": -0.49
+  },
+  {
+    "date": "2026-07-20",
+    "ticker": "AMC",
+    "total_score": 48.4,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 45,
+      "macro": 7,
+      "news": 100,
+      "sent": 20,
+      "fund": 70,
+      "risk": -15,
+      "gap": 30,
+      "social": 0,
+      "rs": 10,
+      "cal": -10
+    },
+    "entry": 2.18,
+    "stop_loss": 2.09,
+    "target_1": 2.31,
+    "target_2": 2.44,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-20",
+    "ticker": "INTC",
+    "total_score": 41.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 0,
+      "macro": 7,
+      "news": 100,
+      "sent": -2,
+      "fund": 70,
+      "risk": -15,
+      "gap": 10,
+      "social": 8,
+      "rs": 6,
+      "cal": 4
+    },
+    "entry": 97.5,
+    "stop_loss": 93.6,
+    "target_1": 103.35,
+    "target_2": 109.2,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-20",
+    "ticker": "TSLA",
+    "total_score": 38.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -27,
+      "macro": 7,
+      "news": 100,
+      "sent": -11,
+      "fund": 84,
+      "risk": -10,
+      "gap": 0,
+      "social": 20,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 373.65,
+    "stop_loss": 358.7,
+    "target_1": 396.07,
+    "target_2": 418.49,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
