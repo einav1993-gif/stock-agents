@@ -1,19 +1,8 @@
 {
-  "cash": 638.9600230979918,
+  "cash": 954.3100139427183,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "INTC",
-      "date_open": "2026-07-21",
-      "shares": 3,
-      "entry": 103.44,
-      "stop_loss": 99.3,
-      "target": 109.65,
-      "score": 43.4,
-      "cost": 311.32
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -299,6 +288,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -3.32,
       "pnl_pct": -1.13
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-07-21",
+      "shares": 3,
+      "entry": 103.44,
+      "stop_loss": 99.3,
+      "target": 109.65,
+      "score": 43.4,
+      "cost": 311.32,
+      "date_close": "2026-07-21",
+      "exit": 105.45,
+      "reason": "🔔 סגירת יום",
+      "pnl": 4.03,
+      "pnl_pct": 1.29
     }
   ],
   "equity_curve": [
@@ -353,6 +357,10 @@
     {
       "date": "2026-07-20",
       "equity": 950.28
+    },
+    {
+      "date": "2026-07-21",
+      "equity": 954.31
     }
   ],
   "peak_equity": 1012.46,

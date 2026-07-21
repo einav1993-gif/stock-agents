@@ -1377,7 +1377,12 @@
     "target_1": 443.42,
     "target_2": 468.52,
     "degraded_data": false,
-    "actual_result": null
+    "actual_result": "neither",
+    "close_price": 424.61,
+    "day_high": 425.36,
+    "day_low": 413.56,
+    "change_pct": 1.5,
+    "pnl_pct": 1.5
   },
   {
     "date": "2026-07-21",
@@ -1402,7 +1407,12 @@
     "target_1": 109.65,
     "target_2": 115.85,
     "degraded_data": false,
-    "actual_result": null
+    "actual_result": "neither",
+    "close_price": 105.45,
+    "day_high": 106.16,
+    "day_low": 101.22,
+    "change_pct": 1.94,
+    "pnl_pct": 1.94
   },
   {
     "date": "2026-07-21",
@@ -1427,6 +1437,11 @@
     "target_1": 406.2,
     "target_2": 429.2,
     "degraded_data": false,
-    "actual_result": null
+    "actual_result": "neither",
+    "close_price": 378.93,
+    "day_high": 384.07,
+    "day_low": 369.99,
+    "change_pct": -1.12,
+    "pnl_pct": -1.12
   }
 ]
