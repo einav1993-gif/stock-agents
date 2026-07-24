@@ -1623,5 +1623,80 @@
     "day_low": 30.18,
     "change_pct": -0.06,
     "pnl_pct": -0.06
+  },
+  {
+    "date": "2026-07-24",
+    "ticker": "TSM",
+    "total_score": 44.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -7,
+      "macro": -2,
+      "news": 100,
+      "sent": 30,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 402.96,
+    "stop_loss": 386.85,
+    "target_1": 427.14,
+    "target_2": 451.32,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-24",
+    "ticker": "MARA",
+    "total_score": 30.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": -2,
+      "news": 100,
+      "sent": -22,
+      "fund": 100,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 12.28,
+    "stop_loss": 11.79,
+    "target_1": 13.02,
+    "target_2": 13.76,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-24",
+    "ticker": "NIO",
+    "total_score": 30.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 0,
+      "macro": -2,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 4.49,
+    "stop_loss": 4.32,
+    "target_1": 4.76,
+    "target_2": 5.03,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]

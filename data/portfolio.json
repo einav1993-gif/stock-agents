@@ -1,8 +1,29 @@
 {
-  "cash": 933.8200204277039,
+  "cash": 315.01002042770386,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "MARA",
+      "date_open": "2026-07-24",
+      "shares": 25,
+      "entry": 12.28,
+      "stop_loss": 11.79,
+      "target": 13.02,
+      "score": 30.4,
+      "cost": 308.0
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-07-24",
+      "shares": 69,
+      "entry": 4.49,
+      "stop_loss": 4.32,
+      "target": 4.76,
+      "score": 30.0,
+      "cost": 310.81
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
