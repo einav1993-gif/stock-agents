@@ -1713,5 +1713,80 @@
     "day_low": 4.47,
     "change_pct": -0.0,
     "pnl_pct": -0.0
+  },
+  {
+    "date": "2026-07-27",
+    "ticker": "MSFT",
+    "total_score": 48.3,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 3,
+      "news": 100,
+      "sent": -3,
+      "fund": 100,
+      "risk": -10,
+      "gap": 10,
+      "social": 20,
+      "rs": 6,
+      "cal": 8
+    },
+    "entry": 392.17,
+    "stop_loss": 376.49,
+    "target_1": 415.71,
+    "target_2": 439.24,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-27",
+    "ticker": "MSTR",
+    "total_score": 43.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 12,
+      "macro": 3,
+      "news": 100,
+      "sent": 0,
+      "fund": 76,
+      "risk": -10,
+      "gap": 10,
+      "social": 0,
+      "rs": 6,
+      "cal": 4
+    },
+    "entry": 96.7,
+    "stop_loss": 92.83,
+    "target_1": 102.5,
+    "target_2": 108.3,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-27",
+    "ticker": "TSM",
+    "total_score": 43.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -15,
+      "macro": 3,
+      "news": 100,
+      "sent": 29,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 389.66,
+    "stop_loss": 374.07,
+    "target_1": 413.04,
+    "target_2": 436.42,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
