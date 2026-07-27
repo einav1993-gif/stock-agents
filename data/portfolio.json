@@ -1,19 +1,8 @@
 {
-  "cash": 634.7200017738343,
+  "cash": 929.670006351471,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "MSTR",
-      "date_open": "2026-07-27",
-      "shares": 3,
-      "entry": 96.7,
-      "stop_loss": 92.83,
-      "target": 102.5,
-      "score": 43.3,
-      "cost": 291.1
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -434,6 +423,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.0,
       "pnl_pct": -0.64
+    },
+    {
+      "ticker": "MSTR",
+      "date_open": "2026-07-27",
+      "shares": 3,
+      "entry": 96.7,
+      "stop_loss": 92.83,
+      "target": 102.5,
+      "score": 43.3,
+      "cost": 291.1,
+      "date_close": "2026-07-27",
+      "exit": 98.65,
+      "reason": "🔔 סגירת יום",
+      "pnl": 3.85,
+      "pnl_pct": 1.32
     }
   ],
   "equity_curve": [
@@ -504,6 +508,10 @@
     {
       "date": "2026-07-24",
       "equity": 925.82
+    },
+    {
+      "date": "2026-07-27",
+      "equity": 929.67
     }
   ],
   "peak_equity": 1012.46,
