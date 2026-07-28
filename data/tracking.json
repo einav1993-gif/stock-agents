@@ -1803,5 +1803,80 @@
     "day_low": 388.81,
     "change_pct": 2.42,
     "pnl_pct": 2.42
+  },
+  {
+    "date": "2026-07-28",
+    "ticker": "HOOD",
+    "total_score": 41.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 27,
+      "macro": 3,
+      "news": 100,
+      "sent": -16,
+      "fund": 100,
+      "risk": -15,
+      "gap": -12,
+      "social": 20,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 91.32,
+    "stop_loss": 87.67,
+    "target_1": 96.8,
+    "target_2": 102.28,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-28",
+    "ticker": "ARM",
+    "total_score": 38.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -19,
+      "macro": 3,
+      "news": 100,
+      "sent": 18,
+      "fund": 70,
+      "risk": -15,
+      "gap": -12,
+      "social": 8,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 244.93,
+    "stop_loss": 235.13,
+    "target_1": 259.63,
+    "target_2": 274.32,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-28",
+    "ticker": "PYPL",
+    "total_score": 37.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 18,
+      "macro": 3,
+      "news": 100,
+      "sent": -30,
+      "fund": 50,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 58.29,
+    "stop_loss": 55.96,
+    "target_1": 61.79,
+    "target_2": 65.28,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
