@@ -1,19 +1,8 @@
 {
-  "cash": 613.6300300025941,
+  "cash": 906.0700300025942,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "BBAI",
-      "date_open": "2026-07-30",
-      "shares": 112,
-      "entry": 2.73,
-      "stop_loss": 2.62,
-      "target": 2.89,
-      "score": 37.2,
-      "cost": 306.76
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -524,6 +513,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -5.2,
       "pnl_pct": -1.68
+    },
+    {
+      "ticker": "BBAI",
+      "date_open": "2026-07-30",
+      "shares": 112,
+      "entry": 2.73,
+      "stop_loss": 2.62,
+      "target": 2.89,
+      "score": 37.2,
+      "cost": 306.76,
+      "date_close": "2026-07-30",
+      "exit": 2.62,
+      "reason": "🛑 סטופ",
+      "pnl": -14.32,
+      "pnl_pct": -4.67
     }
   ],
   "equity_curve": [
@@ -606,8 +610,12 @@
     {
       "date": "2026-07-29",
       "equity": 920.39
+    },
+    {
+      "date": "2026-07-30",
+      "equity": 906.07
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 9.15
+  "max_drawdown_pct": 10.51
 }
