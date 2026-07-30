@@ -1983,5 +1983,80 @@
     "day_low": 4.72,
     "change_pct": -1.04,
     "pnl_pct": -1.04
+  },
+  {
+    "date": "2026-07-30",
+    "ticker": "AAPL",
+    "total_score": 42.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 33,
+      "macro": 13,
+      "news": 100,
+      "sent": -12,
+      "fund": 66,
+      "risk": -10,
+      "gap": 0,
+      "social": 4,
+      "rs": 10,
+      "cal": -15
+    },
+    "entry": 332.15,
+    "stop_loss": 320.01,
+    "target_1": 350.36,
+    "target_2": 368.58,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-30",
+    "ticker": "MSFT",
+    "total_score": 40.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 11,
+      "macro": 13,
+      "news": 100,
+      "sent": 25,
+      "fund": 60,
+      "risk": -10,
+      "gap": 30,
+      "social": 20,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 444.98,
+    "stop_loss": 427.18,
+    "target_1": 471.68,
+    "target_2": 498.38,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-30",
+    "ticker": "BBAI",
+    "total_score": 37.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 20,
+      "macro": 13,
+      "news": 60,
+      "sent": -20,
+      "fund": 86,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": -15
+    },
+    "entry": 2.73,
+    "stop_loss": 2.62,
+    "target_1": 2.89,
+    "target_2": 3.06,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
