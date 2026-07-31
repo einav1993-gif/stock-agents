@@ -1,39 +1,8 @@
 {
-  "cash": 93.35003000259417,
+  "cash": 912.9000154113771,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "AMZN",
-      "date_open": "2026-07-31",
-      "shares": 1,
-      "entry": 270.48,
-      "stop_loss": 259.66,
-      "target": 286.71,
-      "score": 41.5,
-      "cost": 271.48
-    },
-    {
-      "ticker": "SNAP",
-      "date_open": "2026-07-31",
-      "shares": 65,
-      "entry": 4.6,
-      "stop_loss": 4.42,
-      "target": 4.88,
-      "score": 40.0,
-      "cost": 300.0
-    },
-    {
-      "ticker": "PLTR",
-      "date_open": "2026-07-31",
-      "shares": 2,
-      "entry": 120.12,
-      "stop_loss": 115.32,
-      "target": 127.33,
-      "score": 36.5,
-      "cost": 241.24
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -559,6 +528,51 @@
       "reason": "🛑 סטופ",
       "pnl": -14.32,
       "pnl_pct": -4.67
+    },
+    {
+      "ticker": "AMZN",
+      "date_open": "2026-07-31",
+      "shares": 1,
+      "entry": 270.48,
+      "stop_loss": 259.66,
+      "target": 286.71,
+      "score": 41.5,
+      "cost": 271.48,
+      "date_close": "2026-07-31",
+      "exit": 271.58,
+      "reason": "🔔 סגירת יום",
+      "pnl": -0.9,
+      "pnl_pct": -0.33
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-07-31",
+      "shares": 65,
+      "entry": 4.6,
+      "stop_loss": 4.42,
+      "target": 4.88,
+      "score": 40.0,
+      "cost": 300.0,
+      "date_close": "2026-07-31",
+      "exit": 4.69,
+      "reason": "🔔 סגירת יום",
+      "pnl": 3.85,
+      "pnl_pct": 1.28
+    },
+    {
+      "ticker": "PLTR",
+      "date_open": "2026-07-31",
+      "shares": 2,
+      "entry": 120.12,
+      "stop_loss": 115.32,
+      "target": 127.33,
+      "score": 36.5,
+      "cost": 241.24,
+      "date_close": "2026-07-31",
+      "exit": 123.06,
+      "reason": "🔔 סגירת יום",
+      "pnl": 3.88,
+      "pnl_pct": 1.61
     }
   ],
   "equity_curve": [
@@ -645,6 +659,10 @@
     {
       "date": "2026-07-30",
       "equity": 906.07
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 912.9
     }
   ],
   "peak_equity": 1012.46,
