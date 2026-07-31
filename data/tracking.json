@@ -2073,5 +2073,80 @@
     "day_low": 2.61,
     "change_pct": 3.66,
     "pnl_pct": -4.03
+  },
+  {
+    "date": "2026-07-31",
+    "ticker": "AMZN",
+    "total_score": 41.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 26,
+      "macro": 3,
+      "news": 100,
+      "sent": 28,
+      "fund": 74,
+      "risk": -10,
+      "gap": 18,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 270.48,
+    "stop_loss": 259.66,
+    "target_1": 286.71,
+    "target_2": 302.94,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-31",
+    "ticker": "SNAP",
+    "total_score": 40.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -8,
+      "macro": 3,
+      "news": 100,
+      "sent": -30,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": 4
+    },
+    "entry": 4.6,
+    "stop_loss": 4.42,
+    "target_1": 4.88,
+    "target_2": 5.15,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-07-31",
+    "ticker": "PLTR",
+    "total_score": 36.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -27,
+      "macro": 3,
+      "news": 100,
+      "sent": -30,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": -12,
+      "cal": 4
+    },
+    "entry": 120.12,
+    "stop_loss": 115.32,
+    "target_1": 127.33,
+    "target_2": 134.53,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
