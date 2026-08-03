@@ -2163,5 +2163,80 @@
     "day_low": 119.63,
     "change_pct": 2.45,
     "pnl_pct": 2.45
+  },
+  {
+    "date": "2026-08-03",
+    "ticker": "IONQ",
+    "total_score": 47.6,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 13,
+      "news": 100,
+      "sent": 0,
+      "fund": 100,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": -5
+    },
+    "entry": 39.62,
+    "stop_loss": 38.04,
+    "target_1": 42.0,
+    "target_2": 44.37,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-03",
+    "ticker": "RGTI",
+    "total_score": 47.4,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 13,
+      "news": 100,
+      "sent": 0,
+      "fund": 100,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": -1
+    },
+    "entry": 16.05,
+    "stop_loss": 15.41,
+    "target_1": 17.01,
+    "target_2": 17.98,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-03",
+    "ticker": "SNAP",
+    "total_score": 46.7,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 22,
+      "macro": 13,
+      "news": 100,
+      "sent": -15,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 15,
+      "cal": -15
+    },
+    "entry": 4.95,
+    "stop_loss": 4.75,
+    "target_1": 5.24,
+    "target_2": 5.54,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
