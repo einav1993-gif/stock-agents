@@ -1,29 +1,8 @@
 {
-  "cash": 311.0700130844118,
+  "cash": 897.7600345993044,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "RGTI",
-      "date_open": "2026-08-04",
-      "shares": 17,
-      "entry": 17.06,
-      "stop_loss": 16.38,
-      "target": 18.08,
-      "score": 45.7,
-      "cost": 291.02
-    },
-    {
-      "ticker": "IONQ",
-      "date_open": "2026-08-04",
-      "shares": 7,
-      "entry": 40.96,
-      "stop_loss": 39.32,
-      "target": 43.42,
-      "score": 45.1,
-      "cost": 287.72
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -639,6 +618,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": 3.49,
       "pnl_pct": 1.15
+    },
+    {
+      "ticker": "RGTI",
+      "date_open": "2026-08-04",
+      "shares": 17,
+      "entry": 17.06,
+      "stop_loss": 16.38,
+      "target": 18.08,
+      "score": 45.7,
+      "cost": 291.02,
+      "date_close": "2026-08-04",
+      "exit": 17.45,
+      "reason": "🔔 סגירת יום",
+      "pnl": 4.63,
+      "pnl_pct": 1.59
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-08-04",
+      "shares": 7,
+      "entry": 40.96,
+      "stop_loss": 39.32,
+      "target": 43.42,
+      "score": 45.1,
+      "cost": 287.72,
+      "date_close": "2026-08-04",
+      "exit": 41.72,
+      "reason": "🔔 סגירת יום",
+      "pnl": 3.32,
+      "pnl_pct": 1.15
     }
   ],
   "equity_curve": [
@@ -733,6 +742,10 @@
     {
       "date": "2026-08-03",
       "equity": 889.81
+    },
+    {
+      "date": "2026-08-04",
+      "equity": 897.76
     }
   ],
   "peak_equity": 1012.46,
