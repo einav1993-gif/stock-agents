@@ -2253,5 +2253,80 @@
     "day_low": 4.78,
     "change_pct": 1.82,
     "pnl_pct": 1.82
+  },
+  {
+    "date": "2026-08-04",
+    "ticker": "AMD",
+    "total_score": 47.9,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 8,
+      "macro": 13,
+      "news": 100,
+      "sent": -6,
+      "fund": 94,
+      "risk": -15,
+      "gap": 18,
+      "social": 20,
+      "rs": 10,
+      "cal": -10
+    },
+    "entry": 519.7,
+    "stop_loss": 498.91,
+    "target_1": 550.88,
+    "target_2": 582.06,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-04",
+    "ticker": "RGTI",
+    "total_score": 45.7,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 23,
+      "macro": 13,
+      "news": 100,
+      "sent": -30,
+      "fund": 100,
+      "risk": -15,
+      "gap": 10,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 17.06,
+    "stop_loss": 16.38,
+    "target_1": 18.08,
+    "target_2": 19.11,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-04",
+    "ticker": "IONQ",
+    "total_score": 45.1,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 23,
+      "macro": 13,
+      "news": 100,
+      "sent": -30,
+      "fund": 100,
+      "risk": -15,
+      "gap": 10,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 40.96,
+    "stop_loss": 39.32,
+    "target_1": 43.42,
+    "target_2": 45.87,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
