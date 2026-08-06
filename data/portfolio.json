@@ -1,8 +1,29 @@
 {
-  "cash": 883.9900437355043,
+  "cash": 386.05004373550423,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "DIS",
+      "date_open": "2026-08-06",
+      "shares": 2,
+      "entry": 103.47,
+      "stop_loss": 99.75,
+      "target": 109.04,
+      "score": 40.5,
+      "cost": 207.94
+    },
+    {
+      "ticker": "ARRY",
+      "date_open": "2026-08-06",
+      "shares": 50,
+      "entry": 5.78,
+      "stop_loss": 5.54,
+      "target": 6.12,
+      "score": 39.7,
+      "cost": 290.0
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
