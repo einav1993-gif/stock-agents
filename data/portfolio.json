@@ -1,8 +1,39 @@
 {
-  "cash": 870.4100443458558,
+  "cash": 32.250044345855656,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "SMCI",
+      "date_open": "2026-08-07",
+      "shares": 9,
+      "entry": 30.1,
+      "stop_loss": 28.9,
+      "target": 31.91,
+      "score": 36.8,
+      "cost": 271.9
+    },
+    {
+      "ticker": "AMZN",
+      "date_open": "2026-08-07",
+      "shares": 1,
+      "entry": 276.66,
+      "stop_loss": 265.59,
+      "target": 293.26,
+      "score": 35.1,
+      "cost": 277.66
+    },
+    {
+      "ticker": "SOUN",
+      "date_open": "2026-08-07",
+      "shares": 40,
+      "entry": 7.19,
+      "stop_loss": 6.9,
+      "target": 7.62,
+      "score": 34.8,
+      "cost": 288.6
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
