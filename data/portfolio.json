@@ -1,29 +1,8 @@
 {
-  "cash": 386.05004373550423,
+  "cash": 870.4100443458558,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "DIS",
-      "date_open": "2026-08-06",
-      "shares": 2,
-      "entry": 103.47,
-      "stop_loss": 99.75,
-      "target": 109.04,
-      "score": 40.5,
-      "cost": 207.94
-    },
-    {
-      "ticker": "ARRY",
-      "date_open": "2026-08-06",
-      "shares": 50,
-      "entry": 5.78,
-      "stop_loss": 5.54,
-      "target": 6.12,
-      "score": 39.7,
-      "cost": 290.0
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -714,6 +693,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -9.14,
       "pnl_pct": -3.09
+    },
+    {
+      "ticker": "DIS",
+      "date_open": "2026-08-06",
+      "shares": 2,
+      "entry": 103.47,
+      "stop_loss": 99.75,
+      "target": 109.04,
+      "score": 40.5,
+      "cost": 207.94,
+      "date_close": "2026-08-07",
+      "exit": 104.68,
+      "reason": "🔔 סגירת יום",
+      "pnl": 0.42,
+      "pnl_pct": 0.2
+    },
+    {
+      "ticker": "ARRY",
+      "date_open": "2026-08-06",
+      "shares": 50,
+      "entry": 5.78,
+      "stop_loss": 5.54,
+      "target": 6.12,
+      "score": 39.7,
+      "cost": 290.0,
+      "date_close": "2026-08-07",
+      "exit": 5.54,
+      "reason": "🛑 סטופ (יום תנודתי)",
+      "pnl": -14.0,
+      "pnl_pct": -4.83
     }
   ],
   "equity_curve": [
@@ -816,8 +825,12 @@
     {
       "date": "2026-08-05",
       "equity": 883.99
+    },
+    {
+      "date": "2026-08-07",
+      "equity": 870.41
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 12.69
+  "max_drawdown_pct": 14.03
 }
