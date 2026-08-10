@@ -2613,5 +2613,80 @@
     "day_low": 7.09,
     "change_pct": 11.54,
     "pnl_pct": 5.98
+  },
+  {
+    "date": "2026-08-10",
+    "ticker": "UBER",
+    "total_score": 39.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 22,
+      "macro": 7,
+      "news": 100,
+      "sent": 11,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 77.03,
+    "stop_loss": 73.95,
+    "target_1": 81.65,
+    "target_2": 86.27,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-10",
+    "ticker": "MU",
+    "total_score": 33.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 20,
+      "macro": 7,
+      "news": 100,
+      "sent": -30,
+      "fund": 90,
+      "risk": -15,
+      "gap": 0,
+      "social": 12,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 892.32,
+    "stop_loss": 856.63,
+    "target_1": 945.86,
+    "target_2": 999.4,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-10",
+    "ticker": "PLTR",
+    "total_score": 33.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 25,
+      "macro": 7,
+      "news": 100,
+      "sent": -5,
+      "fund": 46,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 176.69,
+    "stop_loss": 169.62,
+    "target_1": 187.29,
+    "target_2": 197.89,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
