@@ -1,8 +1,39 @@
 {
-  "cash": 886.2400398445129,
+  "cash": 42.390039844512955,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "SMCI",
+      "date_open": "2026-08-11",
+      "shares": 9,
+      "entry": 31.99,
+      "stop_loss": 30.71,
+      "target": 33.91,
+      "score": 45.3,
+      "cost": 288.91
+    },
+    {
+      "ticker": "RGTI",
+      "date_open": "2026-08-11",
+      "shares": 16,
+      "entry": 18.19,
+      "stop_loss": 17.47,
+      "target": 19.29,
+      "score": 33.2,
+      "cost": 292.04
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-08-11",
+      "shares": 6,
+      "entry": 43.65,
+      "stop_loss": 41.9,
+      "target": 46.27,
+      "score": 32.3,
+      "cost": 262.9
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
