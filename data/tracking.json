@@ -2793,5 +2793,80 @@
     "day_low": 42.18,
     "change_pct": -0.48,
     "pnl_pct": -0.48
+  },
+  {
+    "date": "2026-08-12",
+    "ticker": "UBER",
+    "total_score": 39.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 18,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": -5
+    },
+    "entry": 77.25,
+    "stop_loss": 74.16,
+    "target_1": 81.89,
+    "target_2": 86.52,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-12",
+    "ticker": "NVDA",
+    "total_score": 38.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 18,
+      "news": 100,
+      "sent": 0,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 4,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 223.14,
+    "stop_loss": 214.21,
+    "target_1": 236.53,
+    "target_2": 249.92,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-12",
+    "ticker": "SMCI",
+    "total_score": 36.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 22,
+      "macro": 18,
+      "news": 100,
+      "sent": 37,
+      "fund": 0,
+      "risk": -15,
+      "gap": 18,
+      "social": 20,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 36.09,
+    "stop_loss": 34.65,
+    "target_1": 38.25,
+    "target_2": 40.42,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
