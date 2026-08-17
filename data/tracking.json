@@ -3063,5 +3063,80 @@
     "day_low": 5.27,
     "change_pct": -0.92,
     "pnl_pct": -0.92
+  },
+  {
+    "date": "2026-08-17",
+    "ticker": "MU",
+    "total_score": 35.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 33,
+      "macro": 3,
+      "news": 100,
+      "sent": -8,
+      "fund": 60,
+      "risk": -15,
+      "gap": 10,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 1011.27,
+    "stop_loss": 970.82,
+    "target_1": 1071.95,
+    "target_2": 1132.62,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-17",
+    "ticker": "SMCI",
+    "total_score": 30.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 7,
+      "macro": 3,
+      "news": 100,
+      "sent": 20,
+      "fund": 30,
+      "risk": -15,
+      "gap": 0,
+      "social": 8,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 39.24,
+    "stop_loss": 37.68,
+    "target_1": 41.6,
+    "target_2": 43.95,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-17",
+    "ticker": "SNAP",
+    "total_score": 22.3,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": 7,
+      "macro": 3,
+      "news": 10,
+      "sent": 0,
+      "fund": 60,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 5.21,
+    "stop_loss": 5.0,
+    "target_1": 5.52,
+    "target_2": 5.84,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
