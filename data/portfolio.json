@@ -1,29 +1,8 @@
 {
-  "cash": 280.72003961563115,
+  "cash": 816.0400221443176,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "SMCI",
-      "date_open": "2026-08-17",
-      "shares": 7,
-      "entry": 39.24,
-      "stop_loss": 37.68,
-      "target": 41.6,
-      "score": 30.9,
-      "cost": 275.68
-    },
-    {
-      "ticker": "SNAP",
-      "date_open": "2026-08-17",
-      "shares": 52,
-      "entry": 5.21,
-      "stop_loss": 5.0,
-      "target": 5.52,
-      "score": 22.3,
-      "cost": 271.92
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -954,6 +933,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -4.55,
       "pnl_pct": -1.63
+    },
+    {
+      "ticker": "SMCI",
+      "date_open": "2026-08-17",
+      "shares": 7,
+      "entry": 39.24,
+      "stop_loss": 37.68,
+      "target": 41.6,
+      "score": 30.9,
+      "cost": 275.68,
+      "date_close": "2026-08-17",
+      "exit": 38.28,
+      "reason": "🔔 סגירת יום",
+      "pnl": -8.72,
+      "pnl_pct": -3.16
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-08-17",
+      "shares": 52,
+      "entry": 5.21,
+      "stop_loss": 5.0,
+      "target": 5.52,
+      "score": 22.3,
+      "cost": 271.92,
+      "date_close": "2026-08-17",
+      "exit": 5.18,
+      "reason": "🔔 סגירת יום",
+      "pnl": -3.56,
+      "pnl_pct": -1.31
     }
   ],
   "equity_curve": [
@@ -1084,8 +1093,12 @@
     {
       "date": "2026-08-14",
       "equity": 828.32
+    },
+    {
+      "date": "2026-08-17",
+      "equity": 816.04
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 18.19
+  "max_drawdown_pct": 19.4
 }
