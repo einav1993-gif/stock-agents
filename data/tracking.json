@@ -3243,5 +3243,80 @@
     "day_low": 95.25,
     "change_pct": -1.01,
     "pnl_pct": -1.01
+  },
+  {
+    "date": "2026-08-19",
+    "ticker": "MRNA",
+    "total_score": 31.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 35,
+      "macro": 7,
+      "news": 100,
+      "sent": 2,
+      "fund": -20,
+      "risk": -15,
+      "gap": 30,
+      "social": 20,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 119.87,
+    "stop_loss": 115.07,
+    "target_1": 127.06,
+    "target_2": 134.25,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-19",
+    "ticker": "SOFI",
+    "total_score": 24.6,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": 33,
+      "macro": 7,
+      "news": 20,
+      "sent": -4,
+      "fund": 44,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 18.11,
+    "stop_loss": 17.39,
+    "target_1": 19.2,
+    "target_2": 20.29,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-19",
+    "ticker": "PLTR",
+    "total_score": 24.5,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": 18,
+      "macro": 7,
+      "news": 40,
+      "sent": -11,
+      "fund": 46,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 176.0,
+    "stop_loss": 168.96,
+    "target_1": 186.56,
+    "target_2": 197.12,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
