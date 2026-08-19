@@ -1,39 +1,8 @@
 {
-  "cash": 135.21001054763803,
+  "cash": 795.4200140571595,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "MRNA",
-      "date_open": "2026-08-19",
-      "shares": 2,
-      "entry": 119.87,
-      "stop_loss": 115.07,
-      "target": 127.06,
-      "score": 31.6,
-      "cost": 240.74
-    },
-    {
-      "ticker": "SOFI",
-      "date_open": "2026-08-19",
-      "shares": 14,
-      "entry": 18.11,
-      "stop_loss": 17.39,
-      "target": 19.2,
-      "score": 24.6,
-      "cost": 254.54
-    },
-    {
-      "ticker": "PLTR",
-      "date_open": "2026-08-19",
-      "shares": 1,
-      "entry": 176.0,
-      "stop_loss": 168.96,
-      "target": 186.56,
-      "score": 24.5,
-      "cost": 177.0
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1039,6 +1008,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -3.97,
       "pnl_pct": -2.02
+    },
+    {
+      "ticker": "MRNA",
+      "date_open": "2026-08-19",
+      "shares": 2,
+      "entry": 119.87,
+      "stop_loss": 115.07,
+      "target": 127.06,
+      "score": 31.6,
+      "cost": 240.74,
+      "date_close": "2026-08-19",
+      "exit": 115.07,
+      "reason": "🛑 סטופ (יום תנודתי)",
+      "pnl": -11.6,
+      "pnl_pct": -4.82
+    },
+    {
+      "ticker": "SOFI",
+      "date_open": "2026-08-19",
+      "shares": 14,
+      "entry": 18.11,
+      "stop_loss": 17.39,
+      "target": 19.2,
+      "score": 24.6,
+      "cost": 254.54,
+      "date_close": "2026-08-19",
+      "exit": 18.42,
+      "reason": "🔔 סגירת יום",
+      "pnl": 2.34,
+      "pnl_pct": 0.92
+    },
+    {
+      "ticker": "PLTR",
+      "date_open": "2026-08-19",
+      "shares": 1,
+      "entry": 176.0,
+      "stop_loss": 168.96,
+      "target": 186.56,
+      "score": 24.5,
+      "cost": 177.0,
+      "date_close": "2026-08-19",
+      "exit": 175.19,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.81,
+      "pnl_pct": -1.59
     }
   ],
   "equity_curve": [
@@ -1177,8 +1191,12 @@
     {
       "date": "2026-08-18",
       "equity": 807.49
+    },
+    {
+      "date": "2026-08-19",
+      "equity": 795.42
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 20.24
+  "max_drawdown_pct": 21.44
 }
