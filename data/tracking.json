@@ -3333,5 +3333,80 @@
     "day_low": 169.77,
     "change_pct": -0.46,
     "pnl_pct": -0.46
+  },
+  {
+    "date": "2026-08-20",
+    "ticker": "BABA",
+    "total_score": 30.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -26,
+      "macro": 3,
+      "news": 10,
+      "sent": 0,
+      "fund": 76,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 122.59,
+    "stop_loss": 117.69,
+    "target_1": 129.95,
+    "target_2": 137.3,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-20",
+    "ticker": "MRNA",
+    "total_score": 29.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 15,
+      "macro": 3,
+      "news": 100,
+      "sent": 34,
+      "fund": 0,
+      "risk": -15,
+      "gap": -12,
+      "social": 20,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 147.85,
+    "stop_loss": 141.93,
+    "target_1": 156.72,
+    "target_2": 165.59,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-20",
+    "ticker": "SMCI",
+    "total_score": 29.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 18,
+      "macro": 3,
+      "news": 100,
+      "sent": 0,
+      "fund": 44,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 38.15,
+    "stop_loss": 36.62,
+    "target_1": 40.44,
+    "target_2": 42.73,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
