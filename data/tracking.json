@@ -3423,5 +3423,80 @@
     "day_low": 35.58,
     "change_pct": -4.33,
     "pnl_pct": -4.01
+  },
+  {
+    "date": "2026-08-21",
+    "ticker": "MSTR",
+    "total_score": 30.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 7,
+      "macro": 7,
+      "news": 100,
+      "sent": -13,
+      "fund": 36,
+      "risk": -10,
+      "gap": 18,
+      "social": 4,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 117.43,
+    "stop_loss": 112.74,
+    "target_1": 124.48,
+    "target_2": 131.53,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-21",
+    "ticker": "IONQ",
+    "total_score": 29.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 35,
+      "macro": 7,
+      "news": 100,
+      "sent": -30,
+      "fund": 36,
+      "risk": -15,
+      "gap": 18,
+      "social": 0,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 43.41,
+    "stop_loss": 41.67,
+    "target_1": 46.01,
+    "target_2": 48.62,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-21",
+    "ticker": "HOOD",
+    "total_score": 29.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 12,
+      "macro": 7,
+      "news": 60,
+      "sent": -30,
+      "fund": 74,
+      "risk": -10,
+      "gap": 18,
+      "social": 4,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 100.83,
+    "stop_loss": 96.8,
+    "target_1": 106.88,
+    "target_2": 112.93,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
