@@ -1,29 +1,8 @@
 {
-  "cash": 326.46001771926876,
+  "cash": 799.9500308418274,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NVDA",
-      "date_open": "2026-08-25",
-      "shares": 1,
-      "entry": 211.9,
-      "stop_loss": 203.76,
-      "target": 224.11,
-      "score": 44.6,
-      "cost": 212.9
-    },
-    {
-      "ticker": "INTC",
-      "date_open": "2026-08-25",
-      "shares": 3,
-      "entry": 89.04,
-      "stop_loss": 85.48,
-      "target": 94.39,
-      "score": 31.8,
-      "cost": 268.12
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1164,6 +1143,36 @@
       "reason": "✅ יעד",
       "pnl": 10.1,
       "pnl_pct": 4.98
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-08-25",
+      "shares": 1,
+      "entry": 211.9,
+      "stop_loss": 203.76,
+      "target": 224.11,
+      "score": 44.6,
+      "cost": 212.9,
+      "date_close": "2026-08-25",
+      "exit": 213.05,
+      "reason": "🔔 סגירת יום",
+      "pnl": -0.85,
+      "pnl_pct": -0.4
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-08-25",
+      "shares": 3,
+      "entry": 89.04,
+      "stop_loss": 85.48,
+      "target": 94.39,
+      "score": 31.8,
+      "cost": 268.12,
+      "date_close": "2026-08-25",
+      "exit": 87.48,
+      "reason": "🔔 סגירת יום",
+      "pnl": -6.68,
+      "pnl_pct": -2.49
     }
   ],
   "equity_curve": [
@@ -1318,6 +1327,10 @@
     {
       "date": "2026-08-24",
       "equity": 807.48
+    },
+    {
+      "date": "2026-08-25",
+      "equity": 799.95
     }
   ],
   "peak_equity": 1012.46,
