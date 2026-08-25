@@ -3513,5 +3513,80 @@
     "day_low": 98.77,
     "change_pct": 7.24,
     "pnl_pct": 6.0
+  },
+  {
+    "date": "2026-08-25",
+    "ticker": "NVDA",
+    "total_score": 44.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -10,
+      "macro": 7,
+      "news": 100,
+      "sent": 9,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 211.9,
+    "stop_loss": 203.76,
+    "target_1": 224.11,
+    "target_2": 236.31,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-25",
+    "ticker": "MU",
+    "total_score": 32.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 10,
+      "macro": 7,
+      "news": 100,
+      "sent": -30,
+      "fund": 90,
+      "risk": -15,
+      "gap": 10,
+      "social": 20,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 928.09,
+    "stop_loss": 890.96,
+    "target_1": 983.77,
+    "target_2": 1039.46,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-25",
+    "ticker": "INTC",
+    "total_score": 31.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -19,
+      "macro": 7,
+      "news": 100,
+      "sent": 8,
+      "fund": 60,
+      "risk": -10,
+      "gap": 10,
+      "social": 20,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 89.04,
+    "stop_loss": 85.48,
+    "target_1": 94.39,
+    "target_2": 99.73,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
