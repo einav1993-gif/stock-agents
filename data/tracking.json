@@ -3693,5 +3693,80 @@
     "day_low": 37.23,
     "change_pct": -0.8,
     "pnl_pct": -0.8
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "TSM",
+    "total_score": 49.4,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 18,
+      "news": 80,
+      "sent": 25,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 427.3,
+    "stop_loss": 411.82,
+    "target_1": 450.52,
+    "target_2": 473.75,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "SMCI",
+    "total_score": 38.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 33,
+      "macro": 18,
+      "news": 100,
+      "sent": 31,
+      "fund": 44,
+      "risk": -15,
+      "gap": 10,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 38.46,
+    "stop_loss": 36.92,
+    "target_1": 40.77,
+    "target_2": 43.08,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "NVDA",
+    "total_score": 36.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 26,
+      "macro": 18,
+      "news": 100,
+      "sent": 14,
+      "fund": 30,
+      "risk": -10,
+      "gap": 30,
+      "social": -8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 227.98,
+    "stop_loss": 218.86,
+    "target_1": 241.66,
+    "target_2": 255.34,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
