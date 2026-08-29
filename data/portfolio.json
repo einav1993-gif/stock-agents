@@ -1,29 +1,8 @@
 {
-  "cash": 316.5000204658508,
+  "cash": 798.4800161933899,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "AMZN",
-      "date_open": "2026-08-28",
-      "shares": 1,
-      "entry": 266.43,
-      "stop_loss": 257.72,
-      "target": 279.49,
-      "score": 33.2,
-      "cost": 267.43
-    },
-    {
-      "ticker": "NVDA",
-      "date_open": "2026-08-28",
-      "shares": 1,
-      "entry": 217.55,
-      "stop_loss": 208.85,
-      "target": 230.6,
-      "score": 31.9,
-      "cost": 218.55
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1269,6 +1248,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.0,
       "pnl_pct": -0.87
+    },
+    {
+      "ticker": "AMZN",
+      "date_open": "2026-08-28",
+      "shares": 1,
+      "entry": 266.43,
+      "stop_loss": 257.72,
+      "target": 279.49,
+      "score": 33.2,
+      "cost": 267.43,
+      "date_close": "2026-08-29",
+      "exit": 266.43,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.0,
+      "pnl_pct": -0.75
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-08-28",
+      "shares": 1,
+      "entry": 217.55,
+      "stop_loss": 208.85,
+      "target": 230.6,
+      "score": 31.9,
+      "cost": 218.55,
+      "date_close": "2026-08-29",
+      "exit": 217.55,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.0,
+      "pnl_pct": -0.92
     }
   ],
   "equity_curve": [
@@ -1435,6 +1444,10 @@
     {
       "date": "2026-08-28",
       "equity": 802.48
+    },
+    {
+      "date": "2026-08-29",
+      "equity": 798.48
     }
   ],
   "peak_equity": 1012.46,
