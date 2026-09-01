@@ -1,39 +1,8 @@
 {
-  "cash": 8.2000161933899,
+  "cash": 791.180014781952,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NIO",
-      "date_open": "2026-08-31",
-      "shares": 62,
-      "entry": 4.28,
-      "stop_loss": 4.11,
-      "target": 4.54,
-      "score": 41.0,
-      "cost": 266.36
-    },
-    {
-      "ticker": "GME",
-      "date_open": "2026-08-31",
-      "shares": 14,
-      "entry": 18.32,
-      "stop_loss": 17.69,
-      "target": 19.25,
-      "score": 40.3,
-      "cost": 257.48
-    },
-    {
-      "ticker": "SNAP",
-      "date_open": "2026-08-31",
-      "shares": 48,
-      "entry": 5.53,
-      "stop_loss": 5.31,
-      "target": 5.86,
-      "score": 34.4,
-      "cost": 266.44
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1309,6 +1278,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.0,
       "pnl_pct": -0.92
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-08-31",
+      "shares": 62,
+      "entry": 4.28,
+      "stop_loss": 4.11,
+      "target": 4.54,
+      "score": 41.0,
+      "cost": 266.36,
+      "date_close": "2026-09-01",
+      "exit": 4.23,
+      "reason": "🔔 סגירת יום",
+      "pnl": -5.1,
+      "pnl_pct": -1.91
+    },
+    {
+      "ticker": "GME",
+      "date_open": "2026-08-31",
+      "shares": 14,
+      "entry": 18.32,
+      "stop_loss": 17.69,
+      "target": 19.25,
+      "score": 40.3,
+      "cost": 257.48,
+      "date_close": "2026-09-01",
+      "exit": 18.38,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.16,
+      "pnl_pct": -0.45
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-08-31",
+      "shares": 48,
+      "entry": 5.53,
+      "stop_loss": 5.31,
+      "target": 5.86,
+      "score": 34.4,
+      "cost": 266.44,
+      "date_close": "2026-09-01",
+      "exit": 5.55,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.04,
+      "pnl_pct": -0.39
     }
   ],
   "equity_curve": [
@@ -1479,6 +1493,10 @@
     {
       "date": "2026-08-29",
       "equity": 798.48
+    },
+    {
+      "date": "2026-09-01",
+      "equity": 791.18
     }
   ],
   "peak_equity": 1012.46,
