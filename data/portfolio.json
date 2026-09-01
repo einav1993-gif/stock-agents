@@ -1,8 +1,29 @@
 {
-  "cash": 791.180014781952,
+  "cash": 475.260014781952,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "QCOM",
+      "date_open": "2026-09-01",
+      "shares": 1,
+      "entry": 166.3,
+      "stop_loss": 159.65,
+      "target": 176.28,
+      "score": 27.2,
+      "cost": 167.3
+    },
+    {
+      "ticker": "MRNA",
+      "date_open": "2026-09-01",
+      "shares": 1,
+      "entry": 147.62,
+      "stop_loss": 141.72,
+      "target": 156.48,
+      "score": 25.5,
+      "cost": 148.62
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",

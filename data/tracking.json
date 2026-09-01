@@ -3963,5 +3963,80 @@
     "day_low": 5.43,
     "change_pct": 0.36,
     "pnl_pct": 0.36
+  },
+  {
+    "date": "2026-09-01",
+    "ticker": "QCOM",
+    "total_score": 27.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 35,
+      "macro": -2,
+      "news": 100,
+      "sent": -1,
+      "fund": 14,
+      "risk": -10,
+      "gap": -12,
+      "social": 8,
+      "rs": 10,
+      "cal": -5
+    },
+    "entry": 166.3,
+    "stop_loss": 159.65,
+    "target_1": 176.28,
+    "target_2": 186.26,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-01",
+    "ticker": "AAPL",
+    "total_score": 27.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 15,
+      "macro": -2,
+      "news": 80,
+      "sent": -30,
+      "fund": 26,
+      "risk": 0,
+      "gap": 0,
+      "social": 20,
+      "rs": 25,
+      "cal": -5
+    },
+    "entry": 325.55,
+    "stop_loss": 315.56,
+    "target_1": 340.54,
+    "target_2": 355.52,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-01",
+    "ticker": "MRNA",
+    "total_score": 25.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 33,
+      "macro": -2,
+      "news": 100,
+      "sent": -9,
+      "fund": -10,
+      "risk": -15,
+      "gap": 0,
+      "social": 8,
+      "rs": 16,
+      "cal": -5
+    },
+    "entry": 147.62,
+    "stop_loss": 141.72,
+    "target_1": 156.48,
+    "target_2": 165.33,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
