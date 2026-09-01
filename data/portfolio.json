@@ -1,29 +1,8 @@
 {
-  "cash": 475.260014781952,
+  "cash": 781.5900153923036,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "QCOM",
-      "date_open": "2026-09-01",
-      "shares": 1,
-      "entry": 166.3,
-      "stop_loss": 159.65,
-      "target": 176.28,
-      "score": 27.2,
-      "cost": 167.3
-    },
-    {
-      "ticker": "MRNA",
-      "date_open": "2026-09-01",
-      "shares": 1,
-      "entry": 147.62,
-      "stop_loss": 141.72,
-      "target": 156.48,
-      "score": 25.5,
-      "cost": 148.62
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1344,6 +1323,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -1.04,
       "pnl_pct": -0.39
+    },
+    {
+      "ticker": "QCOM",
+      "date_open": "2026-09-01",
+      "shares": 1,
+      "entry": 166.3,
+      "stop_loss": 159.65,
+      "target": 176.28,
+      "score": 27.2,
+      "cost": 167.3,
+      "date_close": "2026-09-01",
+      "exit": 166.61,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.69,
+      "pnl_pct": -1.01
+    },
+    {
+      "ticker": "MRNA",
+      "date_open": "2026-09-01",
+      "shares": 1,
+      "entry": 147.62,
+      "stop_loss": 141.72,
+      "target": 156.48,
+      "score": 25.5,
+      "cost": 148.62,
+      "date_close": "2026-09-01",
+      "exit": 141.72,
+      "reason": "🛑 סטופ",
+      "pnl": -7.9,
+      "pnl_pct": -5.32
     }
   ],
   "equity_curve": [
@@ -1518,8 +1527,12 @@
     {
       "date": "2026-09-01",
       "equity": 791.18
+    },
+    {
+      "date": "2026-09-01",
+      "equity": 781.59
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 22.07
+  "max_drawdown_pct": 22.8
 }
