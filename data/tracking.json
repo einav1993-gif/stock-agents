@@ -4053,5 +4053,80 @@
     "day_low": 138.09,
     "change_pct": 4.5,
     "pnl_pct": -4.0
+  },
+  {
+    "date": "2026-09-02",
+    "ticker": "NVDA",
+    "total_score": 37.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 36,
+      "macro": 7,
+      "news": 100,
+      "sent": 0,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 225.84,
+    "stop_loss": 216.81,
+    "target_1": 239.39,
+    "target_2": 252.94,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-02",
+    "ticker": "ARRY",
+    "total_score": 34.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": 7,
+      "news": 50,
+      "sent": 24,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 4.53,
+    "stop_loss": 4.35,
+    "target_1": 4.8,
+    "target_2": 5.07,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-02",
+    "ticker": "NFLX",
+    "total_score": 31.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 7,
+      "news": 100,
+      "sent": -30,
+      "fund": 54,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 82.28,
+    "stop_loss": 79.04,
+    "target_1": 87.14,
+    "target_2": 91.99,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
