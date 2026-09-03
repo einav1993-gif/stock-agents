@@ -1,29 +1,8 @@
 {
-  "cash": 290.5700389099121,
+  "cash": 773.5200272750855,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NVDA",
-      "date_open": "2026-09-03",
-      "shares": 1,
-      "entry": 227.82,
-      "stop_loss": 218.71,
-      "target": 241.49,
-      "score": 37.8,
-      "cost": 228.82
-    },
-    {
-      "ticker": "SNAP",
-      "date_open": "2026-09-03",
-      "shares": 45,
-      "entry": 5.72,
-      "stop_loss": 5.5,
-      "target": 6.07,
-      "score": 31.7,
-      "cost": 258.4
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1419,6 +1398,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -0.65,
       "pnl_pct": -0.26
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-09-03",
+      "shares": 1,
+      "entry": 227.82,
+      "stop_loss": 218.71,
+      "target": 241.49,
+      "score": 37.8,
+      "cost": 228.82,
+      "date_close": "2026-09-03",
+      "exit": 228.45,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.37,
+      "pnl_pct": -0.6
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-09-03",
+      "shares": 45,
+      "entry": 5.72,
+      "stop_loss": 5.5,
+      "target": 6.07,
+      "score": 31.7,
+      "cost": 258.4,
+      "date_close": "2026-09-03",
+      "exit": 5.7,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.9,
+      "pnl_pct": -1.12
     }
   ],
   "equity_curve": [
@@ -1601,8 +1610,12 @@
     {
       "date": "2026-09-02",
       "equity": 777.79
+    },
+    {
+      "date": "2026-09-03",
+      "equity": 773.52
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 23.18
+  "max_drawdown_pct": 23.6
 }
