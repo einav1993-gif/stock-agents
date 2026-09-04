@@ -1,19 +1,8 @@
 {
-  "cash": 529.0400272750854,
+  "cash": 761.8000272750854,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "SMCI",
-      "date_open": "2026-09-04",
-      "shares": 6,
-      "entry": 40.58,
-      "stop_loss": 38.96,
-      "target": 43.01,
-      "score": 35.3,
-      "cost": 244.48
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1439,6 +1428,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.9,
       "pnl_pct": -1.12
+    },
+    {
+      "ticker": "SMCI",
+      "date_open": "2026-09-04",
+      "shares": 6,
+      "entry": 40.58,
+      "stop_loss": 38.96,
+      "target": 43.01,
+      "score": 35.3,
+      "cost": 244.48,
+      "date_close": "2026-09-04",
+      "exit": 38.96,
+      "reason": "🛑 סטופ",
+      "pnl": -11.72,
+      "pnl_pct": -4.79
     }
   ],
   "equity_curve": [
@@ -1625,8 +1629,12 @@
     {
       "date": "2026-09-03",
       "equity": 773.52
+    },
+    {
+      "date": "2026-09-04",
+      "equity": 761.8
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 23.6
+  "max_drawdown_pct": 24.76
 }
