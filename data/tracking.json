@@ -4233,5 +4233,80 @@
     "day_low": 5.68,
     "change_pct": -0.35,
     "pnl_pct": -0.35
+  },
+  {
+    "date": "2026-09-04",
+    "ticker": "TSM",
+    "total_score": 42.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 28,
+      "macro": 12,
+      "news": 10,
+      "sent": 30,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 25,
+      "cal": -5
+    },
+    "entry": 427.39,
+    "stop_loss": 411.72,
+    "target_1": 450.91,
+    "target_2": 474.43,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-04",
+    "ticker": "MU",
+    "total_score": 37.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 46,
+      "macro": 12,
+      "news": 100,
+      "sent": -30,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 25,
+      "cal": -5
+    },
+    "entry": 1004.87,
+    "stop_loss": 964.68,
+    "target_1": 1065.16,
+    "target_2": 1125.45,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-04",
+    "ticker": "SMCI",
+    "total_score": 35.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 31,
+      "macro": 12,
+      "news": 100,
+      "sent": 20,
+      "fund": 30,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 25,
+      "cal": -5
+    },
+    "entry": 40.58,
+    "stop_loss": 38.96,
+    "target_1": 43.01,
+    "target_2": 45.45,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
