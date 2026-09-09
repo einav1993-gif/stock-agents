@@ -4488,5 +4488,80 @@
     "day_low": 17.47,
     "change_pct": -1.12,
     "pnl_pct": -1.12
+  },
+  {
+    "date": "2026-09-09",
+    "ticker": "MU",
+    "total_score": 37.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": -2,
+      "news": 100,
+      "sent": -2,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 4,
+      "rs": 25,
+      "cal": 0
+    },
+    "entry": 1021.43,
+    "stop_loss": 980.57,
+    "target_1": 1082.72,
+    "target_2": 1144.0,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-09",
+    "ticker": "META",
+    "total_score": 34.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 19,
+      "macro": -2,
+      "news": 100,
+      "sent": 23,
+      "fund": 6,
+      "risk": -10,
+      "gap": 18,
+      "social": 20,
+      "rs": 25,
+      "cal": 0
+    },
+    "entry": 649.53,
+    "stop_loss": 623.55,
+    "target_1": 688.5,
+    "target_2": 727.47,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-09",
+    "ticker": "AMD",
+    "total_score": 30.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 22,
+      "macro": -2,
+      "news": 100,
+      "sent": -30,
+      "fund": 54,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 25,
+      "cal": 0
+    },
+    "entry": 523.55,
+    "stop_loss": 502.61,
+    "target_1": 554.96,
+    "target_2": 586.38,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
