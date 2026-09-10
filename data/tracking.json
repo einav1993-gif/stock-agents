@@ -4578,5 +4578,80 @@
     "day_low": 506.36,
     "change_pct": -0.47,
     "pnl_pct": -0.47
+  },
+  {
+    "date": "2026-09-10",
+    "ticker": "AAPL",
+    "total_score": 32.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 51,
+      "macro": -2,
+      "news": 100,
+      "sent": -30,
+      "fund": 26,
+      "risk": 0,
+      "gap": 0,
+      "social": 20,
+      "rs": 25,
+      "cal": -5
+    },
+    "entry": 324.23,
+    "stop_loss": 313.21,
+    "target_1": 340.77,
+    "target_2": 357.3,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-10",
+    "ticker": "GME",
+    "total_score": 32.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 7,
+      "macro": -2,
+      "news": 100,
+      "sent": -20,
+      "fund": -20,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 25,
+      "cal": -5
+    },
+    "entry": 20.45,
+    "stop_loss": 19.64,
+    "target_1": 21.68,
+    "target_2": 22.91,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-10",
+    "ticker": "NIO",
+    "total_score": 30.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 8,
+      "macro": -2,
+      "news": 100,
+      "sent": 9,
+      "fund": 90,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": -12,
+      "cal": -5
+    },
+    "entry": 3.62,
+    "stop_loss": 3.47,
+    "target_1": 3.83,
+    "target_2": 4.05,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
