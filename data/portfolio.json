@@ -1,8 +1,39 @@
 {
-  "cash": 730.1000231552124,
+  "cash": 16.710023155212355,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "GME",
+      "date_open": "2026-09-11",
+      "shares": 11,
+      "entry": 20.89,
+      "stop_loss": 20.05,
+      "target": 22.14,
+      "score": 35.8,
+      "cost": 230.79
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-09-11",
+      "shares": 66,
+      "entry": 3.68,
+      "stop_loss": 3.53,
+      "target": 3.9,
+      "score": 34.9,
+      "cost": 243.88
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-09-11",
+      "shares": 42,
+      "entry": 5.66,
+      "stop_loss": 5.44,
+      "target": 6.0,
+      "score": 31.7,
+      "cost": 238.72
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
