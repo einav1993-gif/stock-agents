@@ -4758,5 +4758,80 @@
     "day_low": 5.52,
     "change_pct": 0.35,
     "pnl_pct": 0.35
+  },
+  {
+    "date": "2026-09-14",
+    "ticker": "TSM",
+    "total_score": 45.1,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": 3,
+      "news": 100,
+      "sent": 30,
+      "fund": 90,
+      "risk": -10,
+      "gap": -12,
+      "social": 8,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 422.41,
+    "stop_loss": 407.22,
+    "target_1": 445.2,
+    "target_2": 467.99,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-14",
+    "ticker": "MSFT",
+    "total_score": 36.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 21,
+      "macro": 3,
+      "news": 100,
+      "sent": 3,
+      "fund": 74,
+      "risk": -10,
+      "gap": 0,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 508.39,
+    "stop_loss": 492.68,
+    "target_1": 531.96,
+    "target_2": 555.53,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-14",
+    "ticker": "GOOGL",
+    "total_score": 35.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 18,
+      "macro": 3,
+      "news": 90,
+      "sent": -6,
+      "fund": 74,
+      "risk": 0,
+      "gap": 0,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 348.71,
+    "stop_loss": 337.49,
+    "target_1": 365.55,
+    "target_2": 382.38,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
