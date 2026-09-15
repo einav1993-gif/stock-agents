@@ -1,19 +1,8 @@
 {
-  "cash": 551.2300155258179,
+  "cash": 722.7900130844116,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "PLTR",
-      "date_open": "2026-09-15",
-      "shares": 1,
-      "entry": 176.23,
-      "stop_loss": 169.18,
-      "target": 186.8,
-      "score": 33.8,
-      "cost": 177.23
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1559,6 +1548,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -1.16,
       "pnl_pct": -0.49
+    },
+    {
+      "ticker": "PLTR",
+      "date_open": "2026-09-15",
+      "shares": 1,
+      "entry": 176.23,
+      "stop_loss": 169.18,
+      "target": 186.8,
+      "score": 33.8,
+      "cost": 177.23,
+      "date_close": "2026-09-15",
+      "exit": 172.56,
+      "reason": "🔔 סגירת יום",
+      "pnl": -5.67,
+      "pnl_pct": -3.2
     }
   ],
   "equity_curve": [
@@ -1773,8 +1777,12 @@
     {
       "date": "2026-09-14",
       "equity": 728.46
+    },
+    {
+      "date": "2026-09-15",
+      "equity": 722.79
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 28.05
+  "max_drawdown_pct": 28.61
 }
