@@ -1,39 +1,8 @@
 {
-  "cash": 61.970013084411534,
+  "cash": 703.7800149154663,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "INTC",
-      "date_open": "2026-09-16",
-      "shares": 2,
-      "entry": 101.61,
-      "stop_loss": 97.54,
-      "target": 107.7,
-      "score": 37.3,
-      "cost": 204.22
-    },
-    {
-      "ticker": "DIS",
-      "date_open": "2026-09-16",
-      "shares": 2,
-      "entry": 108.04,
-      "stop_loss": 104.78,
-      "target": 112.94,
-      "score": 33.6,
-      "cost": 217.08
-    },
-    {
-      "ticker": "AMC",
-      "date_open": "2026-09-16",
-      "shares": 89,
-      "entry": 2.68,
-      "stop_loss": 2.57,
-      "target": 2.84,
-      "score": 31.7,
-      "cost": 239.52
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1594,6 +1563,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -5.67,
       "pnl_pct": -3.2
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-09-16",
+      "shares": 2,
+      "entry": 101.61,
+      "stop_loss": 97.54,
+      "target": 107.7,
+      "score": 37.3,
+      "cost": 204.22,
+      "date_close": "2026-09-16",
+      "exit": 101.05,
+      "reason": "🔔 סגירת יום",
+      "pnl": -3.12,
+      "pnl_pct": -1.53
+    },
+    {
+      "ticker": "DIS",
+      "date_open": "2026-09-16",
+      "shares": 2,
+      "entry": 108.04,
+      "stop_loss": 104.78,
+      "target": 112.94,
+      "score": 33.6,
+      "cost": 217.08,
+      "date_close": "2026-09-16",
+      "exit": 106.99,
+      "reason": "🔔 סגירת יום",
+      "pnl": -4.1,
+      "pnl_pct": -1.89
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-09-16",
+      "shares": 89,
+      "entry": 2.68,
+      "stop_loss": 2.57,
+      "target": 2.84,
+      "score": 31.7,
+      "cost": 239.52,
+      "date_close": "2026-09-16",
+      "exit": 2.57,
+      "reason": "🛑 סטופ",
+      "pnl": -11.79,
+      "pnl_pct": -4.92
     }
   ],
   "equity_curve": [
@@ -1812,8 +1826,12 @@
     {
       "date": "2026-09-15",
       "equity": 722.79
+    },
+    {
+      "date": "2026-09-16",
+      "equity": 703.78
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 28.61
+  "max_drawdown_pct": 30.49
 }
