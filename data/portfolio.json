@@ -1,8 +1,39 @@
 {
-  "cash": 722.7900130844116,
+  "cash": 61.970013084411534,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "INTC",
+      "date_open": "2026-09-16",
+      "shares": 2,
+      "entry": 101.61,
+      "stop_loss": 97.54,
+      "target": 107.7,
+      "score": 37.3,
+      "cost": 204.22
+    },
+    {
+      "ticker": "DIS",
+      "date_open": "2026-09-16",
+      "shares": 2,
+      "entry": 108.04,
+      "stop_loss": 104.78,
+      "target": 112.94,
+      "score": 33.6,
+      "cost": 217.08
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-09-16",
+      "shares": 89,
+      "entry": 2.68,
+      "stop_loss": 2.57,
+      "target": 2.84,
+      "score": 31.7,
+      "cost": 239.52
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
