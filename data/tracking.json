@@ -5028,5 +5028,80 @@
     "day_low": 2.53,
     "change_pct": -0.75,
     "pnl_pct": -4.1
+  },
+  {
+    "date": "2026-09-17",
+    "ticker": "TSM",
+    "total_score": 47.7,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 16,
+      "macro": 13,
+      "news": 100,
+      "sent": 30,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 428.13,
+    "stop_loss": 413.04,
+    "target_1": 450.77,
+    "target_2": 473.41,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-17",
+    "ticker": "AMD",
+    "total_score": 37.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": 13,
+      "news": 100,
+      "sent": -5,
+      "fund": 54,
+      "risk": -10,
+      "gap": 18,
+      "social": 12,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 548.26,
+    "stop_loss": 526.33,
+    "target_1": 581.16,
+    "target_2": 614.06,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-17",
+    "ticker": "INTC",
+    "total_score": 35.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 32,
+      "macro": 13,
+      "news": 100,
+      "sent": 18,
+      "fund": 30,
+      "risk": -10,
+      "gap": 10,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 111.11,
+    "stop_loss": 106.67,
+    "target_1": 117.78,
+    "target_2": 124.44,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
