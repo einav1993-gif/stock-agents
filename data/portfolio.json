@@ -1,19 +1,8 @@
 {
-  "cash": 480.56001491546624,
+  "cash": 692.9000149154663,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "INTC",
-      "date_open": "2026-09-17",
-      "shares": 2,
-      "entry": 111.11,
-      "stop_loss": 106.67,
-      "target": 117.78,
-      "score": 35.2,
-      "cost": 223.22
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1619,6 +1608,21 @@
       "reason": "🛑 סטופ",
       "pnl": -11.79,
       "pnl_pct": -4.92
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-09-17",
+      "shares": 2,
+      "entry": 111.11,
+      "stop_loss": 106.67,
+      "target": 117.78,
+      "score": 35.2,
+      "cost": 223.22,
+      "date_close": "2026-09-17",
+      "exit": 106.67,
+      "reason": "🛑 סטופ",
+      "pnl": -10.88,
+      "pnl_pct": -4.87
     }
   ],
   "equity_curve": [
@@ -1841,8 +1845,12 @@
     {
       "date": "2026-09-16",
       "equity": 703.78
+    },
+    {
+      "date": "2026-09-17",
+      "equity": 692.9
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 30.49
+  "max_drawdown_pct": 31.56
 }

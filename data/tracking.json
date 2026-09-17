@@ -5052,7 +5052,12 @@
     "target_1": 450.77,
     "target_2": 473.41,
     "degraded_data": false,
-    "actual_result": null
+    "actual_result": "neither",
+    "close_price": 430.26,
+    "day_high": 430.53,
+    "day_low": 423.39,
+    "change_pct": 0.5,
+    "pnl_pct": 0.5
   },
   {
     "date": "2026-09-17",
@@ -5077,7 +5082,12 @@
     "target_1": 581.16,
     "target_2": 614.06,
     "degraded_data": false,
-    "actual_result": null
+    "actual_result": "neither",
+    "close_price": 545.09,
+    "day_high": 551.42,
+    "day_low": 527.65,
+    "change_pct": -0.58,
+    "pnl_pct": -0.58
   },
   {
     "date": "2026-09-17",
@@ -5102,6 +5112,11 @@
     "target_1": 117.78,
     "target_2": 124.44,
     "degraded_data": false,
-    "actual_result": null
+    "actual_result": "stop",
+    "close_price": 108.8,
+    "day_high": 111.37,
+    "day_low": 104.7,
+    "change_pct": -2.08,
+    "pnl_pct": -4.0
   }
 ]
