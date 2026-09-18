@@ -1,8 +1,29 @@
 {
-  "cash": 692.9000149154663,
+  "cash": 257.91001491546626,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "INTC",
+      "date_open": "2026-09-18",
+      "shares": 2,
+      "entry": 106.76,
+      "stop_loss": 102.49,
+      "target": 113.17,
+      "score": 34.2,
+      "cost": 214.52
+    },
+    {
+      "ticker": "MARA",
+      "date_open": "2026-09-18",
+      "shares": 17,
+      "entry": 12.91,
+      "stop_loss": 12.4,
+      "target": 13.69,
+      "score": 33.3,
+      "cost": 220.47
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",

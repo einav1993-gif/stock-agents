@@ -5118,5 +5118,80 @@
     "day_low": 104.7,
     "change_pct": -2.08,
     "pnl_pct": -4.0
+  },
+  {
+    "date": "2026-09-18",
+    "ticker": "INTC",
+    "total_score": 34.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 33,
+      "macro": 3,
+      "news": 100,
+      "sent": 18,
+      "fund": 30,
+      "risk": -10,
+      "gap": 0,
+      "social": 20,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 106.76,
+    "stop_loss": 102.49,
+    "target_1": 113.17,
+    "target_2": 119.58,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-18",
+    "ticker": "MU",
+    "total_score": 33.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 21,
+      "macro": 3,
+      "news": 100,
+      "sent": -30,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 4,
+      "rs": 25,
+      "cal": 0
+    },
+    "entry": 993.75,
+    "stop_loss": 954.0,
+    "target_1": 1053.38,
+    "target_2": 1113.0,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-18",
+    "ticker": "MARA",
+    "total_score": 33.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": 3,
+      "news": 100,
+      "sent": -17,
+      "fund": 46,
+      "risk": -15,
+      "gap": 18,
+      "social": 0,
+      "rs": 25,
+      "cal": 0
+    },
+    "entry": 12.91,
+    "stop_loss": 12.4,
+    "target_1": 13.69,
+    "target_2": 14.46,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
