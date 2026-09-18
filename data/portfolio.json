@@ -1,29 +1,8 @@
 {
-  "cash": 257.91001491546626,
+  "cash": 683.9100118637084,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "INTC",
-      "date_open": "2026-09-18",
-      "shares": 2,
-      "entry": 106.76,
-      "stop_loss": 102.49,
-      "target": 113.17,
-      "score": 34.2,
-      "cost": 214.52
-    },
-    {
-      "ticker": "MARA",
-      "date_open": "2026-09-18",
-      "shares": 17,
-      "entry": 12.91,
-      "stop_loss": 12.4,
-      "target": 13.69,
-      "score": 33.3,
-      "cost": 220.47
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1644,6 +1623,36 @@
       "reason": "🛑 סטופ",
       "pnl": -10.88,
       "pnl_pct": -4.87
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-09-18",
+      "shares": 2,
+      "entry": 106.76,
+      "stop_loss": 102.49,
+      "target": 113.17,
+      "score": 34.2,
+      "cost": 214.52,
+      "date_close": "2026-09-18",
+      "exit": 108.6,
+      "reason": "🔔 סגירת יום",
+      "pnl": 1.68,
+      "pnl_pct": 0.78
+    },
+    {
+      "ticker": "MARA",
+      "date_open": "2026-09-18",
+      "shares": 17,
+      "entry": 12.91,
+      "stop_loss": 12.4,
+      "target": 13.69,
+      "score": 33.3,
+      "cost": 220.47,
+      "date_close": "2026-09-18",
+      "exit": 12.4,
+      "reason": "🛑 סטופ",
+      "pnl": -10.67,
+      "pnl_pct": -4.84
     }
   ],
   "equity_curve": [
@@ -1870,8 +1879,12 @@
     {
       "date": "2026-09-17",
       "equity": 692.9
+    },
+    {
+      "date": "2026-09-18",
+      "equity": 683.91
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 31.56
+  "max_drawdown_pct": 32.45
 }
