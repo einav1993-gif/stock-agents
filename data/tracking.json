@@ -5208,5 +5208,80 @@
     "day_low": 12.05,
     "change_pct": 2.56,
     "pnl_pct": -3.95
+  },
+  {
+    "date": "2026-09-21",
+    "ticker": "INTC",
+    "total_score": 37.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 19,
+      "macro": 13,
+      "news": 100,
+      "sent": 20,
+      "fund": 30,
+      "risk": -10,
+      "gap": 18,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 121.81,
+    "stop_loss": 116.93,
+    "target_1": 129.11,
+    "target_2": 136.42,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-21",
+    "ticker": "HOOD",
+    "total_score": 36.7,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": 13,
+      "news": 100,
+      "sent": -11,
+      "fund": 60,
+      "risk": -10,
+      "gap": 18,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 124.84,
+    "stop_loss": 119.84,
+    "target_1": 132.33,
+    "target_2": 139.82,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-21",
+    "ticker": "AMC",
+    "total_score": 36.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 34,
+      "macro": 13,
+      "news": 100,
+      "sent": 18,
+      "fund": 46,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 2.93,
+    "stop_loss": 2.82,
+    "target_1": 3.11,
+    "target_2": 3.29,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
