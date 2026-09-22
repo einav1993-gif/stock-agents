@@ -5283,5 +5283,80 @@
     "target_2": 3.29,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-09-22",
+    "ticker": "MU",
+    "total_score": 36.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 50,
+      "macro": 12,
+      "news": 80,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": -8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 1082.38,
+    "stop_loss": 1039.09,
+    "target_1": 1147.33,
+    "target_2": 1212.27,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-22",
+    "ticker": "ARM",
+    "total_score": 29.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 15,
+      "macro": 12,
+      "news": 100,
+      "sent": -10,
+      "fund": 26,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 331.0,
+    "stop_loss": 317.76,
+    "target_1": 350.86,
+    "target_2": 370.72,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-09-22",
+    "ticker": "MRNA",
+    "total_score": 26.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": 12,
+      "news": 100,
+      "sent": -4,
+      "fund": -10,
+      "risk": -15,
+      "gap": -12,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 182.23,
+    "stop_loss": 174.94,
+    "target_1": 193.16,
+    "target_2": 204.1,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
