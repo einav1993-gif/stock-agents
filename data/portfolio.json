@@ -1,39 +1,8 @@
 {
-  "cash": 36.86001467704767,
+  "cash": 686.5200160503387,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "UBER",
-      "date_open": "2026-09-23",
-      "shares": 3,
-      "entry": 69.58,
-      "stop_loss": 66.8,
-      "target": 73.75,
-      "score": 44.2,
-      "cost": 209.74
-    },
-    {
-      "ticker": "GME",
-      "date_open": "2026-09-23",
-      "shares": 9,
-      "entry": 24.45,
-      "stop_loss": 23.47,
-      "target": 25.91,
-      "score": 39.4,
-      "cost": 221.05
-    },
-    {
-      "ticker": "IONQ",
-      "date_open": "2026-09-23",
-      "shares": 5,
-      "entry": 42.76,
-      "stop_loss": 41.04,
-      "target": 45.32,
-      "score": 39.3,
-      "cost": 214.8
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1729,6 +1698,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": 1.08,
       "pnl_pct": 0.48
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-09-23",
+      "shares": 3,
+      "entry": 69.58,
+      "stop_loss": 66.8,
+      "target": 73.75,
+      "score": 44.2,
+      "cost": 209.74,
+      "date_close": "2026-09-23",
+      "exit": 69.42,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.48,
+      "pnl_pct": -1.18
+    },
+    {
+      "ticker": "GME",
+      "date_open": "2026-09-23",
+      "shares": 9,
+      "entry": 24.45,
+      "stop_loss": 23.47,
+      "target": 25.91,
+      "score": 39.4,
+      "cost": 221.05,
+      "date_close": "2026-09-23",
+      "exit": 24.2,
+      "reason": "🔔 סגירת יום",
+      "pnl": -4.25,
+      "pnl_pct": -1.92
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-09-23",
+      "shares": 5,
+      "entry": 42.76,
+      "stop_loss": 41.04,
+      "target": 45.32,
+      "score": 39.3,
+      "cost": 214.8,
+      "date_close": "2026-09-23",
+      "exit": 45.32,
+      "reason": "✅ יעד",
+      "pnl": 10.8,
+      "pnl_pct": 5.03
     }
   ],
   "equity_curve": [
@@ -1967,6 +1981,10 @@
     {
       "date": "2026-09-22",
       "equity": 682.45
+    },
+    {
+      "date": "2026-09-23",
+      "equity": 686.52
     }
   ],
   "peak_equity": 1012.46,
