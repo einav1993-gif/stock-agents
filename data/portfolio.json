@@ -1,8 +1,39 @@
 {
-  "cash": 667.8500232601166,
+  "cash": 163.06002326011665,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "INTC",
+      "date_open": "2026-09-25",
+      "shares": 1,
+      "entry": 124.32,
+      "stop_loss": 119.35,
+      "target": 131.78,
+      "score": 31.4,
+      "cost": 125.32
+    },
+    {
+      "ticker": "RGTI",
+      "date_open": "2026-09-25",
+      "shares": 13,
+      "entry": 16.86,
+      "stop_loss": 16.19,
+      "target": 17.87,
+      "score": 30.4,
+      "cost": 220.18
+    },
+    {
+      "ticker": "MSTR",
+      "date_open": "2026-09-25",
+      "shares": 1,
+      "entry": 158.29,
+      "stop_loss": 151.96,
+      "target": 167.79,
+      "score": 27.0,
+      "cost": 159.29
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
