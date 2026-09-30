@@ -1,5 +1,5 @@
 {
-  "cash": 232.01002188682563,
+  "cash": 8.980021886825597,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -22,6 +22,16 @@
       "target": 3.23,
       "score": 34.0,
       "cost": 217.55
+    },
+    {
+      "ticker": "GME",
+      "date_open": "2026-09-30",
+      "shares": 9,
+      "entry": 24.67,
+      "stop_loss": 23.68,
+      "target": 26.14,
+      "score": 39.1,
+      "cost": 223.03
     }
   ],
   "closed_trades": [
