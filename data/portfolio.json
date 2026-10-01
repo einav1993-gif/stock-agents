@@ -1,28 +1,8 @@
 {
-  "cash": 8.980021886825597,
+  "cash": 444.3900237178803,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "UBER",
-      "date_open": "2026-09-29",
-      "shares": 3,
-      "entry": 69.23,
-      "stop_loss": 66.69,
-      "target": 73.04,
-      "score": 39.9,
-      "cost": 208.69
-    },
-    {
-      "ticker": "AMC",
-      "date_open": "2026-09-29",
-      "shares": 71,
-      "entry": 3.05,
-      "stop_loss": 2.92,
-      "target": 3.23,
-      "score": 34.0,
-      "cost": 217.55
-    },
     {
       "ticker": "GME",
       "date_open": "2026-09-30",
@@ -1864,6 +1844,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -1.68,
       "pnl_pct": -1.05
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-09-29",
+      "shares": 3,
+      "entry": 69.23,
+      "stop_loss": 66.69,
+      "target": 73.04,
+      "score": 39.9,
+      "cost": 208.69,
+      "date_close": "2026-10-01",
+      "exit": 69.36,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.61,
+      "pnl_pct": -0.77
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-09-29",
+      "shares": 71,
+      "entry": 3.05,
+      "stop_loss": 2.92,
+      "target": 3.23,
+      "score": 34.0,
+      "cost": 217.55,
+      "date_close": "2026-10-01",
+      "exit": 3.23,
+      "reason": "✅ יעד",
+      "pnl": 10.78,
+      "pnl_pct": 4.96
     }
   ],
   "equity_curve": [
@@ -2122,6 +2132,10 @@
     {
       "date": "2026-09-30",
       "equity": 670.08
+    },
+    {
+      "date": "2026-10-01",
+      "equity": 658.23
     }
   ],
   "peak_equity": 1012.46,
