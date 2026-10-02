@@ -1,19 +1,8 @@
 {
-  "cash": 444.3900237178803,
+  "cash": 665.2400202846527,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "GME",
-      "date_open": "2026-09-30",
-      "shares": 9,
-      "entry": 24.67,
-      "stop_loss": 23.68,
-      "target": 26.14,
-      "score": 39.1,
-      "cost": 223.03
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -1874,6 +1863,21 @@
       "reason": "✅ יעד",
       "pnl": 10.78,
       "pnl_pct": 4.96
+    },
+    {
+      "ticker": "GME",
+      "date_open": "2026-09-30",
+      "shares": 9,
+      "entry": 24.67,
+      "stop_loss": 23.68,
+      "target": 26.14,
+      "score": 39.1,
+      "cost": 223.03,
+      "date_close": "2026-10-02",
+      "exit": 24.65,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.18,
+      "pnl_pct": -0.98
     }
   ],
   "equity_curve": [
@@ -2136,6 +2140,10 @@
     {
       "date": "2026-10-01",
       "equity": 658.23
+    },
+    {
+      "date": "2026-10-02",
+      "equity": 665.24
     }
   ],
   "peak_equity": 1012.46,
