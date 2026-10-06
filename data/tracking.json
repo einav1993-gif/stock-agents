@@ -6108,5 +6108,80 @@
     "day_low": 628.55,
     "change_pct": 0.46,
     "pnl_pct": 0.46
+  },
+  {
+    "date": "2026-10-06",
+    "ticker": "AMZN",
+    "total_score": 34.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 23,
+      "macro": 7,
+      "news": 100,
+      "sent": -30,
+      "fund": 90,
+      "risk": 0,
+      "gap": 0,
+      "social": 12,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 256.16,
+    "stop_loss": 248.25,
+    "target_1": 268.02,
+    "target_2": 279.89,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-06",
+    "ticker": "AVGO",
+    "total_score": 34.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 7,
+      "macro": 7,
+      "news": 100,
+      "sent": 0,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 378.68,
+    "stop_loss": 363.53,
+    "target_1": 401.4,
+    "target_2": 424.12,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-06",
+    "ticker": "AMC",
+    "total_score": 33.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 14,
+      "macro": 7,
+      "news": 100,
+      "sent": 25,
+      "fund": 46,
+      "risk": -15,
+      "gap": 0,
+      "social": 8,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 2.88,
+    "stop_loss": 2.77,
+    "target_1": 3.06,
+    "target_2": 3.23,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
