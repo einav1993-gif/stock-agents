@@ -1,38 +1,38 @@
 {
   "tech": {
-    "correct": 82,
+    "correct": 83,
     "wrong": 100
   },
   "macro": {
-    "correct": 55,
+    "correct": 56,
     "wrong": 65
   },
   "news": {
-    "correct": 87,
+    "correct": 88,
     "wrong": 111
   },
   "sent": {
-    "correct": 64,
+    "correct": 65,
     "wrong": 75
   },
   "fund": {
-    "correct": 83,
+    "correct": 84,
     "wrong": 110
   },
   "risk": {
     "correct": 105,
-    "wrong": 81
+    "wrong": 82
   },
   "gap": {
     "correct": 39,
     "wrong": 36
   },
   "rs": {
-    "correct": 77,
+    "correct": 78,
     "wrong": 86
   },
   "social": {
-    "correct": 41,
+    "correct": 42,
     "wrong": 60
   },
   "cal": {
