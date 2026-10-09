@@ -1,18 +1,8 @@
 {
-  "cash": 251.48002390861515,
+  "cash": 459.90002390861514,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "SNAP",
-      "date_open": "2026-10-07",
-      "shares": 37,
-      "entry": 5.89,
-      "stop_loss": 5.66,
-      "target": 6.25,
-      "score": 31.4,
-      "cost": 218.93
-    },
     {
       "ticker": "PLTR",
       "date_open": "2026-10-08",
@@ -1914,6 +1904,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": 3.32,
       "pnl_pct": 1.51
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-10-07",
+      "shares": 37,
+      "entry": 5.89,
+      "stop_loss": 5.66,
+      "target": 6.25,
+      "score": 31.4,
+      "cost": 218.93,
+      "date_close": "2026-10-09",
+      "exit": 5.66,
+      "reason": "🛑 סטופ",
+      "pnl": -10.51,
+      "pnl_pct": -4.8
     }
   ],
   "equity_curve": [
@@ -2196,6 +2201,10 @@
     {
       "date": "2026-10-08",
       "equity": 663.49
+    },
+    {
+      "date": "2026-10-09",
+      "equity": 654.02
     }
   ],
   "peak_equity": 1012.46,
