@@ -1,5 +1,5 @@
 {
-  "cash": 459.90002390861514,
+  "cash": 18.590023908615166,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,6 +12,26 @@
       "target": 208.97,
       "score": 34.7,
       "cost": 198.15
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-10-09",
+      "shares": 64,
+      "entry": 3.56,
+      "stop_loss": 3.41,
+      "target": 3.77,
+      "score": 39.1,
+      "cost": 228.84
+    },
+    {
+      "ticker": "NFLX",
+      "date_open": "2026-10-09",
+      "shares": 3,
+      "entry": 70.49,
+      "stop_loss": 68.2,
+      "target": 73.93,
+      "score": 32.3,
+      "cost": 212.47
     }
   ],
   "closed_trades": [

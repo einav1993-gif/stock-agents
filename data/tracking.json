@@ -6363,5 +6363,80 @@
     "target_2": 278.73,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "NIO",
+    "total_score": 39.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 20,
+      "macro": 18,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": 10,
+      "social": 8,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 3.56,
+    "stop_loss": 3.41,
+    "target_1": 3.77,
+    "target_2": 3.98,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "MSFT",
+    "total_score": 33.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 15,
+      "macro": 18,
+      "news": 100,
+      "sent": -20,
+      "fund": 60,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 534.74,
+    "stop_loss": 515.85,
+    "target_1": 563.07,
+    "target_2": 591.41,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-09",
+    "ticker": "NFLX",
+    "total_score": 32.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": 18,
+      "news": 100,
+      "sent": -30,
+      "fund": 70,
+      "risk": 0,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 70.49,
+    "stop_loss": 68.2,
+    "target_1": 73.93,
+    "target_2": 77.36,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
