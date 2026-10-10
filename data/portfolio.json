@@ -1,18 +1,8 @@
 {
-  "cash": 18.590023908615166,
+  "cash": 216.37002268791204,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "PLTR",
-      "date_open": "2026-10-08",
-      "shares": 1,
-      "entry": 197.15,
-      "stop_loss": 189.26,
-      "target": 208.97,
-      "score": 34.7,
-      "cost": 198.15
-    },
     {
       "ticker": "NIO",
       "date_open": "2026-10-09",
@@ -1939,6 +1929,21 @@
       "reason": "🛑 סטופ",
       "pnl": -10.51,
       "pnl_pct": -4.8
+    },
+    {
+      "ticker": "PLTR",
+      "date_open": "2026-10-08",
+      "shares": 1,
+      "entry": 197.15,
+      "stop_loss": 189.26,
+      "target": 208.97,
+      "score": 34.7,
+      "cost": 198.15,
+      "date_close": "2026-10-10",
+      "exit": 198.78,
+      "reason": "🔔 סגירת יום",
+      "pnl": -0.37,
+      "pnl_pct": -0.19
     }
   ],
   "equity_curve": [
@@ -2225,6 +2230,10 @@
     {
       "date": "2026-10-09",
       "equity": 654.02
+    },
+    {
+      "date": "2026-10-10",
+      "equity": 649.32
     }
   ],
   "peak_equity": 1012.46,
