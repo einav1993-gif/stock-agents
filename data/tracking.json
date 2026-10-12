@@ -6453,5 +6453,80 @@
     "target_2": 77.36,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-12",
+    "ticker": "TSM",
+    "total_score": 55.1,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": -26,
+      "macro": 3,
+      "news": 100,
+      "sent": 30,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 0,
+      "cal": 4
+    },
+    "entry": 444.35,
+    "stop_loss": 427.66,
+    "target_1": 469.39,
+    "target_2": 494.43,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-12",
+    "ticker": "NIO",
+    "total_score": 31.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 0,
+      "macro": 3,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 3.47,
+    "stop_loss": 3.33,
+    "target_1": 3.68,
+    "target_2": 3.89,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-12",
+    "ticker": "AVGO",
+    "total_score": 29.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": 3,
+      "news": 100,
+      "sent": -30,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 354.73,
+    "stop_loss": 340.54,
+    "target_1": 376.01,
+    "target_2": 397.3,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
