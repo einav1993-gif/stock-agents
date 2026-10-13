@@ -6558,5 +6558,80 @@
     "day_low": 354.22,
     "change_pct": 0.0,
     "pnl_pct": 0.0
+  },
+  {
+    "date": "2026-10-13",
+    "ticker": "NIO",
+    "total_score": 35.6,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": 3,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 3.54,
+    "stop_loss": 3.4,
+    "target_1": 3.75,
+    "target_2": 3.96,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-13",
+    "ticker": "AMC",
+    "total_score": 28.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 3,
+      "news": 0,
+      "sent": 25,
+      "fund": 46,
+      "risk": -15,
+      "gap": 10,
+      "social": 8,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 3.1,
+    "stop_loss": 2.97,
+    "target_1": 3.28,
+    "target_2": 3.47,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-13",
+    "ticker": "IONQ",
+    "total_score": 26.3,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 8,
+      "macro": 3,
+      "news": 100,
+      "sent": 0,
+      "fund": 36,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 34.72,
+    "stop_loss": 33.34,
+    "target_1": 36.81,
+    "target_2": 38.89,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
