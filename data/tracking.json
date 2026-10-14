@@ -6633,5 +6633,80 @@
     "target_2": 38.89,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-14",
+    "ticker": "TSM",
+    "total_score": 54.3,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": -10,
+      "macro": -12,
+      "news": 100,
+      "sent": 30,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 3
+    },
+    "entry": 429.96,
+    "stop_loss": 413.01,
+    "target_1": 455.38,
+    "target_2": 480.81,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-14",
+    "ticker": "INTC",
+    "total_score": 26.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 17,
+      "macro": -12,
+      "news": 100,
+      "sent": 15,
+      "fund": 44,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": -12,
+      "cal": -5
+    },
+    "entry": 98.4,
+    "stop_loss": 94.46,
+    "target_1": 104.3,
+    "target_2": 110.21,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-14",
+    "ticker": "AVGO",
+    "total_score": 24.9,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": -8,
+      "macro": -12,
+      "news": 100,
+      "sent": -30,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": -5
+    },
+    "entry": 346.12,
+    "stop_loss": 332.28,
+    "target_1": 366.89,
+    "target_2": 387.65,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
