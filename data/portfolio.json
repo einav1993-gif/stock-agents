@@ -1,8 +1,39 @@
 {
-  "cash": 631.0400196552278,
+  "cash": 166.75001965522776,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "UBER",
+      "date_open": "2026-10-15",
+      "shares": 2,
+      "entry": 70.65,
+      "stop_loss": 68.1,
+      "target": 74.48,
+      "score": 47.2,
+      "cost": 142.3
+    },
+    {
+      "ticker": "DIS",
+      "date_open": "2026-10-15",
+      "shares": 1,
+      "entry": 111.39,
+      "stop_loss": 108.41,
+      "target": 115.84,
+      "score": 35.0,
+      "cost": 112.39
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-10-15",
+      "shares": 70,
+      "entry": 2.98,
+      "stop_loss": 2.87,
+      "target": 3.16,
+      "score": 32.6,
+      "cost": 209.6
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
