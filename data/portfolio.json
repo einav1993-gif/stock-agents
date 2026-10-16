@@ -1,29 +1,8 @@
 {
-  "cash": 222.21001324653636,
+  "cash": 617.4000156879426,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "GME",
-      "date_open": "2026-10-16",
-      "shares": 7,
-      "entry": 26.82,
-      "stop_loss": 25.74,
-      "target": 28.42,
-      "score": 34.2,
-      "cost": 188.74
-    },
-    {
-      "ticker": "AMC",
-      "date_open": "2026-10-16",
-      "shares": 72,
-      "entry": 2.86,
-      "stop_loss": 2.74,
-      "target": 3.03,
-      "score": 29.2,
-      "cost": 206.92
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2064,6 +2043,36 @@
       "reason": "🛑 סטופ",
       "pnl": -9.7,
       "pnl_pct": -4.63
+    },
+    {
+      "ticker": "GME",
+      "date_open": "2026-10-16",
+      "shares": 7,
+      "entry": 26.82,
+      "stop_loss": 25.74,
+      "target": 28.42,
+      "score": 34.2,
+      "cost": 188.74,
+      "date_close": "2026-10-16",
+      "exit": 26.81,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.07,
+      "pnl_pct": -1.1
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-10-16",
+      "shares": 72,
+      "entry": 2.86,
+      "stop_loss": 2.74,
+      "target": 3.03,
+      "score": 29.2,
+      "cost": 206.92,
+      "date_close": "2026-10-16",
+      "exit": 2.91,
+      "reason": "🔔 סגירת יום",
+      "pnl": 1.6,
+      "pnl_pct": 0.77
     }
   ],
   "equity_curve": [
@@ -2370,8 +2379,12 @@
     {
       "date": "2026-10-15",
       "equity": 617.87
+    },
+    {
+      "date": "2026-10-16",
+      "equity": 617.4
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 38.97
+  "max_drawdown_pct": 39.02
 }
