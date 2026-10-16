@@ -6828,5 +6828,80 @@
     "day_low": 2.78,
     "change_pct": 1.34,
     "pnl_pct": -3.69
+  },
+  {
+    "date": "2026-10-16",
+    "ticker": "GME",
+    "total_score": 34.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 25,
+      "macro": -12,
+      "news": 80,
+      "sent": 30,
+      "fund": -20,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 26.82,
+    "stop_loss": 25.74,
+    "target_1": 28.42,
+    "target_2": 30.03,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-16",
+    "ticker": "AMC",
+    "total_score": 29.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -18,
+      "macro": -12,
+      "news": 100,
+      "sent": 25,
+      "fund": 60,
+      "risk": -15,
+      "gap": 0,
+      "social": 8,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 2.86,
+    "stop_loss": 2.74,
+    "target_1": 3.03,
+    "target_2": 3.2,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-16",
+    "ticker": "MSFT",
+    "total_score": 27.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 7,
+      "macro": -12,
+      "news": 100,
+      "sent": -30,
+      "fund": 74,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 527.48,
+    "stop_loss": 510.16,
+    "target_1": 553.47,
+    "target_2": 579.45,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
