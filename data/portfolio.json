@@ -1,8 +1,19 @@
 {
-  "cash": 617.4000156879426,
+  "cash": 431.4200156879426,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "INTC",
+      "date_open": "2026-10-19",
+      "shares": 2,
+      "entry": 92.49,
+      "stop_loss": 88.79,
+      "target": 98.04,
+      "score": 36.1,
+      "cost": 185.98
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
