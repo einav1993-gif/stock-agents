@@ -1,19 +1,8 @@
 {
-  "cash": 400.68001324653636,
+  "cash": 615.2800079059602,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "AMC",
-      "date_open": "2026-10-20",
-      "shares": 70,
-      "entry": 3.04,
-      "stop_loss": 2.91,
-      "target": 3.22,
-      "score": 50.0,
-      "cost": 213.8
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2099,6 +2088,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.92,
       "pnl_pct": -1.57
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-10-20",
+      "shares": 70,
+      "entry": 3.04,
+      "stop_loss": 2.91,
+      "target": 3.22,
+      "score": 50.0,
+      "cost": 213.8,
+      "date_close": "2026-10-22",
+      "exit": 3.08,
+      "reason": "🔔 סגירת יום",
+      "pnl": 0.8,
+      "pnl_pct": 0.37
     }
   ],
   "equity_curve": [
@@ -2417,6 +2421,10 @@
     {
       "date": "2026-10-21",
       "equity": 609.28
+    },
+    {
+      "date": "2026-10-22",
+      "equity": 615.28
     }
   ],
   "peak_equity": 1012.46,
