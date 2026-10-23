@@ -7263,5 +7263,80 @@
     "target_2": 13.52,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-23",
+    "ticker": "UBER",
+    "total_score": 33.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -19,
+      "macro": -5,
+      "news": 20,
+      "sent": 25,
+      "fund": 90,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 67.61,
+    "stop_loss": 64.98,
+    "target_1": 71.54,
+    "target_2": 75.47,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-23",
+    "ticker": "MU",
+    "total_score": 23.1,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": 0,
+      "macro": -5,
+      "news": 40,
+      "sent": -30,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 4,
+      "rs": 16,
+      "cal": 0
+    },
+    "entry": 883.67,
+    "stop_loss": 848.32,
+    "target_1": 936.69,
+    "target_2": 989.71,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-23",
+    "ticker": "ARRY",
+    "total_score": 22.5,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": -7,
+      "macro": -5,
+      "news": 20,
+      "sent": 0,
+      "fund": 100,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 3.17,
+    "stop_loss": 3.04,
+    "target_1": 3.36,
+    "target_2": 3.55,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
