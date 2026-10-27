@@ -7443,5 +7443,80 @@
     "target_2": 104.09,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-27",
+    "ticker": "INTC",
+    "total_score": 50.2,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": 13,
+      "news": 100,
+      "sent": 15,
+      "fund": 100,
+      "risk": -10,
+      "gap": 10,
+      "social": 8,
+      "rs": 6,
+      "cal": 8
+    },
+    "entry": 93.39,
+    "stop_loss": 89.65,
+    "target_1": 98.99,
+    "target_2": 104.59,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-27",
+    "ticker": "TSM",
+    "total_score": 45.9,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 3,
+      "macro": 13,
+      "news": 100,
+      "sent": 30,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 437.6,
+    "stop_loss": 420.1,
+    "target_1": 463.86,
+    "target_2": 490.11,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-27",
+    "ticker": "AMZN",
+    "total_score": 41.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -11,
+      "macro": 13,
+      "news": 100,
+      "sent": -30,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 8
+    },
+    "entry": 253.96,
+    "stop_loss": 243.8,
+    "target_1": 269.2,
+    "target_2": 284.44,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
