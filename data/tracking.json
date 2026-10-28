@@ -7533,5 +7533,80 @@
     "target_2": 284.44,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "RBLX",
+    "total_score": 35.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 25,
+      "macro": 3,
+      "news": 40,
+      "sent": -30,
+      "fund": 86,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 0,
+      "cal": 3
+    },
+    "entry": 53.06,
+    "stop_loss": 50.94,
+    "target_1": 56.24,
+    "target_2": 59.43,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "RIVN",
+    "total_score": 34.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 0,
+      "macro": 3,
+      "news": 50,
+      "sent": -30,
+      "fund": 100,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": -12,
+      "cal": 3
+    },
+    "entry": 11.52,
+    "stop_loss": 11.06,
+    "target_1": 12.22,
+    "target_2": 12.91,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "COIN",
+    "total_score": 31.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -19,
+      "macro": 3,
+      "news": 100,
+      "sent": -30,
+      "fund": 62,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": -12,
+      "cal": -5
+    },
+    "entry": 158.4,
+    "stop_loss": 152.06,
+    "target_1": 167.9,
+    "target_2": 177.4,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
