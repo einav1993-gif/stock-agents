@@ -7623,5 +7623,80 @@
     "target_2": 177.4,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-10-29",
+    "ticker": "TSM",
+    "total_score": 42.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -12,
+      "macro": -2,
+      "news": 100,
+      "sent": 30,
+      "fund": 70,
+      "risk": -10,
+      "gap": 0,
+      "social": 0,
+      "rs": 10,
+      "cal": -5
+    },
+    "entry": 428.64,
+    "stop_loss": 411.49,
+    "target_1": 454.35,
+    "target_2": 480.07,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-29",
+    "ticker": "AMZN",
+    "total_score": 38.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -4,
+      "macro": -2,
+      "news": 100,
+      "sent": -30,
+      "fund": 100,
+      "risk": -10,
+      "gap": -12,
+      "social": 20,
+      "rs": -12,
+      "cal": -5
+    },
+    "entry": 244.52,
+    "stop_loss": 234.74,
+    "target_1": 259.2,
+    "target_2": 273.87,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-10-29",
+    "ticker": "INTC",
+    "total_score": 34.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -12,
+      "macro": -2,
+      "news": 0,
+      "sent": 15,
+      "fund": 100,
+      "risk": -10,
+      "gap": -12,
+      "social": 12,
+      "rs": 10,
+      "cal": -5
+    },
+    "entry": 90.89,
+    "stop_loss": 87.25,
+    "target_1": 96.34,
+    "target_2": 101.8,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
