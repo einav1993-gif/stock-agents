@@ -1,39 +1,8 @@
 {
-  "cash": 76.08999398231532,
+  "cash": 593.6399989414217,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "RBLX",
-      "date_open": "2026-10-28",
-      "shares": 3,
-      "entry": 53.06,
-      "stop_loss": 50.94,
-      "target": 56.24,
-      "score": 35.9,
-      "cost": 160.18
-    },
-    {
-      "ticker": "RIVN",
-      "date_open": "2026-10-28",
-      "shares": 17,
-      "entry": 11.52,
-      "stop_loss": 11.06,
-      "target": 12.22,
-      "score": 34.5,
-      "cost": 196.84
-    },
-    {
-      "ticker": "COIN",
-      "date_open": "2026-10-28",
-      "shares": 1,
-      "entry": 158.4,
-      "stop_loss": 152.06,
-      "target": 167.9,
-      "score": 31.9,
-      "cost": 159.4
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2209,6 +2178,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.2,
       "pnl_pct": -1.18
+    },
+    {
+      "ticker": "RBLX",
+      "date_open": "2026-10-28",
+      "shares": 3,
+      "entry": 53.06,
+      "stop_loss": 50.94,
+      "target": 56.24,
+      "score": 35.9,
+      "cost": 160.18,
+      "date_close": "2026-10-30",
+      "exit": 53.28,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.34,
+      "pnl_pct": -0.84
+    },
+    {
+      "ticker": "RIVN",
+      "date_open": "2026-10-28",
+      "shares": 17,
+      "entry": 11.52,
+      "stop_loss": 11.06,
+      "target": 12.22,
+      "score": 34.5,
+      "cost": 196.84,
+      "date_close": "2026-10-30",
+      "exit": 11.67,
+      "reason": "🔔 סגירת יום",
+      "pnl": 0.55,
+      "pnl_pct": 0.28
+    },
+    {
+      "ticker": "COIN",
+      "date_open": "2026-10-28",
+      "shares": 1,
+      "entry": 158.4,
+      "stop_loss": 152.06,
+      "target": 167.9,
+      "score": 31.9,
+      "cost": 159.4,
+      "date_close": "2026-10-30",
+      "exit": 162.32,
+      "reason": "🔔 סגירת יום",
+      "pnl": 1.92,
+      "pnl_pct": 1.2
     }
   ],
   "equity_curve": [
@@ -2551,6 +2565,10 @@
     {
       "date": "2026-10-29",
       "equity": 601.53
+    },
+    {
+      "date": "2026-10-30",
+      "equity": 593.64
     }
   ],
   "peak_equity": 1012.46,
