@@ -1,8 +1,29 @@
 {
-  "cash": 604.1899952793124,
+  "cash": 202.70999527931235,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "AMC",
+      "date_open": "2026-11-03",
+      "shares": 60,
+      "entry": 3.31,
+      "stop_loss": 3.17,
+      "target": 3.5,
+      "score": 49.5,
+      "cost": 199.6
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-11-03",
+      "shares": 36,
+      "entry": 5.58,
+      "stop_loss": 5.36,
+      "target": 5.91,
+      "score": 37.9,
+      "cost": 201.88
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",

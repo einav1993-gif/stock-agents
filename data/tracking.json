@@ -7908,5 +7908,80 @@
     "day_low": 12.65,
     "change_pct": -0.0,
     "pnl_pct": -4.02
+  },
+  {
+    "date": "2026-11-03",
+    "ticker": "AMC",
+    "total_score": 49.5,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 30,
+      "macro": -1,
+      "news": 100,
+      "sent": 25,
+      "fund": 86,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 3.31,
+    "stop_loss": 3.17,
+    "target_1": 3.5,
+    "target_2": 3.7,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-03",
+    "ticker": "SNAP",
+    "total_score": 37.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -3,
+      "macro": -1,
+      "news": 80,
+      "sent": -30,
+      "fund": 100,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": 3
+    },
+    "entry": 5.58,
+    "stop_loss": 5.36,
+    "target_1": 5.91,
+    "target_2": 6.25,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-03",
+    "ticker": "MRNA",
+    "total_score": 36.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 16,
+      "macro": -1,
+      "news": 100,
+      "sent": -30,
+      "fund": 30,
+      "risk": -15,
+      "gap": 0,
+      "social": 8,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 227.8,
+    "stop_loss": 218.69,
+    "target_1": 241.47,
+    "target_2": 255.14,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
