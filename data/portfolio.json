@@ -1,39 +1,8 @@
 {
-  "cash": 28.559998941421696,
+  "cash": 604.1899952793124,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "PLTR",
-      "date_open": "2026-10-30",
-      "shares": 1,
-      "entry": 184.48,
-      "stop_loss": 177.1,
-      "target": 195.55,
-      "score": 37.9,
-      "cost": 185.48
-    },
-    {
-      "ticker": "ARRY",
-      "date_open": "2026-10-30",
-      "shares": 59,
-      "entry": 3.32,
-      "stop_loss": 3.19,
-      "target": 3.52,
-      "score": 30.4,
-      "cost": 196.88
-    },
-    {
-      "ticker": "SOFI",
-      "date_open": "2026-10-30",
-      "shares": 11,
-      "entry": 16.52,
-      "stop_loss": 15.86,
-      "target": 17.51,
-      "score": 26.5,
-      "cost": 182.72
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2254,6 +2223,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": 1.92,
       "pnl_pct": 1.2
+    },
+    {
+      "ticker": "PLTR",
+      "date_open": "2026-10-30",
+      "shares": 1,
+      "entry": 184.48,
+      "stop_loss": 177.1,
+      "target": 195.55,
+      "score": 37.9,
+      "cost": 185.48,
+      "date_close": "2026-11-03",
+      "exit": 178.34,
+      "reason": "🔔 סגירת יום",
+      "pnl": -8.14,
+      "pnl_pct": -4.39
+    },
+    {
+      "ticker": "ARRY",
+      "date_open": "2026-10-30",
+      "shares": 59,
+      "entry": 3.32,
+      "stop_loss": 3.19,
+      "target": 3.52,
+      "score": 30.4,
+      "cost": 196.88,
+      "date_close": "2026-11-03",
+      "exit": 3.52,
+      "reason": "✅ יעד",
+      "pnl": 9.8,
+      "pnl_pct": 4.98
+    },
+    {
+      "ticker": "SOFI",
+      "date_open": "2026-10-30",
+      "shares": 11,
+      "entry": 16.52,
+      "stop_loss": 15.86,
+      "target": 17.51,
+      "score": 26.5,
+      "cost": 182.72,
+      "date_close": "2026-11-03",
+      "exit": 17.51,
+      "reason": "✅ יעד",
+      "pnl": 8.89,
+      "pnl_pct": 4.87
     }
   ],
   "equity_curve": [
@@ -2604,6 +2618,10 @@
     {
       "date": "2026-10-31",
       "equity": 628.73
+    },
+    {
+      "date": "2026-11-03",
+      "equity": 604.19
     }
   ],
   "peak_equity": 1012.46,
