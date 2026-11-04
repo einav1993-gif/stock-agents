@@ -1,5 +1,5 @@
 {
-  "cash": 202.70999527931235,
+  "cash": 61.269995279312354,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -22,6 +22,16 @@
       "target": 5.91,
       "score": 37.9,
       "cost": 201.88
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-11-04",
+      "shares": 2,
+      "entry": 70.22,
+      "stop_loss": 67.41,
+      "target": 74.43,
+      "score": 59.8,
+      "cost": 141.44
     }
   ],
   "closed_trades": [
