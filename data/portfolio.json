@@ -1,28 +1,8 @@
 {
-  "cash": 61.269995279312354,
+  "cash": 450.7100007724764,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "AMC",
-      "date_open": "2026-11-03",
-      "shares": 60,
-      "entry": 3.31,
-      "stop_loss": 3.17,
-      "target": 3.5,
-      "score": 49.5,
-      "cost": 199.6
-    },
-    {
-      "ticker": "SNAP",
-      "date_open": "2026-11-03",
-      "shares": 36,
-      "entry": 5.58,
-      "stop_loss": 5.36,
-      "target": 5.91,
-      "score": 37.9,
-      "cost": 201.88
-    },
     {
       "ticker": "UBER",
       "date_open": "2026-11-04",
@@ -2299,6 +2279,36 @@
       "reason": "✅ יעד",
       "pnl": 8.89,
       "pnl_pct": 4.87
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-11-03",
+      "shares": 60,
+      "entry": 3.31,
+      "stop_loss": 3.17,
+      "target": 3.5,
+      "score": 49.5,
+      "cost": 199.6,
+      "date_close": "2026-11-05",
+      "exit": 3.17,
+      "reason": "🛑 סטופ",
+      "pnl": -10.4,
+      "pnl_pct": -5.21
+    },
+    {
+      "ticker": "SNAP",
+      "date_open": "2026-11-03",
+      "shares": 36,
+      "entry": 5.58,
+      "stop_loss": 5.36,
+      "target": 5.91,
+      "score": 37.9,
+      "cost": 201.88,
+      "date_close": "2026-11-05",
+      "exit": 5.59,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.64,
+      "pnl_pct": -0.81
     }
   ],
   "equity_curve": [
@@ -2657,8 +2667,12 @@
     {
       "date": "2026-11-04",
       "equity": 590.31
+    },
+    {
+      "date": "2026-11-05",
+      "equity": 583.91
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 41.7
+  "max_drawdown_pct": 42.33
 }
