@@ -1,5 +1,5 @@
 {
-  "cash": 450.7100007724764,
+  "cash": 21.35000077247642,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,6 +12,26 @@
       "target": 74.43,
       "score": 59.8,
       "cost": 141.44
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-11-05",
+      "shares": 4,
+      "entry": 53.72,
+      "stop_loss": 51.57,
+      "target": 56.94,
+      "score": 39.3,
+      "cost": 215.88
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-11-05",
+      "shares": 8,
+      "entry": 26.56,
+      "stop_loss": 25.5,
+      "target": 28.15,
+      "score": 31.5,
+      "cost": 213.48
     }
   ],
   "closed_trades": [
