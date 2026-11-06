@@ -1,18 +1,8 @@
 {
-  "cash": 21.35000077247642,
+  "cash": 155.1700007724764,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "UBER",
-      "date_open": "2026-11-04",
-      "shares": 2,
-      "entry": 70.22,
-      "stop_loss": 67.41,
-      "target": 74.43,
-      "score": 59.8,
-      "cost": 141.44
-    },
     {
       "ticker": "INTC",
       "date_open": "2026-11-05",
@@ -2329,6 +2319,21 @@
       "reason": "🔔 סגירת יום",
       "pnl": -1.64,
       "pnl_pct": -0.81
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-11-04",
+      "shares": 2,
+      "entry": 70.22,
+      "stop_loss": 67.41,
+      "target": 74.43,
+      "score": 59.8,
+      "cost": 141.44,
+      "date_close": "2026-11-06",
+      "exit": 67.41,
+      "reason": "🛑 סטופ",
+      "pnl": -7.62,
+      "pnl_pct": -5.39
     }
   ],
   "equity_curve": [
@@ -2691,6 +2696,10 @@
     {
       "date": "2026-11-05",
       "equity": 583.91
+    },
+    {
+      "date": "2026-11-06",
+      "equity": 624.57
     }
   ],
   "peak_equity": 1012.46,
