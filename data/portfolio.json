@@ -1,5 +1,5 @@
 {
-  "cash": 155.1700007724764,
+  "cash": 3.9300007724764043,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -22,6 +22,16 @@
       "target": 28.15,
       "score": 31.5,
       "cost": 213.48
+    },
+    {
+      "ticker": "MARA",
+      "date_open": "2026-11-06",
+      "shares": 24,
+      "entry": 6.26,
+      "stop_loss": 6.01,
+      "target": 6.64,
+      "score": 40.7,
+      "cost": 151.24
     }
   ],
   "closed_trades": [
