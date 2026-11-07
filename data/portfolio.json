@@ -1,28 +1,8 @@
 {
-  "cash": 3.9300007724764043,
+  "cash": 412.2100007724764,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "INTC",
-      "date_open": "2026-11-05",
-      "shares": 4,
-      "entry": 53.72,
-      "stop_loss": 51.57,
-      "target": 56.94,
-      "score": 39.3,
-      "cost": 215.88
-    },
-    {
-      "ticker": "IONQ",
-      "date_open": "2026-11-05",
-      "shares": 8,
-      "entry": 26.56,
-      "stop_loss": 25.5,
-      "target": 28.15,
-      "score": 31.5,
-      "cost": 213.48
-    },
     {
       "ticker": "MARA",
       "date_open": "2026-11-06",
@@ -2344,6 +2324,36 @@
       "reason": "🛑 סטופ",
       "pnl": -7.62,
       "pnl_pct": -5.39
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-11-05",
+      "shares": 4,
+      "entry": 53.72,
+      "stop_loss": 51.57,
+      "target": 56.94,
+      "score": 39.3,
+      "cost": 215.88,
+      "date_close": "2026-11-07",
+      "exit": 51.57,
+      "reason": "🛑 סטופ",
+      "pnl": -10.6,
+      "pnl_pct": -4.91
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-11-05",
+      "shares": 8,
+      "entry": 26.56,
+      "stop_loss": 25.5,
+      "target": 28.15,
+      "score": 31.5,
+      "cost": 213.48,
+      "date_close": "2026-11-07",
+      "exit": 25.5,
+      "reason": "🛑 סטופ (יום תנודתי)",
+      "pnl": -10.48,
+      "pnl_pct": -4.91
     }
   ],
   "equity_curve": [
@@ -2710,8 +2720,12 @@
     {
       "date": "2026-11-06",
       "equity": 624.57
+    },
+    {
+      "date": "2026-11-07",
+      "equity": 553.33
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 42.33
+  "max_drawdown_pct": 45.35
 }
