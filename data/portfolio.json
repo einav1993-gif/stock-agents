@@ -1,5 +1,5 @@
 {
-  "cash": 412.2100007724764,
+  "cash": 73.17000077247639,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,6 +12,26 @@
       "target": 6.64,
       "score": 40.7,
       "cost": 151.24
+    },
+    {
+      "ticker": "RGTI",
+      "date_open": "2026-11-09",
+      "shares": 15,
+      "entry": 12.98,
+      "stop_loss": 12.46,
+      "target": 13.76,
+      "score": 48.1,
+      "cost": 195.7
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-11-09",
+      "shares": 2,
+      "entry": 71.17,
+      "stop_loss": 68.32,
+      "target": 75.44,
+      "score": 45.8,
+      "cost": 143.34
     }
   ],
   "closed_trades": [
