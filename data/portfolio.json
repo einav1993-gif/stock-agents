@@ -1,39 +1,8 @@
 {
-  "cash": 73.17000077247639,
+  "cash": 558.7699971103671,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "MARA",
-      "date_open": "2026-11-06",
-      "shares": 24,
-      "entry": 6.26,
-      "stop_loss": 6.01,
-      "target": 6.64,
-      "score": 40.7,
-      "cost": 151.24
-    },
-    {
-      "ticker": "RGTI",
-      "date_open": "2026-11-09",
-      "shares": 15,
-      "entry": 12.98,
-      "stop_loss": 12.46,
-      "target": 13.76,
-      "score": 48.1,
-      "cost": 195.7
-    },
-    {
-      "ticker": "UBER",
-      "date_open": "2026-11-09",
-      "shares": 2,
-      "entry": 71.17,
-      "stop_loss": 68.32,
-      "target": 75.44,
-      "score": 45.8,
-      "cost": 143.34
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2374,6 +2343,51 @@
       "reason": "🛑 סטופ (יום תנודתי)",
       "pnl": -10.48,
       "pnl_pct": -4.91
+    },
+    {
+      "ticker": "MARA",
+      "date_open": "2026-11-06",
+      "shares": 24,
+      "entry": 6.26,
+      "stop_loss": 6.01,
+      "target": 6.64,
+      "score": 40.7,
+      "cost": 151.24,
+      "date_close": "2026-11-10",
+      "exit": 6.64,
+      "reason": "✅ יעד",
+      "pnl": 7.12,
+      "pnl_pct": 4.71
+    },
+    {
+      "ticker": "RGTI",
+      "date_open": "2026-11-09",
+      "shares": 15,
+      "entry": 12.98,
+      "stop_loss": 12.46,
+      "target": 13.76,
+      "score": 48.1,
+      "cost": 195.7,
+      "date_close": "2026-11-10",
+      "exit": 12.46,
+      "reason": "🛑 סטופ",
+      "pnl": -9.8,
+      "pnl_pct": -5.01
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-11-09",
+      "shares": 2,
+      "entry": 71.17,
+      "stop_loss": 68.32,
+      "target": 75.44,
+      "score": 45.8,
+      "cost": 143.34,
+      "date_close": "2026-11-10",
+      "exit": 71.17,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.0,
+      "pnl_pct": -1.4
     }
   ],
   "equity_curve": [
@@ -2744,6 +2758,10 @@
     {
       "date": "2026-11-07",
       "equity": 553.33
+    },
+    {
+      "date": "2026-11-10",
+      "equity": 558.77
     }
   ],
   "peak_equity": 1012.46,
