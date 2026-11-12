@@ -1,39 +1,8 @@
 {
-  "cash": 4.609997110367118,
+  "cash": 585.8799971103672,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "RGTI",
-      "date_open": "2026-11-10",
-      "shares": 15,
-      "entry": 12.12,
-      "stop_loss": 11.64,
-      "target": 12.85,
-      "score": 39.5,
-      "cost": 182.8
-    },
-    {
-      "ticker": "QBTS",
-      "date_open": "2026-11-10",
-      "shares": 18,
-      "entry": 10.27,
-      "stop_loss": 9.86,
-      "target": 10.89,
-      "score": 37.3,
-      "cost": 185.86
-    },
-    {
-      "ticker": "LCID",
-      "date_open": "2026-11-10",
-      "shares": 50,
-      "entry": 3.69,
-      "stop_loss": 3.54,
-      "target": 3.91,
-      "score": 30.9,
-      "cost": 185.5
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2419,6 +2388,51 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.0,
       "pnl_pct": -1.4
+    },
+    {
+      "ticker": "RGTI",
+      "date_open": "2026-11-10",
+      "shares": 15,
+      "entry": 12.12,
+      "stop_loss": 11.64,
+      "target": 12.85,
+      "score": 39.5,
+      "cost": 182.8,
+      "date_close": "2026-11-12",
+      "exit": 12.85,
+      "reason": "✅ יעד",
+      "pnl": 8.95,
+      "pnl_pct": 4.9
+    },
+    {
+      "ticker": "QBTS",
+      "date_open": "2026-11-10",
+      "shares": 18,
+      "entry": 10.27,
+      "stop_loss": 9.86,
+      "target": 10.89,
+      "score": 37.3,
+      "cost": 185.86,
+      "date_close": "2026-11-12",
+      "exit": 10.89,
+      "reason": "✅ יעד",
+      "pnl": 9.16,
+      "pnl_pct": 4.93
+    },
+    {
+      "ticker": "LCID",
+      "date_open": "2026-11-10",
+      "shares": 50,
+      "entry": 3.69,
+      "stop_loss": 3.54,
+      "target": 3.91,
+      "score": 30.9,
+      "cost": 185.5,
+      "date_close": "2026-11-12",
+      "exit": 3.91,
+      "reason": "✅ יעד",
+      "pnl": 9.0,
+      "pnl_pct": 4.85
     }
   ],
   "equity_curve": [
@@ -2797,6 +2811,10 @@
     {
       "date": "2026-11-11",
       "equity": 585.77
+    },
+    {
+      "date": "2026-11-12",
+      "equity": 585.88
     }
   ],
   "peak_equity": 1012.46,
