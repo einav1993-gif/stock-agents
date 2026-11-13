@@ -1,5 +1,5 @@
 {
-  "cash": 400.3199971103672,
+  "cash": 24.639997110367204,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,6 +12,26 @@
       "target": 32.61,
       "score": 30.2,
       "cost": 185.56
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-11-13",
+      "shares": 3,
+      "entry": 59.36,
+      "stop_loss": 56.99,
+      "target": 62.92,
+      "score": 39.7,
+      "cost": 179.08
+    },
+    {
+      "ticker": "ARRY",
+      "date_open": "2026-11-13",
+      "shares": 40,
+      "entry": 4.89,
+      "stop_loss": 4.69,
+      "target": 5.18,
+      "score": 28.8,
+      "cost": 196.6
     }
   ],
   "closed_trades": [
