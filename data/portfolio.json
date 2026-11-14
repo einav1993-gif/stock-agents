@@ -1,28 +1,8 @@
 {
-  "cash": 24.639997110367204,
+  "cash": 397.27999665260353,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
-    {
-      "ticker": "IONQ",
-      "date_open": "2026-11-12",
-      "shares": 6,
-      "entry": 30.76,
-      "stop_loss": 29.53,
-      "target": 32.61,
-      "score": 30.2,
-      "cost": 185.56
-    },
-    {
-      "ticker": "INTC",
-      "date_open": "2026-11-13",
-      "shares": 3,
-      "entry": 59.36,
-      "stop_loss": 56.99,
-      "target": 62.92,
-      "score": 39.7,
-      "cost": 179.08
-    },
     {
       "ticker": "ARRY",
       "date_open": "2026-11-13",
@@ -2464,6 +2444,36 @@
       "reason": "✅ יעד",
       "pnl": 9.0,
       "pnl_pct": 4.85
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-11-12",
+      "shares": 6,
+      "entry": 30.76,
+      "stop_loss": 29.53,
+      "target": 32.61,
+      "score": 30.2,
+      "cost": 185.56,
+      "date_close": "2026-11-14",
+      "exit": 32.61,
+      "reason": "✅ יעד",
+      "pnl": 9.1,
+      "pnl_pct": 4.9
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-11-13",
+      "shares": 3,
+      "entry": 59.36,
+      "stop_loss": 56.99,
+      "target": 62.92,
+      "score": 39.7,
+      "cost": 179.08,
+      "date_close": "2026-11-14",
+      "exit": 59.66,
+      "reason": "🔔 סגירת יום",
+      "pnl": -1.1,
+      "pnl_pct": -0.61
     }
   ],
   "equity_curve": [
@@ -2850,6 +2860,10 @@
     {
       "date": "2026-11-13",
       "equity": 604.68
+    },
+    {
+      "date": "2026-11-14",
+      "equity": 589.28
     }
   ],
   "peak_equity": 1012.46,
