@@ -1,5 +1,5 @@
 {
-  "cash": 397.27999665260353,
+  "cash": 45.73999665260354,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,6 +12,26 @@
       "target": 5.18,
       "score": 28.8,
       "cost": 196.6
+    },
+    {
+      "ticker": "XPEV",
+      "date_open": "2026-11-16",
+      "shares": 20,
+      "entry": 9.67,
+      "stop_loss": 9.28,
+      "target": 10.25,
+      "score": 46.2,
+      "cost": 194.4
+    },
+    {
+      "ticker": "NVDA",
+      "date_open": "2026-11-16",
+      "shares": 1,
+      "entry": 156.14,
+      "stop_loss": 149.89,
+      "target": 165.51,
+      "score": 35.1,
+      "cost": 157.14
     }
   ],
   "closed_trades": [

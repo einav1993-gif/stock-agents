@@ -8713,5 +8713,80 @@
     "day_low": 385.83,
     "change_pct": -0.29,
     "pnl_pct": -0.29
+  },
+  {
+    "date": "2026-11-16",
+    "ticker": "XPEV",
+    "total_score": 46.2,
+    "decision": "🟢 קנייה חזקה",
+    "trade_type": "long",
+    "components": {
+      "tech": 19,
+      "macro": -10,
+      "news": 100,
+      "sent": 0,
+      "fund": 76,
+      "risk": -10,
+      "gap": 30,
+      "social": 0,
+      "rs": 16,
+      "cal": -5
+    },
+    "entry": 9.67,
+    "stop_loss": 9.28,
+    "target_1": 10.25,
+    "target_2": 10.83,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-16",
+    "ticker": "NVDA",
+    "total_score": 35.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 12,
+      "macro": -10,
+      "news": 60,
+      "sent": -30,
+      "fund": 100,
+      "risk": -15,
+      "gap": -12,
+      "social": 20,
+      "rs": -12,
+      "cal": 3
+    },
+    "entry": 156.14,
+    "stop_loss": 149.89,
+    "target_1": 165.51,
+    "target_2": 174.88,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-16",
+    "ticker": "AMZN",
+    "total_score": 26.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 4,
+      "macro": -10,
+      "news": 100,
+      "sent": -30,
+      "fund": 60,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 0,
+      "cal": -5
+    },
+    "entry": 257.75,
+    "stop_loss": 247.44,
+    "target_1": 273.21,
+    "target_2": 288.68,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
