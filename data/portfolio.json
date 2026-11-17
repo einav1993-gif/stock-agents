@@ -1,8 +1,39 @@
 {
-  "cash": 579.8799975681309,
+  "cash": 96.82999756813086,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [],
+  "open_positions": [
+    {
+      "ticker": "DIS",
+      "date_open": "2026-11-17",
+      "shares": 1,
+      "entry": 116.94,
+      "stop_loss": 112.5,
+      "target": 123.59,
+      "score": 38.8,
+      "cost": 117.94
+    },
+    {
+      "ticker": "XPEV",
+      "date_open": "2026-11-17",
+      "shares": 19,
+      "entry": 9.99,
+      "stop_loss": 9.59,
+      "target": 10.59,
+      "score": 34.1,
+      "cost": 190.81
+    },
+    {
+      "ticker": "BABA",
+      "date_open": "2026-11-17",
+      "shares": 2,
+      "entry": 86.65,
+      "stop_loss": 83.18,
+      "target": 91.85,
+      "score": 33.6,
+      "cost": 174.3
+    }
+  ],
   "closed_trades": [
     {
       "ticker": "HOOD",
