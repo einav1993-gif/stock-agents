@@ -8988,5 +8988,80 @@
     "day_low": 340.74,
     "change_pct": 0.03,
     "pnl_pct": 0.03
+  },
+  {
+    "date": "2026-11-19",
+    "ticker": "UBER",
+    "total_score": 33.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -43,
+      "macro": -17,
+      "news": 100,
+      "sent": 15,
+      "fund": 36,
+      "risk": -10,
+      "gap": 0,
+      "social": 8,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 65.61,
+    "stop_loss": 62.98,
+    "target_1": 69.54,
+    "target_2": 73.48,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-19",
+    "ticker": "GME",
+    "total_score": 26.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 25,
+      "macro": -17,
+      "news": 100,
+      "sent": 0,
+      "fund": -20,
+      "risk": -10,
+      "gap": 8,
+      "social": 12,
+      "rs": 25,
+      "cal": 0
+    },
+    "entry": 26.97,
+    "stop_loss": 25.89,
+    "target_1": 28.59,
+    "target_2": 30.21,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-19",
+    "ticker": "IONQ",
+    "total_score": 26.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -4,
+      "macro": -17,
+      "news": 100,
+      "sent": -30,
+      "fund": 90,
+      "risk": -15,
+      "gap": 10,
+      "social": 8,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 22.71,
+    "stop_loss": 21.8,
+    "target_1": 24.07,
+    "target_2": 25.44,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
