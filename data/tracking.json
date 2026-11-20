@@ -9068,5 +9068,80 @@
     "target_2": 25.44,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-11-20",
+    "ticker": "TSLA",
+    "total_score": 7.5,
+    "decision": "⚪ הימנע",
+    "trade_type": "none",
+    "components": {
+      "tech": 5,
+      "macro": -30,
+      "news": 100,
+      "sent": -30,
+      "fund": 40,
+      "risk": -10,
+      "gap": 0,
+      "social": 12,
+      "rs": 0,
+      "cal": 0
+    },
+    "entry": 348.41,
+    "stop_loss": 334.47,
+    "target_1": 369.31,
+    "target_2": 390.22,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-20",
+    "ticker": "SMCI",
+    "total_score": 4.9,
+    "decision": "⚪ הימנע",
+    "trade_type": "none",
+    "components": {
+      "tech": -7,
+      "macro": -30,
+      "news": 100,
+      "sent": -10,
+      "fund": 40,
+      "risk": -15,
+      "gap": -12,
+      "social": 8,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 21.91,
+    "stop_loss": 21.03,
+    "target_1": 23.22,
+    "target_2": 24.53,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-20",
+    "ticker": "TSM",
+    "total_score": 4.1,
+    "decision": "⚪ הימנע",
+    "trade_type": "none",
+    "components": {
+      "tech": 0,
+      "macro": -30,
+      "news": 70,
+      "sent": 0,
+      "fund": 40,
+      "risk": -15,
+      "gap": -12,
+      "social": 12,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 322.32,
+    "stop_loss": 309.43,
+    "target_1": 341.66,
+    "target_2": 361.0,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
