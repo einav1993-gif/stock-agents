@@ -1,5 +1,5 @@
 {
-  "cash": 84.61000420570406,
+  "cash": 245.19000603675875,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,16 +12,6 @@
       "target": 69.54,
       "score": 33.1,
       "cost": 132.22
-    },
-    {
-      "ticker": "GME",
-      "date_open": "2026-11-19",
-      "shares": 6,
-      "entry": 26.97,
-      "stop_loss": 25.89,
-      "target": 28.59,
-      "score": 26.8,
-      "cost": 162.82
     },
     {
       "ticker": "IONQ",
@@ -2614,6 +2604,21 @@
       "reason": "🛑 סטופ",
       "pnl": -9.35,
       "pnl_pct": -5.02
+    },
+    {
+      "ticker": "GME",
+      "date_open": "2026-11-19",
+      "shares": 6,
+      "entry": 26.97,
+      "stop_loss": 25.89,
+      "target": 28.59,
+      "score": 26.8,
+      "cost": 162.82,
+      "date_close": "2026-11-20",
+      "exit": 26.93,
+      "reason": "🔔 סגירת יום",
+      "pnl": -2.24,
+      "pnl_pct": -1.38
     }
   ],
   "equity_curve": [
@@ -3016,6 +3021,10 @@
     {
       "date": "2026-11-19",
       "equity": 562.33
+    },
+    {
+      "date": "2026-11-20",
+      "equity": 570.55
     }
   ],
   "peak_equity": 1012.46,
