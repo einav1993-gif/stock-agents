@@ -1,29 +1,8 @@
 {
-  "cash": 245.19000603675875,
+  "cash": 544.530008478165,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "UBER",
-      "date_open": "2026-11-19",
-      "shares": 2,
-      "entry": 65.61,
-      "stop_loss": 62.98,
-      "target": 69.54,
-      "score": 33.1,
-      "cost": 132.22
-    },
-    {
-      "ticker": "IONQ",
-      "date_open": "2026-11-19",
-      "shares": 8,
-      "entry": 22.71,
-      "stop_loss": 21.8,
-      "target": 24.07,
-      "score": 26.5,
-      "cost": 182.68
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2619,6 +2598,36 @@
       "reason": "🔔 סגירת יום",
       "pnl": -2.24,
       "pnl_pct": -1.38
+    },
+    {
+      "ticker": "UBER",
+      "date_open": "2026-11-19",
+      "shares": 2,
+      "entry": 65.61,
+      "stop_loss": 62.98,
+      "target": 69.54,
+      "score": 33.1,
+      "cost": 132.22,
+      "date_close": "2026-11-21",
+      "exit": 63.47,
+      "reason": "🔔 סגירת יום",
+      "pnl": -6.28,
+      "pnl_pct": -4.75
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-11-19",
+      "shares": 8,
+      "entry": 22.71,
+      "stop_loss": 21.8,
+      "target": 24.07,
+      "score": 26.5,
+      "cost": 182.68,
+      "date_close": "2026-11-21",
+      "exit": 21.8,
+      "reason": "🛑 סטופ",
+      "pnl": -9.28,
+      "pnl_pct": -5.08
     }
   ],
   "equity_curve": [
@@ -3025,8 +3034,12 @@
     {
       "date": "2026-11-20",
       "equity": 570.55
+    },
+    {
+      "date": "2026-11-21",
+      "equity": 544.53
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 45.35
+  "max_drawdown_pct": 46.22
 }
