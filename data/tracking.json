@@ -9243,5 +9243,30 @@
     "target_2": 431.72,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-11-24",
+    "ticker": "AMC",
+    "total_score": 27.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -3,
+      "macro": -7,
+      "news": 60,
+      "sent": 25,
+      "fund": 46,
+      "risk": -15,
+      "gap": 0,
+      "social": 8,
+      "rs": 16,
+      "cal": 0
+    },
+    "entry": 2.95,
+    "stop_loss": 2.83,
+    "target_1": 3.13,
+    "target_2": 3.3,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]

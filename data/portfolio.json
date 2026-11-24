@@ -1,5 +1,5 @@
 {
-  "cash": 364.55000847816495,
+  "cash": 183.60000847816494,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
   "open_positions": [
@@ -12,6 +12,16 @@
       "target": 63.24,
       "score": 44.4,
       "cost": 179.98
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-11-24",
+      "shares": 61,
+      "entry": 2.95,
+      "stop_loss": 2.83,
+      "target": 3.13,
+      "score": 27.2,
+      "cost": 180.95
     }
   ],
   "closed_trades": [
