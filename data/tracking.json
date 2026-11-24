@@ -9168,5 +9168,80 @@
     "day_low": 318.48,
     "change_pct": -1.12,
     "pnl_pct": -1.12
+  },
+  {
+    "date": "2026-11-24",
+    "ticker": "INTC",
+    "total_score": 44.4,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 19,
+      "macro": 8,
+      "news": 70,
+      "sent": 25,
+      "fund": 60,
+      "risk": -15,
+      "gap": 18,
+      "social": 8,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 59.66,
+    "stop_loss": 57.27,
+    "target_1": 63.24,
+    "target_2": 66.82,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-24",
+    "ticker": "TSM",
+    "total_score": 44.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -16,
+      "macro": 8,
+      "news": 100,
+      "sent": 30,
+      "fund": 70,
+      "risk": -15,
+      "gap": 18,
+      "social": 0,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 363.6,
+    "stop_loss": 349.06,
+    "target_1": 385.42,
+    "target_2": 407.23,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-24",
+    "ticker": "TSLA",
+    "total_score": 31.2,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -2,
+      "macro": 8,
+      "news": 100,
+      "sent": 0,
+      "fund": 16,
+      "risk": -10,
+      "gap": 30,
+      "social": 12,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 385.46,
+    "stop_loss": 370.04,
+    "target_1": 408.59,
+    "target_2": 431.72,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
