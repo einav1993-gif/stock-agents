@@ -1,29 +1,8 @@
 {
-  "cash": 183.60000847816494,
+  "cash": 526.040008478165,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "INTC",
-      "date_open": "2026-11-24",
-      "shares": 3,
-      "entry": 59.66,
-      "stop_loss": 57.27,
-      "target": 63.24,
-      "score": 44.4,
-      "cost": 179.98
-    },
-    {
-      "ticker": "AMC",
-      "date_open": "2026-11-24",
-      "shares": 61,
-      "entry": 2.95,
-      "stop_loss": 2.83,
-      "target": 3.13,
-      "score": 27.2,
-      "cost": 180.95
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2649,6 +2628,36 @@
       "reason": "🛑 סטופ",
       "pnl": -9.28,
       "pnl_pct": -5.08
+    },
+    {
+      "ticker": "INTC",
+      "date_open": "2026-11-24",
+      "shares": 3,
+      "entry": 59.66,
+      "stop_loss": 57.27,
+      "target": 63.24,
+      "score": 44.4,
+      "cost": 179.98,
+      "date_close": "2026-11-25",
+      "exit": 57.27,
+      "reason": "🛑 סטופ",
+      "pnl": -9.17,
+      "pnl_pct": -5.1
+    },
+    {
+      "ticker": "AMC",
+      "date_open": "2026-11-24",
+      "shares": 61,
+      "entry": 2.95,
+      "stop_loss": 2.83,
+      "target": 3.13,
+      "score": 27.2,
+      "cost": 180.95,
+      "date_close": "2026-11-25",
+      "exit": 2.83,
+      "reason": "🛑 סטופ",
+      "pnl": -9.32,
+      "pnl_pct": -5.15
     }
   ],
   "equity_curve": [
@@ -3063,8 +3072,12 @@
     {
       "date": "2026-11-24",
       "equity": 543.53
+    },
+    {
+      "date": "2026-11-25",
+      "equity": 526.04
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 46.32
+  "max_drawdown_pct": 48.04
 }
