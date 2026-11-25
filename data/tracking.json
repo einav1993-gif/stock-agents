@@ -9288,5 +9288,80 @@
     "day_low": 2.81,
     "change_pct": 0.0,
     "pnl_pct": -4.07
+  },
+  {
+    "date": "2026-11-25",
+    "ticker": "TSM",
+    "total_score": 37.8,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -20,
+      "macro": -2,
+      "news": 100,
+      "sent": 30,
+      "fund": 70,
+      "risk": -15,
+      "gap": -12,
+      "social": 8,
+      "rs": -12,
+      "cal": -5
+    },
+    "entry": 342.34,
+    "stop_loss": 328.65,
+    "target_1": 362.88,
+    "target_2": 383.42,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-25",
+    "ticker": "META",
+    "total_score": 25.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": -2,
+      "news": 100,
+      "sent": -30,
+      "fund": 36,
+      "risk": -10,
+      "gap": -12,
+      "social": 12,
+      "rs": 15,
+      "cal": -5
+    },
+    "entry": 609.89,
+    "stop_loss": 585.49,
+    "target_1": 646.48,
+    "target_2": 683.08,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-25",
+    "ticker": "NIO",
+    "total_score": 21.9,
+    "decision": "⚪ המתן",
+    "trade_type": "none",
+    "components": {
+      "tech": -12,
+      "macro": -2,
+      "news": 30,
+      "sent": 0,
+      "fund": 76,
+      "risk": -15,
+      "gap": 0,
+      "social": 0,
+      "rs": 6,
+      "cal": -5
+    },
+    "entry": 2.69,
+    "stop_loss": 2.58,
+    "target_1": 2.85,
+    "target_2": 3.01,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
