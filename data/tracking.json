@@ -9378,5 +9378,80 @@
     "day_low": 2.51,
     "change_pct": 0.0,
     "pnl_pct": 0.0
+  },
+  {
+    "date": "2026-11-26",
+    "ticker": "TSM",
+    "total_score": 38.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -20,
+      "macro": -2,
+      "news": 100,
+      "sent": 30,
+      "fund": 70,
+      "risk": -15,
+      "gap": -12,
+      "social": 8,
+      "rs": -12,
+      "cal": 0
+    },
+    "entry": 342.34,
+    "stop_loss": 328.65,
+    "target_1": 362.88,
+    "target_2": 383.42,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-26",
+    "ticker": "META",
+    "total_score": 27.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 9,
+      "macro": -2,
+      "news": 100,
+      "sent": 0,
+      "fund": 36,
+      "risk": -10,
+      "gap": -12,
+      "social": 0,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 609.89,
+    "stop_loss": 585.49,
+    "target_1": 646.48,
+    "target_2": 683.08,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-26",
+    "ticker": "IONQ",
+    "total_score": 27.0,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -2,
+      "macro": -2,
+      "news": 70,
+      "sent": 0,
+      "fund": 90,
+      "risk": -15,
+      "gap": -12,
+      "social": 0,
+      "rs": 6,
+      "cal": 0
+    },
+    "entry": 23.54,
+    "stop_loss": 22.6,
+    "target_1": 24.95,
+    "target_2": 26.36,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
