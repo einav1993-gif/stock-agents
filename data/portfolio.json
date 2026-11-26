@@ -1,19 +1,8 @@
 {
-  "cash": 350.19000847816494,
+  "cash": 516.890008478165,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "NIO",
-      "date_open": "2026-11-25",
-      "shares": 65,
-      "entry": 2.69,
-      "stop_loss": 2.58,
-      "target": 2.85,
-      "score": 21.9,
-      "cost": 175.85
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2669,6 +2658,21 @@
       "reason": "🛑 סטופ",
       "pnl": -9.32,
       "pnl_pct": -5.15
+    },
+    {
+      "ticker": "NIO",
+      "date_open": "2026-11-25",
+      "shares": 65,
+      "entry": 2.69,
+      "stop_loss": 2.58,
+      "target": 2.85,
+      "score": 21.9,
+      "cost": 175.85,
+      "date_close": "2026-11-26",
+      "exit": 2.58,
+      "reason": "🛑 סטופ",
+      "pnl": -9.15,
+      "pnl_pct": -5.2
     }
   ],
   "equity_curve": [
@@ -3087,8 +3091,12 @@
     {
       "date": "2026-11-25",
       "equity": 526.04
+    },
+    {
+      "date": "2026-11-26",
+      "equity": 516.89
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 48.04
+  "max_drawdown_pct": 48.95
 }
