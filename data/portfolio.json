@@ -3106,8 +3106,12 @@
     {
       "date": "2026-11-26",
       "equity": 516.89
+    },
+    {
+      "date": "2026-11-27",
+      "equity": 515.89
     }
   ],
   "peak_equity": 1012.46,
-  "max_drawdown_pct": 48.95
+  "max_drawdown_pct": 49.05
 }
