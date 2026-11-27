@@ -9453,5 +9453,80 @@
     "target_2": 26.36,
     "degraded_data": false,
     "actual_result": null
+  },
+  {
+    "date": "2026-11-27",
+    "ticker": "PLTR",
+    "total_score": 36.1,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 23,
+      "macro": 15,
+      "news": 100,
+      "sent": 0,
+      "fund": 70,
+      "risk": -10,
+      "gap": 10,
+      "social": 8,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 172.17,
+    "stop_loss": 165.28,
+    "target_1": 182.5,
+    "target_2": 192.83,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-27",
+    "ticker": "IONQ",
+    "total_score": 34.9,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": -3,
+      "macro": 15,
+      "news": 100,
+      "sent": 0,
+      "fund": 90,
+      "risk": -15,
+      "gap": 18,
+      "social": 0,
+      "rs": 10,
+      "cal": 0
+    },
+    "entry": 24.97,
+    "stop_loss": 23.97,
+    "target_1": 26.47,
+    "target_2": 27.97,
+    "degraded_data": false,
+    "actual_result": null
+  },
+  {
+    "date": "2026-11-27",
+    "ticker": "TSLA",
+    "total_score": 34.5,
+    "decision": "🟡 לונג — בחן מקרוב",
+    "trade_type": "long",
+    "components": {
+      "tech": 41,
+      "macro": 15,
+      "news": 100,
+      "sent": 0,
+      "fund": 16,
+      "risk": -10,
+      "gap": 10,
+      "social": 20,
+      "rs": 15,
+      "cal": 0
+    },
+    "entry": 400.0,
+    "stop_loss": 384.0,
+    "target_1": 424.0,
+    "target_2": 448.0,
+    "degraded_data": false,
+    "actual_result": null
   }
 ]
