@@ -1,29 +1,8 @@
 {
-  "cash": 177.94000847816503,
+  "cash": 515.870008478165,
   "start_cash": 1000.0,
   "start_date": "2026-07-05",
-  "open_positions": [
-    {
-      "ticker": "IONQ",
-      "date_open": "2026-11-26",
-      "shares": 7,
-      "entry": 23.54,
-      "stop_loss": 22.6,
-      "target": 24.95,
-      "score": 27.0,
-      "cost": 165.78
-    },
-    {
-      "ticker": "PLTR",
-      "date_open": "2026-11-27",
-      "shares": 1,
-      "entry": 172.17,
-      "stop_loss": 165.28,
-      "target": 182.5,
-      "score": 36.1,
-      "cost": 173.17
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "ticker": "HOOD",
@@ -2694,6 +2673,36 @@
       "reason": "🛑 סטופ",
       "pnl": -9.15,
       "pnl_pct": -5.2
+    },
+    {
+      "ticker": "IONQ",
+      "date_open": "2026-11-26",
+      "shares": 7,
+      "entry": 23.54,
+      "stop_loss": 22.6,
+      "target": 24.95,
+      "score": 27.0,
+      "cost": 165.78,
+      "date_close": "2026-11-28",
+      "exit": 24.95,
+      "reason": "✅ יעד",
+      "pnl": 7.87,
+      "pnl_pct": 4.75
+    },
+    {
+      "ticker": "PLTR",
+      "date_open": "2026-11-27",
+      "shares": 1,
+      "entry": 172.17,
+      "stop_loss": 165.28,
+      "target": 182.5,
+      "score": 36.1,
+      "cost": 173.17,
+      "date_close": "2026-11-28",
+      "exit": 165.28,
+      "reason": "🛑 סטופ",
+      "pnl": -8.89,
+      "pnl_pct": -5.13
     }
   ],
   "equity_curve": [
@@ -3120,6 +3129,10 @@
     {
       "date": "2026-11-27",
       "equity": 515.89
+    },
+    {
+      "date": "2026-11-28",
+      "equity": 515.87
     }
   ],
   "peak_equity": 1012.46,
